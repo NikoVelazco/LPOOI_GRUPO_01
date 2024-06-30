@@ -11,9 +11,19 @@ namespace Vistas
 {
     public partial class FrmLogin : Form
     {
+
+        WMPLib.WindowsMediaPlayer music;
+
         public FrmLogin()
         {
             InitializeComponent();
+        }
+
+        public void playMusic(string link)
+        {
+            music = new WMPLib.WindowsMediaPlayer();
+            music.URL = link;
+            music.controls.play();
         }
 
         /**
@@ -55,6 +65,16 @@ namespace Vistas
         private void pnlWindowTopBar_MouseDown(object sender, MouseEventArgs e)
         {
             Util.DragForm(this);
+        }
+
+        private void btnIngresar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FrmLogin_Load(object sender, EventArgs e)
+        {
+            playMusic(Util.soundPath("Login-sound.mp3"));
         }
     }
 }

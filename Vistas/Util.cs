@@ -1,8 +1,13 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Drawing;
+using System.IO;
+using System.Net.Mail;
+using System.Data;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
-using System.Linq;
-using System.Drawing;
 
 namespace Vistas
 {
@@ -42,6 +47,16 @@ namespace Vistas
         {
             ReleaseCapture();
             SendMessage(form.Handle, 0x112, 0xf012, 0);
+        }
+
+        /**
+         * Reproduce Sonido
+         * */
+        public static string soundPath(string nameMusic)
+        {
+            var CurrentDirectory = Directory.GetCurrentDirectory();
+            var VistasDirectory = CurrentDirectory.Substring(0, CurrentDirectory.Length - 9);
+            return VistasDirectory + "\\Recursos\\sounds\\" + nameMusic;
         }
 
     }
