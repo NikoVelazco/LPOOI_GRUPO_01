@@ -6,24 +6,16 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using ClasesBase;
 
 namespace Vistas
 {
     public partial class FrmLogin : Form
     {
 
-        WMPLib.WindowsMediaPlayer music;
-
         public FrmLogin()
         {
             InitializeComponent();
-        }
-
-        public void playMusic(string link)
-        {
-            music = new WMPLib.WindowsMediaPlayer();
-            music.URL = link;
-            music.controls.play();
         }
 
         /**
@@ -40,7 +32,7 @@ namespace Vistas
          * */
         private void btnPowerOff_Click(object sender, EventArgs e)
         {
-            Util.closeApp();
+            Util.closeApp("alerta.mp3");
         }
 
         /**
@@ -56,7 +48,7 @@ namespace Vistas
          * */
         private void btnClose_Click(object sender, EventArgs e)
         {
-            Util.closeApp();
+            Util.closeApp("alerta.mp3");
         }
 
         /**
@@ -67,14 +59,48 @@ namespace Vistas
             Util.DragForm(this);
         }
 
-        private void btnIngresar_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void FrmLogin_Load(object sender, EventArgs e)
         {
-            playMusic(Util.soundPath("Login-sound.mp3"));
+            Util.startSound("Login-sound.mp3");
         }
+
+        /**
+         * Login
+         * */
+        private void txtUserName_Enter(object sender, EventArgs e)
+        {
+            if (txtUserName.Text == "Usuario")
+            {
+                txtUserName.Text = "";
+            }
+        }
+
+        private void txtPassword_Enter(object sender, EventArgs e)
+        {
+            if (txtPassword.Text == "Contraseña")
+            {
+                txtPassword.Text = "";
+            }
+        }
+
+        private void btnIngresar_Click(object sender, EventArgs e)
+        {
+            string usuario = txtUserName.Text;
+            string contrasenia = txtPassword.Text;
+            if (TrabajarUsuario.validarUsuario(usuario, contrasenia))
+            {
+                Util.startSound("sound-correct.mp3");
+                MessageBox.Show("Bienvenido/a " + usuario);
+                FrmPrincipal oFrmPrincipal = new FrmPrincipal(/*usuario*/);
+                oFrmPrincipal.Show();
+                this.Hide();
+            }
+            else
+            {
+                Util.startSound("sound-fail.mp3");
+                MessageBox.Show("No existe el usuario o contraseña ingresados");
+            }
+        }
+
     }
 }

@@ -23,10 +23,14 @@ namespace Vistas
         }
 
         /**
+         * mODI**/
+
+        /**
          * Apaga la aplicación
          * **/
-        public static void closeApp()
+        public static void closeApp(string nameAlert)
         {
+            startSound(nameAlert);
             DialogResult mensaje = MessageBox.Show("¿Estás seguro que queres salir de la aplicación?", "Cerrar Aplicación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (mensaje == DialogResult.Yes)
             {
@@ -52,11 +56,26 @@ namespace Vistas
         /**
          * Reproduce Sonido
          * */
+
+        static WMPLib.WindowsMediaPlayer music;
+
+        public static void playMusic(string link)
+        {
+            music = new WMPLib.WindowsMediaPlayer();
+            music.URL = link;
+            music.controls.play();
+        }
+
         public static string soundPath(string nameMusic)
         {
             var CurrentDirectory = Directory.GetCurrentDirectory();
             var VistasDirectory = CurrentDirectory.Substring(0, CurrentDirectory.Length - 9);
             return VistasDirectory + "\\Recursos\\sounds\\" + nameMusic;
+        }
+
+        public static void startSound(string nameMusic) 
+        {
+            playMusic(soundPath(nameMusic));
         }
 
     }
