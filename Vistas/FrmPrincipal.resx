@@ -117,47 +117,20 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="Atthlete" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\recursos\atthlete.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="avatar_12620376" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\recursos\avatar_12620376.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="behavior_3316335" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\recursos\behavior_3316335.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="btnApagar_Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\recursos\btnapagar.image.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="btnClose_Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\recursos\btnclose.image.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="btnMinimize_Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\recursos\btnminimize.image.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="competition_12650038" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\recursos\competition_12650038.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="laptop_1304110" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\recursos\laptop_1304110.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="man_145892" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\recursos\man_145892.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="mining_1468155" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\recursos\mining_1468155.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Mobile_Menu_Icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\recursos\mobile-menu-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="opening_12267862" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\recursos\opening_12267862.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="password" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\recursos\password.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="user" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\recursos\user.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <metadata name="dateTimer.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="pictureBox3.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        EwAACxMBAJqcGAAAAWhJREFUaEPtmk1KA0EQhWejN1C8isn1jH8XE4krXWTrv7mFvhcpcKHWk57uKqE+
+        +CCBzqt+NLOYmUxFUfyZfXgBX+F7Ml/gGeQeXc7hdyGZPIUubM3Fx7tvuVhA7o17dLHWWZH3N3eRa3j1
+        +XEWwoqE5YUNFpHzwgaLyHlhg0XkvLDBInJe2GAROS9ssIicFzZYRM4LGywi54UNFpHzwgaLyHlhg0Xk
+        vLDBInLeXIN5F3cCLe8S7sFW5P3JCx2+ljB5C92KZbnICx0eoWWZb7AVy3KRFzo8Q8syt7AVy3KRF/7C
+        AbyHlmXywUYrluUiL/yBQ3gHmfEAnyBPgtfHv7nYeRK3kL/fwCM4N92LjChBuhYZVYJ0KzKyBOlWZA25
+        nhc4L/TedCvCh283cEQJ0q3IaKpINqpINqpINqpINuT92ctQvnjMxhJyb7z7dOF7bGud1RV04WMclrGT
+        ySRPgiWkPwwURWFM0wfB7YCvQCCc/gAAAABJRU5ErkJggg==
+</value>
   </data>
 </root>

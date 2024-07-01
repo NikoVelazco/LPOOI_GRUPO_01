@@ -78,6 +78,9 @@
     <EmbeddedResource Include="FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmPrincipal.resx">
+      <DependentUpon>FrmPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmRecoverEmail.resx">
       <DependentUpon>FrmRecoverEmail.cs</DependentUpon>
     </EmbeddedResource>
@@ -131,9 +134,18 @@
     </COMReference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Recursos\Atthlete.png" />
+    <Content Include="Recursos\avatar_12620376.png" />
+    <Content Include="Recursos\behavior_3316335.png" />
     <Content Include="Recursos\btnApagar.Image.png" />
     <Content Include="Recursos\btnClose.Image.png" />
     <Content Include="Recursos\btnMinimize.Image.png" />
+    <Content Include="Recursos\competition_12650038.png" />
+    <Content Include="Recursos\laptop_1304110.png" />
+    <Content Include="Recursos\man_145892.png" />
+    <Content Include="Recursos\mining_1468155.png" />
+    <Content Include="Recursos\Mobile-Menu-Icon.png" />
+    <Content Include="Recursos\opening_12267862.png" />
     <Content Include="Recursos\password.png" />
     <Content Include="Recursos\sounds\alerta.mp3" />
     <Content Include="Recursos\sounds\Login-sound.mp3" />
