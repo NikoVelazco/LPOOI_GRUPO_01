@@ -51,7 +51,7 @@
             this.pictureBoxUser = new System.Windows.Forms.PictureBox();
             this.pcitureBoxPassword = new System.Windows.Forms.PictureBox();
             this.btnIngresar = new System.Windows.Forms.Button();
-            this.lblRecuperarPsw = new System.Windows.Forms.Label();
+            this.lblRecoverPassword = new System.Windows.Forms.Label();
             this.pnlWindowTopBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).BeginInit();
@@ -304,17 +304,19 @@
             this.btnIngresar.UseVisualStyleBackColor = false;
             this.btnIngresar.Click += new System.EventHandler(this.btnIngresar_Click);
             // 
-            // lblRecuperarPsw
+            // lblRecoverPassword
             // 
-            this.lblRecuperarPsw.AutoSize = true;
-            this.lblRecuperarPsw.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRecuperarPsw.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.lblRecuperarPsw.Location = new System.Drawing.Point(164, 237);
-            this.lblRecuperarPsw.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblRecuperarPsw.Name = "lblRecuperarPsw";
-            this.lblRecuperarPsw.Size = new System.Drawing.Size(237, 17);
-            this.lblRecuperarPsw.TabIndex = 23;
-            this.lblRecuperarPsw.Text = "¿Olvidaste tu usuario o contraseña?";
+            this.lblRecoverPassword.AutoSize = true;
+            this.lblRecoverPassword.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblRecoverPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRecoverPassword.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.lblRecoverPassword.Location = new System.Drawing.Point(164, 237);
+            this.lblRecoverPassword.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblRecoverPassword.Name = "lblRecoverPassword";
+            this.lblRecoverPassword.Size = new System.Drawing.Size(237, 17);
+            this.lblRecoverPassword.TabIndex = 23;
+            this.lblRecoverPassword.Text = "¿Olvidaste tu usuario o contraseña?";
+            this.lblRecoverPassword.Click += new System.EventHandler(this.lblRecoverPassword_Click);
             // 
             // FrmLogin
             // 
@@ -322,7 +324,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(213)))), ((int)(((byte)(217)))));
             this.ClientSize = new System.Drawing.Size(547, 446);
-            this.Controls.Add(this.lblRecuperarPsw);
+            this.Controls.Add(this.lblRecoverPassword);
             this.Controls.Add(this.btnIngresar);
             this.Controls.Add(this.pcitureBoxPassword);
             this.Controls.Add(this.pictureBoxUser);
@@ -378,7 +380,7 @@
         private System.Windows.Forms.PictureBox pictureBoxUser;
         private System.Windows.Forms.PictureBox pcitureBoxPassword;
         private System.Windows.Forms.Button btnIngresar;
-        private System.Windows.Forms.Label lblRecuperarPsw;
+        private System.Windows.Forms.Label lblRecoverPassword;
     }
 }
 

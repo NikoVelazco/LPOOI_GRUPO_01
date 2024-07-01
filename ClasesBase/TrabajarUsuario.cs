@@ -33,5 +33,21 @@ namespace ClasesBase
             cnn.Close();
             return false;
         }
+
+        /**
+         * Recupera email
+         * */
+        public static DataTable buscarPorCorreo(string correo)
+        {
+            SqlConnection cn = new SqlConnection(ClasesBase.Properties.Settings.Default.comdepConnectionString);
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText = "SELECT * FROM Usuario WHERE Usu_Email = '" + correo + "';";
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = cn;
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            return dt;
+        }
     }
 }
