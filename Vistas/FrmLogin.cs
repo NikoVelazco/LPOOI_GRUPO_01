@@ -102,5 +102,12 @@ namespace Vistas
             }
         }
 
+        private void lblRecoverPassword_Click(object sender, EventArgs e)
+        {
+            Util.startSound("alerta.mp3");
+            FrmRecoverEmail oFrmRecover = new FrmRecoverEmail();
+            oFrmRecover.Show();
+        }
+
     }
 }
