@@ -54,13 +54,13 @@ namespace Vistas
 
         private void btnSlide_Click(object sender, EventArgs e)
         {
-            if (menuVertical.Width == 184)
+            if (menuVertical.Width == 200)
             {
                 menuVertical.Width = 70;
             }
             else
             {
-                menuVertical.Width = 184;
+                menuVertical.Width = 200;
             }
         }
     }
