@@ -121,12 +121,6 @@
   <data name="Atthlete" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\recursos\atthlete.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="avatar_12620376" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\recursos\avatar_12620376.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="behavior_3316335" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\recursos\behavior_3316335.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="btnApagar_Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\recursos\btnapagar.image.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -136,28 +130,34 @@
   <data name="btnMinimize_Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\recursos\btnminimize.image.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="competition_12650038" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\recursos\competition_12650038.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="laptop_1304110" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\recursos\laptop_1304110.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="man_145892" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\recursos\man_145892.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="mining_1468155" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\recursos\mining_1468155.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Mobile_Menu_Icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\recursos\mobile-menu-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="opening_12267862" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\recursos\opening_12267862.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="password" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\recursos\password.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="user" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\recursos\user.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="atleta" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\atleta.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="categoria" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\categoria.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="competencia" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\competencia.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="disciplina" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\disciplina.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="evento" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\recursos\evento.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="sistema" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\recursos\sistema.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="usuario" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\usuario.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

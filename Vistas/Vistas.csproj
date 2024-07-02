@@ -134,24 +134,29 @@
     </COMReference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Recursos\atleta.png" />
     <Content Include="Recursos\Atthlete.png" />
-    <Content Include="Recursos\avatar_12620376.png" />
-    <Content Include="Recursos\behavior_3316335.png" />
     <Content Include="Recursos\btnApagar.Image.png" />
     <Content Include="Recursos\btnClose.Image.png" />
     <Content Include="Recursos\btnMinimize.Image.png" />
-    <Content Include="Recursos\competition_12650038.png" />
-    <Content Include="Recursos\laptop_1304110.png" />
-    <Content Include="Recursos\man_145892.png" />
-    <Content Include="Recursos\mining_1468155.png" />
+    <Content Include="Recursos\categoria.png" />
+    <Content Include="Recursos\competencia.png" />
+    <Content Include="Recursos\disciplina.png" />
+    <Content Include="Recursos\evento.png" />
     <Content Include="Recursos\Mobile-Menu-Icon.png" />
-    <Content Include="Recursos\opening_12267862.png" />
     <Content Include="Recursos\password.png" />
+    <Content Include="Recursos\sistema.png" />
     <Content Include="Recursos\sounds\alerta.mp3" />
     <Content Include="Recursos\sounds\Login-sound.mp3" />
     <Content Include="Recursos\sounds\sound-correct.mp3" />
     <Content Include="Recursos\sounds\sound-fail.mp3" />
     <Content Include="Recursos\user.png" />
+    <Content Include="Recursos\usuario.png" />
+    <None Include="Resources\disciplina.png" />
+    <None Include="Resources\competencia.png" />
+    <None Include="Resources\categoria.png" />
+    <None Include="Resources\atleta.png" />
+    <None Include="Resources\usuario.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

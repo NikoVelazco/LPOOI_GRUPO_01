@@ -36,47 +36,41 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.pnlDate = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.lblDate = new System.Windows.Forms.Label();
             this.lblTime = new System.Windows.Forms.Label();
             this.dateTimer = new System.Windows.Forms.Timer(this.components);
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.txtUser = new System.Windows.Forms.Label();
-            this.txtRol = new System.Windows.Forms.Label();
             this.btnExit = new System.Windows.Forms.Button();
+            this.txtRol = new System.Windows.Forms.Label();
+            this.txtUser = new System.Windows.Forms.Label();
             this.menuVertical = new System.Windows.Forms.Panel();
-            this.imgEvento = new System.Windows.Forms.PictureBox();
-            this.imgCategoria = new System.Windows.Forms.PictureBox();
-            this.imgUsuario = new System.Windows.Forms.PictureBox();
-            this.imgSistema = new System.Windows.Forms.PictureBox();
-            this.imgCompetencia = new System.Windows.Forms.PictureBox();
-            this.imgDisciplina = new System.Windows.Forms.PictureBox();
-            this.imgAtleta = new System.Windows.Forms.PictureBox();
-            this.imgUser = new System.Windows.Forms.PictureBox();
+            this.panel5 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.imgUser = new System.Windows.Forms.PictureBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btnSlide = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.btnMinimize = new System.Windows.Forms.PictureBox();
             this.btnClose = new System.Windows.Forms.PictureBox();
-            this.btnSlide = new System.Windows.Forms.PictureBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
+            this.panelContenedor = new System.Windows.Forms.Panel();
             this.pnlWindowTopBar.SuspendLayout();
             this.panel1.SuspendLayout();
             this.pnlDate.SuspendLayout();
-            this.panel5.SuspendLayout();
             this.menuVertical.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.imgEvento)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgCategoria)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgUsuario)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgSistema)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgCompetencia)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgDisciplina)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgAtleta)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgUser)).BeginInit();
+            this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgUser)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnSlide)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnSlide)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlWindowTopBar
@@ -141,6 +135,34 @@
             this.pnlDate.Size = new System.Drawing.Size(920, 66);
             this.pnlDate.TabIndex = 5;
             // 
+            // label2
+            // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(8)))), ((int)(((byte)(8)))));
+            this.label2.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.label2.Location = new System.Drawing.Point(385, 32);
+            this.label2.Margin = new System.Windows.Forms.Padding(4);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(470, 27);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "©Athlete - Todos los derechos reservados";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(8)))), ((int)(((byte)(8)))));
+            this.label1.Font = new System.Drawing.Font("Consolas", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.label1.Location = new System.Drawing.Point(335, 10);
+            this.label1.Margin = new System.Windows.Forms.Padding(4);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(562, 21);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Laboratorio de Programación Orientada a Objetos I";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // lblDate
             // 
             this.lblDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
@@ -174,75 +196,6 @@
             this.dateTimer.Enabled = true;
             this.dateTimer.Tick += new System.EventHandler(this.dateTimer_Tick);
             // 
-            // label1
-            // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(8)))), ((int)(((byte)(8)))));
-            this.label1.Font = new System.Drawing.Font("Consolas", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.label1.Location = new System.Drawing.Point(335, 10);
-            this.label1.Margin = new System.Windows.Forms.Padding(4);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(562, 21);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "Laboratorio de Programación Orientada a Objetos I";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label2
-            // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(8)))), ((int)(((byte)(8)))));
-            this.label2.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.label2.Location = new System.Drawing.Point(385, 32);
-            this.label2.Margin = new System.Windows.Forms.Padding(4);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(470, 27);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "©Athlete - Todos los derechos reservados";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(8)))), ((int)(((byte)(8)))));
-            this.panel5.Controls.Add(this.btnSlide);
-            this.panel5.Controls.Add(this.btnExit);
-            this.panel5.Controls.Add(this.txtRol);
-            this.panel5.Controls.Add(this.txtUser);
-            this.panel5.Controls.Add(this.imgUser);
-            this.panel5.Location = new System.Drawing.Point(10, 37);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(920, 80);
-            this.panel5.TabIndex = 6;
-            // 
-            // txtUser
-            // 
-            this.txtUser.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(8)))), ((int)(((byte)(8)))));
-            this.txtUser.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUser.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.txtUser.Location = new System.Drawing.Point(730, 18);
-            this.txtUser.Margin = new System.Windows.Forms.Padding(4);
-            this.txtUser.Name = "txtUser";
-            this.txtUser.Size = new System.Drawing.Size(92, 21);
-            this.txtUser.TabIndex = 7;
-            this.txtUser.Text = "Usuario";
-            this.txtUser.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // txtRol
-            // 
-            this.txtRol.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtRol.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(8)))), ((int)(((byte)(8)))));
-            this.txtRol.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRol.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.txtRol.Location = new System.Drawing.Point(729, 47);
-            this.txtRol.Margin = new System.Windows.Forms.Padding(4);
-            this.txtRol.Name = "txtRol";
-            this.txtRol.Size = new System.Drawing.Size(92, 27);
-            this.txtRol.TabIndex = 7;
-            this.txtRol.Text = "Rol";
-            this.txtRol.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // btnExit
             // 
             this.btnExit.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -254,7 +207,7 @@
             this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExit.Font = new System.Drawing.Font("Consolas", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExit.ForeColor = System.Drawing.Color.White;
-            this.btnExit.Location = new System.Drawing.Point(822, 30);
+            this.btnExit.Location = new System.Drawing.Point(825, 29);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(92, 30);
             this.btnExit.TabIndex = 25;
@@ -262,102 +215,111 @@
             this.btnExit.UseVisualStyleBackColor = false;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
+            // txtRol
+            // 
+            this.txtRol.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtRol.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(8)))), ((int)(((byte)(8)))));
+            this.txtRol.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRol.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.txtRol.Location = new System.Drawing.Point(727, 45);
+            this.txtRol.Margin = new System.Windows.Forms.Padding(4);
+            this.txtRol.Name = "txtRol";
+            this.txtRol.Size = new System.Drawing.Size(92, 27);
+            this.txtRol.TabIndex = 7;
+            this.txtRol.Text = "Rol";
+            this.txtRol.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // txtUser
+            // 
+            this.txtUser.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(8)))), ((int)(((byte)(8)))));
+            this.txtUser.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUser.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.txtUser.Location = new System.Drawing.Point(728, 16);
+            this.txtUser.Margin = new System.Windows.Forms.Padding(4);
+            this.txtUser.Name = "txtUser";
+            this.txtUser.Size = new System.Drawing.Size(92, 21);
+            this.txtUser.TabIndex = 7;
+            this.txtUser.Text = "Usuario";
+            this.txtUser.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // menuVertical
             // 
-            this.menuVertical.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(8)))), ((int)(((byte)(8)))));
-            this.menuVertical.Controls.Add(this.pictureBox1);
-            this.menuVertical.Location = new System.Drawing.Point(10, 37);
+            this.menuVertical.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(111)))), ((int)(((byte)(109)))));
+            this.menuVertical.Controls.Add(this.button7);
+            this.menuVertical.Controls.Add(this.button6);
+            this.menuVertical.Controls.Add(this.button5);
+            this.menuVertical.Controls.Add(this.button4);
+            this.menuVertical.Controls.Add(this.button3);
+            this.menuVertical.Controls.Add(this.button2);
+            this.menuVertical.Controls.Add(this.button1);
+            this.menuVertical.Controls.Add(this.btnSlide);
+            this.menuVertical.Location = new System.Drawing.Point(10, 124);
             this.menuVertical.Name = "menuVertical";
-            this.menuVertical.Size = new System.Drawing.Size(184, 523);
-            this.menuVertical.TabIndex = 7;
+            this.menuVertical.Size = new System.Drawing.Size(200, 436);
+            this.menuVertical.TabIndex = 26;
             // 
-            // imgEvento
+            // panel5
             // 
-            this.imgEvento.Image = global::Vistas.Properties.Resources.opening_12267862;
-            this.imgEvento.Location = new System.Drawing.Point(832, 338);
-            this.imgEvento.Name = "imgEvento";
-            this.imgEvento.Size = new System.Drawing.Size(50, 50);
-            this.imgEvento.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.imgEvento.TabIndex = 14;
-            this.imgEvento.TabStop = false;
+            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(8)))), ((int)(((byte)(8)))));
+            this.panel5.Controls.Add(this.pictureBox1);
+            this.panel5.Controls.Add(this.imgUser);
+            this.panel5.Controls.Add(this.btnExit);
+            this.panel5.Controls.Add(this.txtRol);
+            this.panel5.Controls.Add(this.txtUser);
+            this.panel5.Location = new System.Drawing.Point(10, 37);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(920, 88);
+            this.panel5.TabIndex = 27;
             // 
-            // imgCategoria
+            // pictureBox1
             // 
-            this.imgCategoria.Image = global::Vistas.Properties.Resources.mining_1468155;
-            this.imgCategoria.Location = new System.Drawing.Point(832, 177);
-            this.imgCategoria.Name = "imgCategoria";
-            this.imgCategoria.Size = new System.Drawing.Size(50, 50);
-            this.imgCategoria.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.imgCategoria.TabIndex = 13;
-            this.imgCategoria.TabStop = false;
-            // 
-            // imgUsuario
-            // 
-            this.imgUsuario.Image = global::Vistas.Properties.Resources.man_145892;
-            this.imgUsuario.Location = new System.Drawing.Point(744, 256);
-            this.imgUsuario.Name = "imgUsuario";
-            this.imgUsuario.Size = new System.Drawing.Size(50, 50);
-            this.imgUsuario.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.imgUsuario.TabIndex = 12;
-            this.imgUsuario.TabStop = false;
-            // 
-            // imgSistema
-            // 
-            this.imgSistema.Image = global::Vistas.Properties.Resources.laptop_1304110;
-            this.imgSistema.Location = new System.Drawing.Point(832, 256);
-            this.imgSistema.Name = "imgSistema";
-            this.imgSistema.Size = new System.Drawing.Size(50, 50);
-            this.imgSistema.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.imgSistema.TabIndex = 11;
-            this.imgSistema.TabStop = false;
-            // 
-            // imgCompetencia
-            // 
-            this.imgCompetencia.Image = global::Vistas.Properties.Resources.competition_12650038;
-            this.imgCompetencia.Location = new System.Drawing.Point(743, 338);
-            this.imgCompetencia.Name = "imgCompetencia";
-            this.imgCompetencia.Size = new System.Drawing.Size(50, 50);
-            this.imgCompetencia.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.imgCompetencia.TabIndex = 10;
-            this.imgCompetencia.TabStop = false;
-            // 
-            // imgDisciplina
-            // 
-            this.imgDisciplina.Image = global::Vistas.Properties.Resources.behavior_3316335;
-            this.imgDisciplina.Location = new System.Drawing.Point(832, 424);
-            this.imgDisciplina.Name = "imgDisciplina";
-            this.imgDisciplina.Size = new System.Drawing.Size(50, 50);
-            this.imgDisciplina.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.imgDisciplina.TabIndex = 9;
-            this.imgDisciplina.TabStop = false;
-            // 
-            // imgAtleta
-            // 
-            this.imgAtleta.Image = global::Vistas.Properties.Resources.avatar_12620376;
-            this.imgAtleta.Location = new System.Drawing.Point(744, 177);
-            this.imgAtleta.Name = "imgAtleta";
-            this.imgAtleta.Size = new System.Drawing.Size(50, 50);
-            this.imgAtleta.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.imgAtleta.TabIndex = 8;
-            this.imgAtleta.TabStop = false;
+            this.pictureBox1.Image = global::Vistas.Properties.Resources.Atthlete;
+            this.pictureBox1.Location = new System.Drawing.Point(6, 5);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(157, 76);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 7;
+            this.pictureBox1.TabStop = false;
             // 
             // imgUser
             // 
-            this.imgUser.Location = new System.Drawing.Point(655, 3);
+            this.imgUser.Location = new System.Drawing.Point(653, 7);
             this.imgUser.Name = "imgUser";
             this.imgUser.Size = new System.Drawing.Size(68, 74);
             this.imgUser.TabIndex = 7;
             this.imgUser.TabStop = false;
             // 
-            // pictureBox1
+            // button1
             // 
-            this.pictureBox1.Image = global::Vistas.Properties.Resources.Atthlete;
-            this.pictureBox1.Location = new System.Drawing.Point(3, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(134, 76);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 7;
-            this.pictureBox1.TabStop = false;
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(111)))), ((int)(((byte)(109)))));
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(43)))), ((int)(((byte)(44)))));
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(43)))), ((int)(((byte)(44)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Consolas", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(-1, 54);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(200, 46);
+            this.button1.TabIndex = 28;
+            this.button1.Text = "Home";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // btnSlide
+            // 
+            this.btnSlide.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSlide.Image = global::Vistas.Properties.Resources.Mobile_Menu_Icon;
+            this.btnSlide.Location = new System.Drawing.Point(18, 7);
+            this.btnSlide.Name = "btnSlide";
+            this.btnSlide.Size = new System.Drawing.Size(35, 37);
+            this.btnSlide.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnSlide.TabIndex = 15;
+            this.btnSlide.TabStop = false;
+            this.btnSlide.Click += new System.EventHandler(this.btnSlide_Click);
             // 
             // pictureBox3
             // 
@@ -398,16 +360,127 @@
             this.btnClose.TabStop = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // btnSlide
+            // button2
             // 
-            this.btnSlide.Image = global::Vistas.Properties.Resources.Mobile_Menu_Icon;
-            this.btnSlide.Location = new System.Drawing.Point(186, 7);
-            this.btnSlide.Name = "btnSlide";
-            this.btnSlide.Size = new System.Drawing.Size(35, 37);
-            this.btnSlide.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnSlide.TabIndex = 15;
-            this.btnSlide.TabStop = false;
-            this.btnSlide.Click += new System.EventHandler(this.btnSlide_Click);
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(111)))), ((int)(((byte)(109)))));
+            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(43)))), ((int)(((byte)(44)))));
+            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(43)))), ((int)(((byte)(44)))));
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Consolas", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.Image = global::Vistas.Properties.Resources.usuario;
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.Location = new System.Drawing.Point(0, 114);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(200, 46);
+            this.button2.TabIndex = 29;
+            this.button2.Text = " Usuario";
+            this.button2.UseVisualStyleBackColor = false;
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(111)))), ((int)(((byte)(109)))));
+            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(43)))), ((int)(((byte)(44)))));
+            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(43)))), ((int)(((byte)(44)))));
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Consolas", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.ForeColor = System.Drawing.Color.White;
+            this.button3.Image = global::Vistas.Properties.Resources.atleta;
+            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button3.Location = new System.Drawing.Point(0, 173);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(200, 46);
+            this.button3.TabIndex = 30;
+            this.button3.Text = " Atleta";
+            this.button3.UseVisualStyleBackColor = false;
+            // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(111)))), ((int)(((byte)(109)))));
+            this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button4.FlatAppearance.BorderSize = 0;
+            this.button4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(43)))), ((int)(((byte)(44)))));
+            this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(43)))), ((int)(((byte)(44)))));
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Font = new System.Drawing.Font("Consolas", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.ForeColor = System.Drawing.Color.White;
+            this.button4.Image = global::Vistas.Properties.Resources.competencia;
+            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button4.Location = new System.Drawing.Point(0, 228);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(200, 46);
+            this.button4.TabIndex = 31;
+            this.button4.Text = "      Competencia";
+            this.button4.UseVisualStyleBackColor = false;
+            // 
+            // button5
+            // 
+            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(111)))), ((int)(((byte)(109)))));
+            this.button5.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button5.FlatAppearance.BorderSize = 0;
+            this.button5.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(43)))), ((int)(((byte)(44)))));
+            this.button5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(43)))), ((int)(((byte)(44)))));
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button5.Font = new System.Drawing.Font("Consolas", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5.ForeColor = System.Drawing.Color.White;
+            this.button5.Image = global::Vistas.Properties.Resources.categoria;
+            this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button5.Location = new System.Drawing.Point(-3, 284);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(200, 46);
+            this.button5.TabIndex = 32;
+            this.button5.Text = "    Categoria";
+            this.button5.UseVisualStyleBackColor = false;
+            // 
+            // button6
+            // 
+            this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(111)))), ((int)(((byte)(109)))));
+            this.button6.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button6.FlatAppearance.BorderSize = 0;
+            this.button6.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(43)))), ((int)(((byte)(44)))));
+            this.button6.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(43)))), ((int)(((byte)(44)))));
+            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button6.Font = new System.Drawing.Font("Consolas", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button6.ForeColor = System.Drawing.Color.White;
+            this.button6.Image = global::Vistas.Properties.Resources.disciplina;
+            this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button6.Location = new System.Drawing.Point(-1, 336);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(200, 46);
+            this.button6.TabIndex = 33;
+            this.button6.Text = "     Disciplina";
+            this.button6.UseVisualStyleBackColor = false;
+            // 
+            // button7
+            // 
+            this.button7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(111)))), ((int)(((byte)(109)))));
+            this.button7.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button7.FlatAppearance.BorderSize = 0;
+            this.button7.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(43)))), ((int)(((byte)(44)))));
+            this.button7.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(43)))), ((int)(((byte)(44)))));
+            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button7.Font = new System.Drawing.Font("Consolas", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button7.ForeColor = System.Drawing.Color.White;
+            this.button7.Image = global::Vistas.Properties.Resources.evento;
+            this.button7.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button7.Location = new System.Drawing.Point(-1, 388);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(200, 46);
+            this.button7.TabIndex = 34;
+            this.button7.Text = "Evento";
+            this.button7.UseVisualStyleBackColor = false;
+            // 
+            // panelContenedor
+            // 
+            this.panelContenedor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(213)))), ((int)(((byte)(217)))));
+            this.panelContenedor.Location = new System.Drawing.Point(210, 125);
+            this.panelContenedor.Name = "panelContenedor";
+            this.panelContenedor.Size = new System.Drawing.Size(720, 435);
+            this.panelContenedor.TabIndex = 28;
             // 
             // FrmPrincipal
             // 
@@ -415,15 +488,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(213)))), ((int)(((byte)(217)))));
             this.ClientSize = new System.Drawing.Size(940, 636);
-            this.Controls.Add(this.imgEvento);
-            this.Controls.Add(this.imgCategoria);
-            this.Controls.Add(this.imgUsuario);
-            this.Controls.Add(this.imgSistema);
-            this.Controls.Add(this.imgCompetencia);
-            this.Controls.Add(this.menuVertical);
-            this.Controls.Add(this.imgDisciplina);
-            this.Controls.Add(this.imgAtleta);
+            this.Controls.Add(this.panelContenedor);
             this.Controls.Add(this.panel5);
+            this.Controls.Add(this.menuVertical);
             this.Controls.Add(this.pnlDate);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
@@ -437,21 +504,14 @@
             this.pnlWindowTopBar.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.pnlDate.ResumeLayout(false);
-            this.panel5.ResumeLayout(false);
             this.menuVertical.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.imgEvento)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgCategoria)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgUsuario)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgSistema)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgCompetencia)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgDisciplina)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgAtleta)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgUser)).EndInit();
+            this.panel5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgUser)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnSlide)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimize)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnSlide)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -472,20 +532,21 @@
         private System.Windows.Forms.Timer dateTimer;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox imgUser;
         private System.Windows.Forms.Label txtRol;
         private System.Windows.Forms.Label txtUser;
         private System.Windows.Forms.Button btnExit;
-        private System.Windows.Forms.Panel menuVertical;
-        private System.Windows.Forms.PictureBox imgAtleta;
-        private System.Windows.Forms.PictureBox imgDisciplina;
-        private System.Windows.Forms.PictureBox imgCompetencia;
-        private System.Windows.Forms.PictureBox imgSistema;
-        private System.Windows.Forms.PictureBox imgUsuario;
-        private System.Windows.Forms.PictureBox imgCategoria;
-        private System.Windows.Forms.PictureBox imgEvento;
         private System.Windows.Forms.PictureBox btnSlide;
+        private System.Windows.Forms.Panel menuVertical;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Panel panelContenedor;
     }
 }
