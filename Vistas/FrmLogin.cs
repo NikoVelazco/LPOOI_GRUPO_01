@@ -90,8 +90,8 @@ namespace Vistas
             if (TrabajarUsuario.validarUsuario(usuario, contrasenia))
             {
                 Util.startSound("sound-correct.mp3");
-                MessageBox.Show("Bienvenido/a " + usuario);
-                FrmPrincipal oFrmPrincipal = new FrmPrincipal(/*usuario*/);
+                Util.messageYesNo("Bienvenido(a) " + usuario, "Login Correcto", MessageBoxButtons.OK, MessageBoxIcon.None);
+                FrmPrincipal oFrmPrincipal = new FrmPrincipal();
                 oFrmPrincipal.txtUser.Text = usuario;
                 oFrmPrincipal.txtRol.Text = TrabajarUsuario.getUserRol(usuario);
                 oFrmPrincipal.Show();
@@ -99,8 +99,7 @@ namespace Vistas
             }
             else
             {
-                Util.startSound("sound-fail.mp3");
-                MessageBox.Show("Las credenciales son incorrectas");
+                Util.messageYesNo("Las crendenciales son incorrectas", "Login Incorrecto", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
