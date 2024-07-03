@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Drawing;
 
 namespace ClasesBase
 {
@@ -60,6 +61,14 @@ namespace ClasesBase
         {
             get { return usu_Email; }
             set { usu_Email = value; }
+        }
+
+        private Image usu_Imagen;
+
+        public Image Usu_Imagen
+        {
+            get { return usu_Imagen; }
+            set { usu_Imagen = value; }
         }
 
         public override string ToString()
