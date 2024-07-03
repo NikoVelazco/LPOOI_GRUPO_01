@@ -8,6 +8,7 @@ using System.Net.Mail;
 using System.Data;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using ClasesBase;
 
 namespace Vistas
 {
@@ -24,19 +25,24 @@ namespace Vistas
         }
 
         /**
-         * mODI**/
-
-        /**
          * Apaga la aplicación
          * **/
         public static void closeApp(string nameAlert)
         {
             startSound(nameAlert);
-            DialogResult mensaje = MessageBox.Show("¿Estás seguro que queres salir de la aplicación?", "Cerrar Aplicación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (mensaje == DialogResult.Yes)
+            if (messageYesNo("¿Estás seguro que queres salir de la aplicación?", "Cerrar Aplicación", MessageBoxButtons.YesNo ,MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 Application.Exit();
             }
+        }
+
+        /**
+         * Mensajes Personalizados
+         * */
+        public static DialogResult messageYesNo(string message, string title, MessageBoxButtons option,MessageBoxIcon tipoMensaje)
+        {
+            DialogResult mensaje = MessageBox.Show(message, title, option, tipoMensaje);
+            return mensaje;
         }
 
         /**
@@ -85,7 +91,6 @@ namespace Vistas
          * */
         public static void openFormInPanel(Form frmSon, Panel panelContenedor)
         {
-            //Form activeForm = null;
             if (activeForm != null)
             {
                 activeForm.Close();
@@ -97,6 +102,17 @@ namespace Vistas
             panelContenedor.Controls.Add(frmSon);
             panelContenedor.Tag = frmSon;
             frmSon.Show();
+        }
+
+        /**
+         * Deshabilitar Botón
+         * */
+        public static void disabledButton(Button button)
+        {
+            if (button != null)
+            {
+                button.Enabled = false;
+            }
         }
     }
 }

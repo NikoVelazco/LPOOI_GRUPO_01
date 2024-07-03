@@ -17,6 +17,7 @@ namespace Vistas
         public FrmPrincipal()
         {
             InitializeComponent();
+            disabledButtonByRol();
         }
 
         /**
@@ -92,6 +93,30 @@ namespace Vistas
         private void FrmPrincipal_Load(object sender, EventArgs e)
         {
             Util.openFormInPanel(new FrmHome(txtUser.Text), panelContenedor);
+            disabledButtonByRol();
+        }
+
+        public void disabledButtonByRol()
+        {
+            if (TrabajarUsuario.getRolCodigo(txtUser.Text) == 1)
+            {
+                Util.disabledButton(btnAtletas);
+                Util.disabledButton(btnCategorias);
+                Util.disabledButton(btnDisciplinas);
+                Util.disabledButton(btnCompetencia);
+                Util.disabledButton(btnEventos);
+            }
+            if (TrabajarUsuario.getRolCodigo(txtUser.Text) == 2)
+            {
+                Util.disabledButton(btnUsuarios);
+                Util.disabledButton(btnCategorias);
+                Util.disabledButton(btnDisciplinas);
+                Util.disabledButton(btnEventos);
+            }
+            if (TrabajarUsuario.getRolCodigo(txtUser.Text) == 3)
+            {
+                Util.disabledButton(btnUsuarios);
+            }
         }
 
     }

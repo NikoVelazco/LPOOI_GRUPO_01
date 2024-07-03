@@ -41,7 +41,7 @@
             // 
             this.lblBienvenida.AutoSize = true;
             this.lblBienvenida.Font = new System.Drawing.Font("Consolas", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBienvenida.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(142)))), ((int)(((byte)(114)))));
+            this.lblBienvenida.ForeColor = System.Drawing.Color.DarkOrange;
             this.lblBienvenida.Location = new System.Drawing.Point(132, 277);
             this.lblBienvenida.Name = "lblBienvenida";
             this.lblBienvenida.Size = new System.Drawing.Size(480, 32);
@@ -53,7 +53,7 @@
             this.lblRol.AutoSize = true;
             this.lblRol.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblRol.Font = new System.Drawing.Font("Consolas", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRol.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.lblRol.ForeColor = System.Drawing.Color.MidnightBlue;
             this.lblRol.Location = new System.Drawing.Point(265, 320);
             this.lblRol.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblRol.Name = "lblRol";
@@ -85,7 +85,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(213)))), ((int)(((byte)(217)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(248)))), ((int)(((byte)(241)))));
             this.ClientSize = new System.Drawing.Size(720, 435);
             this.Controls.Add(this.lblRol);
             this.Controls.Add(this.lblBienvenida);
