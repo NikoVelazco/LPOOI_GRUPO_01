@@ -6,11 +6,14 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using ClasesBase;
 
 namespace Vistas
 {
     public partial class FrmPrincipal : Form
     {
+        public Usuario userLogueado = new Usuario();
+
         public FrmPrincipal()
         {
             InitializeComponent();
@@ -40,6 +43,9 @@ namespace Vistas
             Util.closeApp("alerta.mp3");
         }
 
+        /**
+         * Mueve la ventana
+         * **/
         private void pnlWindowTopBar_MouseDown(object sender, MouseEventArgs e)
         {
             Util.DragForm(this);
@@ -63,5 +69,30 @@ namespace Vistas
                 menuVertical.Width = 200;
             }
         }
+
+        /**
+         * Lleva al form home
+         * */
+        private void btnHome_Click(object sender, EventArgs e)
+        {
+            Util.openFormInPanel(new FrmHome(txtUser.Text), panelContenedor);
+        }
+
+        /**
+         * Lleva a la gestión de usuario
+         * **/
+        private void btnUsuarios_Click(object sender, EventArgs e)
+        {
+            Util.openFormInPanel(new FrmGestionUsuario(), panelContenedor);
+        }
+
+        /**
+         * Pantalla Principal
+         * */
+        private void FrmPrincipal_Load(object sender, EventArgs e)
+        {
+            Util.openFormInPanel(new FrmHome(txtUser.Text), panelContenedor);
+        }
+
     }
 }

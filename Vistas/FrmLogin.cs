@@ -92,16 +92,21 @@ namespace Vistas
                 Util.startSound("sound-correct.mp3");
                 MessageBox.Show("Bienvenido/a " + usuario);
                 FrmPrincipal oFrmPrincipal = new FrmPrincipal(/*usuario*/);
+                oFrmPrincipal.txtUser.Text = usuario;
+                oFrmPrincipal.txtRol.Text = TrabajarUsuario.getUserRol(usuario);
                 oFrmPrincipal.Show();
                 this.Hide();
             }
             else
             {
                 Util.startSound("sound-fail.mp3");
-                MessageBox.Show("No existe el usuario o contraseña ingresados");
+                MessageBox.Show("Las credenciales son incorrectas");
             }
         }
 
+        /**
+         * Recuperar contraseña form
+         * */
         private void lblRecoverPassword_Click(object sender, EventArgs e)
         {
             Util.startSound("alerta.mp3");
