@@ -9,6 +9,17 @@ namespace ClasesBase
     {
         private int usu_ID;
 
+        public Usuario(int idUsuario, string nombreUsuario, string contrasenia, string apellidoNombre, int rolCodigo)
+        {
+            this.usu_ID = idUsuario;
+            this.usu_NombreUsuario = nombreUsuario;
+            this.usu_Contrasenia = contrasenia;
+            this.usu_ApellidoNombre = apellidoNombre;
+            this.rol_Codigo = rolCodigo;
+        }
+
+        public Usuario() { }
+
         public int Usu_ID
         {
             get { return usu_ID; }
@@ -41,6 +52,14 @@ namespace ClasesBase
         {
             get { return rol_Codigo; }
             set { rol_Codigo = value; }
+        }
+
+        private string usu_Email;
+
+        public string Usu_Email
+        {
+            get { return usu_Email; }
+            set { usu_Email = value; }
         }
 
         public override string ToString()

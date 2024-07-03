@@ -13,6 +13,7 @@ namespace Vistas
 {
     public static class Util
     {
+        private static Form activeForm = null;
         /**
          * Obtiene la fecha y hora actual del sistema
          * **/
@@ -78,5 +79,24 @@ namespace Vistas
             playMusic(soundPath(nameMusic));
         }
 
+        /**
+         * Abrir Form en el
+         * panel contenedor
+         * */
+        public static void openFormInPanel(Form frmSon, Panel panelContenedor)
+        {
+            //Form activeForm = null;
+            if (activeForm != null)
+            {
+                activeForm.Close();
+            }
+            activeForm = frmSon;
+            frmSon.TopLevel = false;
+            frmSon.Dock = DockStyle.Fill;
+            frmSon.FormBorderStyle = FormBorderStyle.None;
+            panelContenedor.Controls.Add(frmSon);
+            panelContenedor.Tag = frmSon;
+            frmSon.Show();
+        }
     }
 }
