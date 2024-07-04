@@ -124,5 +124,11 @@ namespace Vistas
             }
         }
 
+        private void btnCategorias_Click(object sender, EventArgs e)
+        {
+            Util.openFormInPanel(new FrmGestionCategoria(), panelContenedor);
+            imgUser.Visible = true;
+        }
+
     }
 }

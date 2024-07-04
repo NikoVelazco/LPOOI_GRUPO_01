@@ -354,6 +354,7 @@
             this.btnCategorias.TabIndex = 32;
             this.btnCategorias.Text = "      Categoria";
             this.btnCategorias.UseVisualStyleBackColor = false;
+            this.btnCategorias.Click += new System.EventHandler(this.btnCategorias_Click);
             // 
             // btnCompetencia
             // 
