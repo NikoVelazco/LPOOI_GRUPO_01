@@ -466,7 +466,7 @@
             // 
             this.btnMinimize.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMinimize.Image = global::Vistas.Properties.Resources.btnMinimize_Image;
-            this.btnMinimize.Location = new System.Drawing.Point(850, 3);
+            this.btnMinimize.Location = new System.Drawing.Point(835, 3);
             this.btnMinimize.Name = "btnMinimize";
             this.btnMinimize.Size = new System.Drawing.Size(57, 32);
             this.btnMinimize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
