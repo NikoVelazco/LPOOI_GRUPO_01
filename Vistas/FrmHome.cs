@@ -25,6 +25,7 @@ namespace Vistas
             userLogueado = TrabajarUsuario.searchUserByNameUser(nombreUser);
             lblBienvenida.Text = "Bienvenido(a) " + userLogueado.Usu_ApellidoNombre;
             lblRol.Text = "Su rol es: " + TrabajarUsuario.getUserRol(nombreUser);
+            imgUsuario.Image = userLogueado.Usu_Imagen;
             //lblBienvenida.TextAlign = ContentAlignment.MiddleCenter;
         }
     }

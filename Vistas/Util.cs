@@ -114,5 +114,36 @@ namespace Vistas
                 button.Enabled = false;
             }
         }
+
+        /**
+         * Controla que no haya campos en blanco
+         * */
+        public static bool textBoxEmpty(Panel panel)
+        {
+            var textBoxes = panel.Controls.OfType<TextBox>();
+            foreach (var textBox in textBoxes)
+            {
+                if (string.IsNullOrWhiteSpace(textBox.Text))
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        /**
+         * Limpia los textBoxs
+         * */
+        public static void clearTextBox(Panel panel)
+        {
+            foreach (Control control in panel.Controls)
+            {
+                if (control is TextBox)
+                {
+                    TextBox textBox = (TextBox)control;
+                    textBox.Clear();
+                }
+            }
+        }
     }
 }

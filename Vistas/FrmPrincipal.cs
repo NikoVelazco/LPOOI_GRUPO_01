@@ -77,6 +77,7 @@ namespace Vistas
         private void btnHome_Click(object sender, EventArgs e)
         {
             Util.openFormInPanel(new FrmHome(txtUser.Text), panelContenedor);
+            imgUser.Visible = false;
         }
 
         /**
@@ -85,6 +86,7 @@ namespace Vistas
         private void btnUsuarios_Click(object sender, EventArgs e)
         {
             Util.openFormInPanel(new FrmGestionUsuario(), panelContenedor);
+            imgUser.Visible = true;
         }
 
         /**
@@ -92,7 +94,10 @@ namespace Vistas
          * */
         private void FrmPrincipal_Load(object sender, EventArgs e)
         {
+            userLogueado = TrabajarUsuario.searchUserByNameUser(txtUser.Text);
             Util.openFormInPanel(new FrmHome(txtUser.Text), panelContenedor);
+            imgUser.Image = userLogueado.Usu_Imagen;
+            imgUser.Visible = false;
             disabledButtonByRol();
         }
 

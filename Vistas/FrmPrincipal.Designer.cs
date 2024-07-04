@@ -473,6 +473,7 @@
             this.imgUser.Location = new System.Drawing.Point(636, 7);
             this.imgUser.Name = "imgUser";
             this.imgUser.Size = new System.Drawing.Size(68, 74);
+            this.imgUser.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.imgUser.TabIndex = 7;
             this.imgUser.TabStop = false;
             // 
