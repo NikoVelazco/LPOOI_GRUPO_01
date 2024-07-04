@@ -124,5 +124,10 @@ namespace Vistas
             }
         }
 
+        private void btnDisciplinas_Click(object sender, EventArgs e)
+        {
+            Util.openFormInPanel(new FrmGestionDisciplina(),panelContenedor);
+        }
+
     }
 }
