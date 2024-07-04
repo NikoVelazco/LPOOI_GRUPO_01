@@ -50,6 +50,7 @@
     <Compile Include="Rol.cs" />
     <Compile Include="TrabajarUsuario.cs" />
     <Compile Include="Usuario.cs" />
+    <Compile Include="UtilImagen.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
