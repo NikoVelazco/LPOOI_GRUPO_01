@@ -48,6 +48,8 @@
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
     <Compile Include="Rol.cs" />
+    <Compile Include="TrabajarCategoria.cs" />
+    <Compile Include="TrabajarDisciplina.cs" />
     <Compile Include="TrabajarUsuario.cs" />
     <Compile Include="Usuario.cs" />
     <Compile Include="UtilImagen.cs" />
