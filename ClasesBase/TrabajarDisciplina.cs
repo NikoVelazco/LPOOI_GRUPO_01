@@ -13,7 +13,7 @@ namespace ClasesBase
         {
             SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.comdepConnectionString);
             SqlCommand cmd = new SqlCommand();
-            cmd.CommandText = "getAllDisciplines";
+            cmd.CommandText = "getAllDisciplinas";
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Connection = cnn;
 

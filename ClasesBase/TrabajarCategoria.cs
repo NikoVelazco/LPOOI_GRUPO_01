@@ -16,7 +16,7 @@ namespace ClasesBase
 
         SqlConnection sqlConnection;
         SqlCommand sqlCommand;
-        SqlDataAdapter sqlDataAdapter;
+        //SqlDataAdapter sqlDataAdapter;
         Categoria oCategoria;
 
         public TrabajarCategoria()
@@ -27,9 +27,9 @@ namespace ClasesBase
         /*----------------------------------*
          | Obtiene el listado de categorias |
          *----------------------------------*/
-        public DataTable getListOfCategories()
+        public static DataTable getListOfCategories()
         {
-            using (sqlConnection = new SqlConnection(connectionString))
+            /*using (sqlConnection = new SqlConnection(connectionString))
             {
                 sqlConnection.Open();
                 sqlCommand = new SqlCommand();
@@ -45,7 +45,20 @@ namespace ClasesBase
                 sqlDataAdapter.Fill(dataTable);
 
                 return dataTable;
-            }
+            }*/
+
+            SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.comdepConnectionString);
+            SqlDataAdapter da = new SqlDataAdapter();
+            da.SelectCommand = new SqlCommand();
+            da.SelectCommand.Connection = cnn;
+
+            da.SelectCommand.CommandText = "getAllCategories";
+            da.SelectCommand.CommandType = CommandType.StoredProcedure;
+
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+
+            return dt;
         }
 
         /*----------------------*

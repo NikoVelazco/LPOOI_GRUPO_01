@@ -49,9 +49,9 @@ namespace Vistas
 
         private void loadCategorias()
         {
-            cmbCategoria.DataSource = trabajarCategoria.getListOfCategories();
+            cmbCategoria.DataSource = TrabajarCategoria.getListOfCategories();
             cmbCategoria.DisplayMember = "Nombre";
-            cmbCategoria.ValueMember = "ID";
+            cmbCategoria.ValueMember = "Id";
             cmbCategoria.SelectedIndex = 0;
         }
 
@@ -73,7 +73,7 @@ namespace Vistas
 
         private void dataGridCompetencia_SelectionChanged(object sender, EventArgs e)
         {
-            if (dataGridCompetencia.CurrentRow != null && !dataGridCompetencia.CurrentRow.IsNewRow)
+            if (dataGridCompetencia.SelectedRows.Count > 0 && !dataGridCompetencia.CurrentRow.IsNewRow)
             {
                 txtNombre.Text = dataGridCompetencia.CurrentRow.Cells["Nombre"].Value.ToString();
                 txtDescripcion.Text = dataGridCompetencia.CurrentRow.Cells["Descripcion"].Value.ToString();
@@ -118,11 +118,11 @@ namespace Vistas
             }
             else
             {
-
                 Util.startSound("alerta.mp3");
                 if (Util.messageYesNo("¿Estás Seguro que quieres editar los datos?", "Editar Competencia", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     Competencia nuevaCompetencia = createCompetencia();
+                    nuevaCompetencia.Com_ID = idSeleccionado;
                     TrabajarCompetencia.editCompetencia(nuevaCompetencia);
                     loadCompetencias();
                     idSeleccionado = 0;
