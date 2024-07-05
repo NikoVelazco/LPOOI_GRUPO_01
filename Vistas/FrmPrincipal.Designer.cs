@@ -373,6 +373,7 @@
             this.btnCompetencia.TabIndex = 31;
             this.btnCompetencia.Text = "       Competencia";
             this.btnCompetencia.UseVisualStyleBackColor = false;
+            this.btnCompetencia.Click += new System.EventHandler(this.btnCompetencia_Click);
             // 
             // btnAtletas
             // 
