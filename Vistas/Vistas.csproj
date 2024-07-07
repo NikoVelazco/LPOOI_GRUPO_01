@@ -65,6 +65,12 @@
     <Compile Include="FrmGestionDisciplina.Designer.cs">
       <DependentUpon>FrmGestionDisciplina.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmGestionCategoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmGestionCategoria.Designer.cs">
+      <DependentUpon>FrmGestionCategoria.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmGestionUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -104,6 +110,9 @@
       </EmbeddedResource>
     <EmbeddedResource Include="FrmGestionDisciplina.resx">
       <DependentUpon>FrmGestionDisciplina.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmGestionCategoria.resx">
+      <DependentUpon>FrmGestionCategoria.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmGestionUsuario.resx">
       <DependentUpon>FrmGestionUsuario.cs</DependentUpon>
