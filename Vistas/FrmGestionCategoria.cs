@@ -13,6 +13,7 @@ namespace Vistas
     public partial class FrmGestionCategoria : Form
     {
         private TrabajarCategoria trabajarCategoria;
+
         public FrmGestionCategoria()
         {
             InitializeComponent();
@@ -21,7 +22,7 @@ namespace Vistas
 
         private void loadListOfCategories()
         {
-            dataGridCategoria.DataSource = TrabajarCategoria.getListOfCategories();
+            dataGridCategoria.DataSource = trabajarCategoria.getListOfCategories();
             dataGridCategoria.Columns["Id"].Visible = false;
         }
 

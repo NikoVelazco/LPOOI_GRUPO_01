@@ -151,5 +151,11 @@ namespace Vistas
             btnSlide.BackColor = Color.FromArgb(22, 111, 109);
         }
 
+        private void btnAtletas_Click(object sender, EventArgs e)
+        {
+            Util.openFormInPanel(new FrmGestionAtleta(), panelContenedor);
+            imgUser.Visible = true;
+            btnSlide.BackColor = Color.FromArgb(22, 111, 109);
+        }
     }
 }
