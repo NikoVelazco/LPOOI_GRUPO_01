@@ -21,7 +21,7 @@ namespace Vistas
 
         private void loadListOfCategories()
         {
-            dataGridCategoria.DataSource = trabajarCategoria.getListOfCategories();
+            dataGridCategoria.DataSource = TrabajarCategoria.getListOfCategories();
             dataGridCategoria.Columns["Id"].Visible = false;
         }
 
@@ -150,7 +150,7 @@ namespace Vistas
 
         private void dataGridCategoria_SelectionChanged(object sender, EventArgs e)
         {
-            if (dataGridCategoria.CurrentRow != null)
+            if (dataGridCategoria.SelectedRows.Count > 0 && !dataGridCategoria.CurrentRow.IsNewRow)
             {
                 txtNombre.Text = dataGridCategoria.CurrentRow.Cells["Nombre"].Value.ToString();
                 txtDescripcion.Text = dataGridCategoria.CurrentRow.Cells["Descripcion"].Value.ToString();

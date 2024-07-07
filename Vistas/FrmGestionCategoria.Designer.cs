@@ -215,6 +215,7 @@
             // 
             // dataGridCategoria
             // 
+            this.dataGridCategoria.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridCategoria.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridCategoria.Location = new System.Drawing.Point(12, 37);
             this.dataGridCategoria.Name = "dataGridCategoria";

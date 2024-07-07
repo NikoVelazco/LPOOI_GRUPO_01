@@ -40,7 +40,7 @@ namespace Vistas
 
         private void dgvDisciplina_CurrentCellChanged(object sender, EventArgs e)
         {
-            if (dgvDisciplina.CurrentRow != null)
+            if (dgvDisciplina.SelectedRows.Count > 0 && !dgvDisciplina.CurrentRow.IsNewRow)
             {
 
                 txtNombre.Text = dgvDisciplina.CurrentRow.Cells["Nombre"].Value.ToString();
