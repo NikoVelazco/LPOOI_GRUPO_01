@@ -345,6 +345,7 @@
             this.btnAtletas.TabIndex = 30;
             this.btnAtletas.Text = "  Atleta";
             this.btnAtletas.UseVisualStyleBackColor = false;
+            this.btnAtletas.Click += new System.EventHandler(this.btnAtletas_Click);
             // 
             // btnUsuarios
             // 

@@ -46,19 +46,6 @@ namespace ClasesBase
 
                 return dataTable;
             }
-
-            //SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.comdepConnectionString);
-            //SqlDataAdapter da = new SqlDataAdapter();
-            //da.SelectCommand = new SqlCommand();
-            //da.SelectCommand.Connection = cnn;
-
-            //da.SelectCommand.CommandText = "getAllCategories";
-            //da.SelectCommand.CommandType = CommandType.StoredProcedure;
-
-            //DataTable dt = new DataTable();
-            //da.Fill(dt);
-
-            //return dt;
         }
 
         /*----------------------*
