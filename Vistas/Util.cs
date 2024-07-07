@@ -145,5 +145,14 @@ namespace Vistas
                 }
             }
         }
+
+        /**
+         * Hace a los paneles responsivos
+         * */
+        public static void responsiveForm(Panel panel)
+        {
+            panel.Dock = DockStyle.None;
+            panel.Anchor = AnchorStyles.None;
+        }
     }
 }

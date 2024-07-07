@@ -32,6 +32,7 @@ namespace Vistas
         {
             loadListOfCategories();
             btnEditCategoria.Enabled = false;
+            Util.responsiveForm(panelContenedor);
         }
 
         /**

@@ -27,6 +27,7 @@ namespace Vistas
             cmbEstado.SelectedIndex = 0;
             trabajarCategoria = new TrabajarCategoria();
             btnEditCompetencia.Enabled = false;
+            Util.responsiveForm(panelGestorCompetencia);
         }
 
         private Competencia createCompetencia()
