@@ -58,6 +58,7 @@
     </Compile>
     <Compile Include="FrmGestionCompetencia.Designer.cs">
       <DependentUpon>FrmGestionCompetencia.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmGestionDisciplina.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,8 +99,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RecoverEmail.cs" />
     <Compile Include="Util.cs" />
-    <EmbeddedResource Include="FrmGestionCompetencia.resx">
-      <DependentUpon>FrmGestionCompetencia.cs</DependentUpon>
+      <EmbeddedResource Include="FrmGestionCompetencia.resx">
+        <DependentUpon>FrmGestionCompetencia.cs</DependentUpon>
+      </EmbeddedResource>
     <EmbeddedResource Include="FrmGestionDisciplina.resx">
       <DependentUpon>FrmGestionDisciplina.cs</DependentUpon>
     </EmbeddedResource>
