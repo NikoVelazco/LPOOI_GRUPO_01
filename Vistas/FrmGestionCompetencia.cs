@@ -14,9 +14,11 @@ namespace Vistas
     {
         private int idSeleccionado = 0;
         private TrabajarCategoria trabajarCategoria;
+
         public FrmGestionCompetencia()
         {
             InitializeComponent();
+            trabajarCategoria = new TrabajarCategoria();
         }
 
         private void FrmGestionCompetencia_Load(object sender, EventArgs e)
@@ -25,7 +27,6 @@ namespace Vistas
             loadCategorias();
             loadDisciplinas();
             cmbEstado.SelectedIndex = 0;
-            trabajarCategoria = new TrabajarCategoria();
             btnEditCompetencia.Enabled = false;
         }
 
@@ -49,7 +50,7 @@ namespace Vistas
 
         private void loadCategorias()
         {
-            cmbCategoria.DataSource = TrabajarCategoria.getListOfCategories();
+            cmbCategoria.DataSource = trabajarCategoria.getListOfCategories();
             cmbCategoria.DisplayMember = "Nombre";
             cmbCategoria.ValueMember = "Id";
             cmbCategoria.SelectedIndex = 0;
