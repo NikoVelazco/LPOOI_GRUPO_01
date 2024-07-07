@@ -78,6 +78,7 @@ namespace Vistas
         {
             Util.openFormInPanel(new FrmHome(txtUser.Text), panelContenedor);
             imgUser.Visible = false;
+            btnSlide.BackColor = Color.FromArgb(207, 248, 241);
         }
 
         /**
@@ -87,6 +88,7 @@ namespace Vistas
         {
             Util.openFormInPanel(new FrmGestionUsuario(), panelContenedor);
             imgUser.Visible = true;
+            btnSlide.BackColor = Color.FromArgb(22, 111, 109);
         }
         /*
          * Lleva a la gestion de competencia
@@ -95,6 +97,7 @@ namespace Vistas
         {
             Util.openFormInPanel(new FrmGestionCompetencia(), panelContenedor);
             imgUser.Visible = true;
+            btnSlide.BackColor = Color.FromArgb(22, 111, 109);
         }
 
         /**
@@ -108,6 +111,7 @@ namespace Vistas
             imgUser.Visible = false;
             disabledButtonByRol();
             menuVertical.Width = 70;
+            btnSlide.BackColor = Color.FromArgb(207, 248, 241);
         }
 
         public void disabledButtonByRol()
@@ -137,12 +141,14 @@ namespace Vistas
         {
             Util.openFormInPanel(new FrmGestionDisciplina(),panelContenedor);
             imgUser.Visible = true;
+            btnSlide.BackColor = Color.FromArgb(22, 111, 109);
         }
         
         private void btnCategorias_Click(object sender, EventArgs e)
         {
             Util.openFormInPanel(new FrmGestionCategoria(), panelContenedor);
             imgUser.Visible = true;
+            btnSlide.BackColor = Color.FromArgb(22, 111, 109);
         }
 
     }

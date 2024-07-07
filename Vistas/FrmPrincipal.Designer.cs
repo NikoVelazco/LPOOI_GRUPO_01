@@ -157,10 +157,10 @@
             this.lblTime.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(8)))), ((int)(((byte)(8)))));
             this.lblTime.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTime.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.lblTime.Location = new System.Drawing.Point(96, 10);
+            this.lblTime.Location = new System.Drawing.Point(86, 10);
             this.lblTime.Margin = new System.Windows.Forms.Padding(4);
             this.lblTime.Name = "lblTime";
-            this.lblTime.Size = new System.Drawing.Size(76, 21);
+            this.lblTime.Size = new System.Drawing.Size(97, 21);
             this.lblTime.TabIndex = 5;
             this.lblTime.Text = "lblTime";
             this.lblTime.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -260,7 +260,7 @@
             this.btnEventos.ForeColor = System.Drawing.Color.White;
             this.btnEventos.Image = global::Vistas.Properties.Resources.evento;
             this.btnEventos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEventos.Location = new System.Drawing.Point(-1, 388);
+            this.btnEventos.Location = new System.Drawing.Point(-1, 364);
             this.btnEventos.Name = "btnEventos";
             this.btnEventos.Size = new System.Drawing.Size(200, 46);
             this.btnEventos.TabIndex = 34;
@@ -279,7 +279,7 @@
             this.btnDisciplinas.ForeColor = System.Drawing.Color.White;
             this.btnDisciplinas.Image = global::Vistas.Properties.Resources.disciplina;
             this.btnDisciplinas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDisciplinas.Location = new System.Drawing.Point(-1, 336);
+            this.btnDisciplinas.Location = new System.Drawing.Point(-1, 312);
             this.btnDisciplinas.Name = "btnDisciplinas";
             this.btnDisciplinas.Size = new System.Drawing.Size(200, 46);
             this.btnDisciplinas.TabIndex = 33;
@@ -299,7 +299,7 @@
             this.btnCategorias.ForeColor = System.Drawing.Color.White;
             this.btnCategorias.Image = global::Vistas.Properties.Resources.categoria;
             this.btnCategorias.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCategorias.Location = new System.Drawing.Point(-3, 284);
+            this.btnCategorias.Location = new System.Drawing.Point(-3, 260);
             this.btnCategorias.Name = "btnCategorias";
             this.btnCategorias.Size = new System.Drawing.Size(200, 46);
             this.btnCategorias.TabIndex = 32;
@@ -319,7 +319,7 @@
             this.btnCompetencia.ForeColor = System.Drawing.Color.White;
             this.btnCompetencia.Image = global::Vistas.Properties.Resources.competencia;
             this.btnCompetencia.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCompetencia.Location = new System.Drawing.Point(0, 228);
+            this.btnCompetencia.Location = new System.Drawing.Point(0, 204);
             this.btnCompetencia.Name = "btnCompetencia";
             this.btnCompetencia.Size = new System.Drawing.Size(200, 46);
             this.btnCompetencia.TabIndex = 31;
@@ -339,7 +339,7 @@
             this.btnAtletas.ForeColor = System.Drawing.Color.White;
             this.btnAtletas.Image = global::Vistas.Properties.Resources.atleta;
             this.btnAtletas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAtletas.Location = new System.Drawing.Point(0, 173);
+            this.btnAtletas.Location = new System.Drawing.Point(0, 149);
             this.btnAtletas.Name = "btnAtletas";
             this.btnAtletas.Size = new System.Drawing.Size(200, 46);
             this.btnAtletas.TabIndex = 30;
@@ -358,7 +358,7 @@
             this.btnUsuarios.ForeColor = System.Drawing.Color.White;
             this.btnUsuarios.Image = global::Vistas.Properties.Resources.usuario;
             this.btnUsuarios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUsuarios.Location = new System.Drawing.Point(0, 114);
+            this.btnUsuarios.Location = new System.Drawing.Point(0, 90);
             this.btnUsuarios.Name = "btnUsuarios";
             this.btnUsuarios.Size = new System.Drawing.Size(200, 46);
             this.btnUsuarios.TabIndex = 29;
@@ -378,7 +378,7 @@
             this.btnHome.ForeColor = System.Drawing.Color.White;
             this.btnHome.Image = ((System.Drawing.Image)(resources.GetObject("btnHome.Image")));
             this.btnHome.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHome.Location = new System.Drawing.Point(-1, 54);
+            this.btnHome.Location = new System.Drawing.Point(-1, 30);
             this.btnHome.Name = "btnHome";
             this.btnHome.Size = new System.Drawing.Size(200, 46);
             this.btnHome.TabIndex = 28;
@@ -388,7 +388,7 @@
             // 
             // btnSlide
             // 
-            this.btnSlide.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(111)))), ((int)(((byte)(109)))));
+            this.btnSlide.BackColor = System.Drawing.Color.Transparent;
             this.btnSlide.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSlide.Image = global::Vistas.Properties.Resources.Mobile_Menu_Icon;
             this.btnSlide.Location = new System.Drawing.Point(0, 0);
@@ -507,7 +507,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnExit;
-        private System.Windows.Forms.PictureBox btnSlide;
         private System.Windows.Forms.Panel menuVertical;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Button btnHome;
@@ -523,5 +522,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panelContenedor;
+        public System.Windows.Forms.PictureBox btnSlide;
     }
 }
