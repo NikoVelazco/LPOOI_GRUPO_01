@@ -28,6 +28,7 @@ namespace Vistas
             loadDisciplinas();
             cmbEstado.SelectedIndex = 0;
             btnEditCompetencia.Enabled = false;
+            Util.responsiveForm(panelGestorCompetencia);
         }
 
         private Competencia createCompetencia()

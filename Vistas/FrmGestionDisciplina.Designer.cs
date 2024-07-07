@@ -31,10 +31,10 @@
             this.lblTitleUser = new System.Windows.Forms.Panel();
             this.lblGestionDisc = new System.Windows.Forms.Label();
             this.pnlConsultaDisc = new System.Windows.Forms.Panel();
+            this.dgvDisciplina = new System.Windows.Forms.DataGridView();
             this.lblFiltro = new System.Windows.Forms.Label();
             this.txtBusquedaDisc = new System.Windows.Forms.TextBox();
             this.lblConsulta = new System.Windows.Forms.Label();
-            this.dgvDisciplina = new System.Windows.Forms.DataGridView();
             this.lblNombreDis = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.lblDescipcionDisc = new System.Windows.Forms.Label();
@@ -74,13 +74,24 @@
             // pnlConsultaDisc
             // 
             this.pnlConsultaDisc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(248)))), ((int)(((byte)(241)))));
+            this.pnlConsultaDisc.Controls.Add(this.dgvDisciplina);
             this.pnlConsultaDisc.Controls.Add(this.lblFiltro);
             this.pnlConsultaDisc.Controls.Add(this.txtBusquedaDisc);
             this.pnlConsultaDisc.Controls.Add(this.lblConsulta);
-            this.pnlConsultaDisc.Location = new System.Drawing.Point(0, 30);
+            this.pnlConsultaDisc.Location = new System.Drawing.Point(12, 37);
             this.pnlConsultaDisc.Name = "pnlConsultaDisc";
-            this.pnlConsultaDisc.Size = new System.Drawing.Size(372, 72);
+            this.pnlConsultaDisc.Size = new System.Drawing.Size(360, 386);
             this.pnlConsultaDisc.TabIndex = 3;
+            // 
+            // dgvDisciplina
+            // 
+            this.dgvDisciplina.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvDisciplina.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDisciplina.Location = new System.Drawing.Point(7, 78);
+            this.dgvDisciplina.Name = "dgvDisciplina";
+            this.dgvDisciplina.Size = new System.Drawing.Size(347, 274);
+            this.dgvDisciplina.TabIndex = 25;
+            this.dgvDisciplina.SelectionChanged += new System.EventHandler(this.dgvDisciplina_SelectionChanged);
             // 
             // lblFiltro
             // 
@@ -91,14 +102,14 @@
             this.lblFiltro.Location = new System.Drawing.Point(4, 26);
             this.lblFiltro.Margin = new System.Windows.Forms.Padding(4);
             this.lblFiltro.Name = "lblFiltro";
-            this.lblFiltro.Size = new System.Drawing.Size(120, 45);
+            this.lblFiltro.Size = new System.Drawing.Size(108, 45);
             this.lblFiltro.TabIndex = 9;
             this.lblFiltro.Text = "Filtrar Por Nombre ";
             this.lblFiltro.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // txtBusquedaDisc
             // 
-            this.txtBusquedaDisc.Location = new System.Drawing.Point(131, 38);
+            this.txtBusquedaDisc.Location = new System.Drawing.Point(119, 38);
             this.txtBusquedaDisc.Name = "txtBusquedaDisc";
             this.txtBusquedaDisc.Size = new System.Drawing.Size(238, 20);
             this.txtBusquedaDisc.TabIndex = 24;
@@ -110,23 +121,13 @@
             this.lblConsulta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(248)))), ((int)(((byte)(241)))));
             this.lblConsulta.Font = new System.Drawing.Font("Consolas", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblConsulta.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.lblConsulta.Location = new System.Drawing.Point(0, 0);
+            this.lblConsulta.Location = new System.Drawing.Point(4, 4);
             this.lblConsulta.Margin = new System.Windows.Forms.Padding(4);
             this.lblConsulta.Name = "lblConsulta";
-            this.lblConsulta.Size = new System.Drawing.Size(369, 21);
+            this.lblConsulta.Size = new System.Drawing.Size(350, 21);
             this.lblConsulta.TabIndex = 9;
             this.lblConsulta.Text = "CONSULTA";
             this.lblConsulta.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // dgvDisciplina
-            // 
-            this.dgvDisciplina.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvDisciplina.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDisciplina.Location = new System.Drawing.Point(0, 103);
-            this.dgvDisciplina.Name = "dgvDisciplina";
-            this.dgvDisciplina.Size = new System.Drawing.Size(372, 274);
-            this.dgvDisciplina.TabIndex = 4;
-            this.dgvDisciplina.CurrentCellChanged += new System.EventHandler(this.dgvDisciplina_CurrentCellChanged);
             // 
             // lblNombreDis
             // 
@@ -134,10 +135,10 @@
             this.lblNombreDis.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(248)))), ((int)(((byte)(241)))));
             this.lblNombreDis.Font = new System.Drawing.Font("Consolas", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNombreDis.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.lblNombreDis.Location = new System.Drawing.Point(108, 4);
+            this.lblNombreDis.Location = new System.Drawing.Point(108, 5);
             this.lblNombreDis.Margin = new System.Windows.Forms.Padding(4);
             this.lblNombreDis.Name = "lblNombreDis";
-            this.lblNombreDis.Size = new System.Drawing.Size(143, 45);
+            this.lblNombreDis.Size = new System.Drawing.Size(131, 45);
             this.lblNombreDis.TabIndex = 32;
             this.lblNombreDis.Text = "Nombre Disciplina";
             this.lblNombreDis.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -155,10 +156,10 @@
             this.lblDescipcionDisc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(248)))), ((int)(((byte)(241)))));
             this.lblDescipcionDisc.Font = new System.Drawing.Font("Consolas", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDescipcionDisc.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.lblDescipcionDisc.Location = new System.Drawing.Point(108, 116);
+            this.lblDescipcionDisc.Location = new System.Drawing.Point(108, 117);
             this.lblDescipcionDisc.Margin = new System.Windows.Forms.Padding(4);
             this.lblDescipcionDisc.Name = "lblDescipcionDisc";
-            this.lblDescipcionDisc.Size = new System.Drawing.Size(143, 45);
+            this.lblDescipcionDisc.Size = new System.Drawing.Size(131, 45);
             this.lblDescipcionDisc.TabIndex = 33;
             this.lblDescipcionDisc.Text = "Descripción";
             this.lblDescipcionDisc.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -181,7 +182,7 @@
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDelete.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.ForeColor = System.Drawing.Color.White;
-            this.btnDelete.Location = new System.Drawing.Point(596, 347);
+            this.btnDelete.Location = new System.Drawing.Point(79, 290);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(80, 30);
             this.btnDelete.TabIndex = 42;
@@ -200,7 +201,7 @@
             this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditar.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditar.ForeColor = System.Drawing.Color.White;
-            this.btnEditar.Location = new System.Drawing.Point(438, 347);
+            this.btnEditar.Location = new System.Drawing.Point(187, 230);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(80, 30);
             this.btnEditar.TabIndex = 43;
@@ -219,7 +220,7 @@
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardar.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardar.ForeColor = System.Drawing.Color.White;
-            this.btnGuardar.Location = new System.Drawing.Point(438, 278);
+            this.btnGuardar.Location = new System.Drawing.Point(79, 230);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(80, 30);
             this.btnGuardar.TabIndex = 44;
@@ -238,7 +239,7 @@
             this.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLimpiar.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLimpiar.ForeColor = System.Drawing.Color.White;
-            this.btnLimpiar.Location = new System.Drawing.Point(596, 278);
+            this.btnLimpiar.Location = new System.Drawing.Point(187, 290);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(80, 30);
             this.btnLimpiar.TabIndex = 45;
@@ -249,12 +250,16 @@
             // pnlGestion
             // 
             this.pnlGestion.Controls.Add(this.lblNombreDis);
+            this.pnlGestion.Controls.Add(this.btnLimpiar);
             this.pnlGestion.Controls.Add(this.txtNombre);
+            this.pnlGestion.Controls.Add(this.btnDelete);
+            this.pnlGestion.Controls.Add(this.btnEditar);
+            this.pnlGestion.Controls.Add(this.btnGuardar);
             this.pnlGestion.Controls.Add(this.lblDescipcionDisc);
             this.pnlGestion.Controls.Add(this.txtDescripcion);
             this.pnlGestion.Location = new System.Drawing.Point(378, 37);
             this.pnlGestion.Name = "pnlGestion";
-            this.pnlGestion.Size = new System.Drawing.Size(342, 205);
+            this.pnlGestion.Size = new System.Drawing.Size(330, 386);
             this.pnlGestion.TabIndex = 46;
             // 
             // FrmGestionDisciplina
@@ -264,11 +269,6 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(248)))), ((int)(((byte)(241)))));
             this.ClientSize = new System.Drawing.Size(720, 435);
             this.Controls.Add(this.pnlGestion);
-            this.Controls.Add(this.btnLimpiar);
-            this.Controls.Add(this.btnGuardar);
-            this.Controls.Add(this.btnEditar);
-            this.Controls.Add(this.btnDelete);
-            this.Controls.Add(this.dgvDisciplina);
             this.Controls.Add(this.pnlConsultaDisc);
             this.Controls.Add(this.lblTitleUser);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -294,7 +294,6 @@
         public System.Windows.Forms.Label lblFiltro;
         private System.Windows.Forms.TextBox txtBusquedaDisc;
         public System.Windows.Forms.Label lblConsulta;
-        private System.Windows.Forms.DataGridView dgvDisciplina;
         public System.Windows.Forms.Label lblNombreDis;
         private System.Windows.Forms.TextBox txtNombre;
         public System.Windows.Forms.Label lblDescipcionDisc;
@@ -304,5 +303,6 @@
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Button btnLimpiar;
         private System.Windows.Forms.Panel pnlGestion;
+        private System.Windows.Forms.DataGridView dgvDisciplina;
     }
 }

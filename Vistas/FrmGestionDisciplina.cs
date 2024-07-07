@@ -16,6 +16,8 @@ namespace Vistas
         public FrmGestionDisciplina()
         {
             InitializeComponent();
+            btnEditar.Enabled = false;
+            btnGuardar.Enabled = true;
         }
 
         
@@ -31,22 +33,15 @@ namespace Vistas
         private void FrmGestionDisciplina_Load(object sender, EventArgs e)
         {
             CargarDisciplina();
+            Util.responsiveForm(pnlConsultaDisc);
+            Util.responsiveForm(pnlGestion);
+            btnEditar.Enabled = false;
+            btnGuardar.Enabled = true;
         }
 
         private void txtBusquedaDisc_TextChanged(object sender, EventArgs e)
         {
             dgvDisciplina.DataSource = TrabajarDisciplina.buscarDisciplina(txtBusquedaDisc.Text);
-        }
-
-        private void dgvDisciplina_CurrentCellChanged(object sender, EventArgs e)
-        {
-            if (dgvDisciplina.SelectedRows.Count > 0 && !dgvDisciplina.CurrentRow.IsNewRow)
-            {
-
-                txtNombre.Text = dgvDisciplina.CurrentRow.Cells["Nombre"].Value.ToString();
-                txtDescripcion.Text = dgvDisciplina.CurrentRow.Cells["Descripcion"].Value.ToString();
-
-            }
         }
 
         /**
@@ -68,19 +63,25 @@ namespace Vistas
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            DialogResult dialog = MessageBox.Show("¿Deseas modificar una Disciplina?", "Disciplina", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-
-            if (dialog == DialogResult.Yes)
+            if (!Util.textBoxEmpty(pnlGestion))
             {
-                Disciplina oDis = new Disciplina();
-                oDis.Dis_Nombre = txtNombre.Text;
-                oDis.Dis_Descripcion = txtDescripcion.Text;
-                oDis.Dis_ID = int.Parse(dgvDisciplina.CurrentRow.Cells["ID"].Value.ToString());
+                DialogResult dialog = MessageBox.Show("¿Deseas modificar una Disciplina?", "Disciplina", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
-                TrabajarDisciplina.ModificarDisciplina(oDis);
-                CargarDisciplina();
-
-            }  
+                if (dialog == DialogResult.Yes)
+                {
+                    Disciplina oDis = new Disciplina();
+                    oDis.Dis_Nombre = txtNombre.Text;
+                    oDis.Dis_Descripcion = txtDescripcion.Text;
+                    oDis.Dis_ID = int.Parse(dgvDisciplina.CurrentRow.Cells["ID"].Value.ToString());
+                    TrabajarDisciplina.ModificarDisciplina(oDis);
+                    CargarDisciplina();
+                    Util.clearTextBox(pnlGestion);
+                }
+            }
+            else
+            {
+                Util.messageYesNo("No se permite campos en blancos", "Disciplina", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         /**
@@ -96,6 +97,7 @@ namespace Vistas
                 TrabajarDisciplina.eliminarDisciplina(int.Parse(dgvDisciplina.CurrentRow.Cells["ID"].Value.ToString()));
                 CargarDisciplina();
             }
+            Util.clearTextBox(pnlGestion);
         }
 
         /**
@@ -104,24 +106,36 @@ namespace Vistas
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            DialogResult dialog = MessageBox.Show("¿Deseas registrar una Disciplina?", "Disciplina", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-
-            if (dialog == DialogResult.Yes)
+            if (!Util.textBoxEmpty(pnlGestion))
             {
-                Disciplina oDis = new Disciplina();
-                oDis.Dis_Nombre = txtNombre.Text;
-                oDis.Dis_Descripcion = txtDescripcion.Text;
+                DialogResult dialog = MessageBox.Show("¿Deseas registrar una Disciplina?", "Disciplina", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
-                TrabajarDisciplina.altaDisciplina(oDis);
-                CargarDisciplina();
+                if (dialog == DialogResult.Yes)
+                {
+                    Disciplina oDis = new Disciplina();
+                    oDis.Dis_Nombre = txtNombre.Text;
+                    oDis.Dis_Descripcion = txtDescripcion.Text;
+                    TrabajarDisciplina.altaDisciplina(oDis);
+                    CargarDisciplina();
+                }
+            }
+            else
+            {
+                Util.messageYesNo("No se permite campos en blancos", "Disciplina", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
-        
+        private void dgvDisciplina_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dgvDisciplina.SelectedRows.Count > 0 && !dgvDisciplina.CurrentRow.IsNewRow)
+            {
 
+                txtNombre.Text = dgvDisciplina.CurrentRow.Cells["Nombre"].Value.ToString();
+                txtDescripcion.Text = dgvDisciplina.CurrentRow.Cells["Descripcion"].Value.ToString();
 
-
-
-
+            }
+            btnEditar.Enabled = true;
+            btnGuardar.Enabled = false;
+        }
     }
 }

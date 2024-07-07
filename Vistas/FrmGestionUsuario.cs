@@ -50,6 +50,8 @@ namespace Vistas
             loadListRoles();
             loadUsers();
             btnEditUser.Enabled = false;
+            Util.responsiveForm(panelConsultaUser);
+            Util.responsiveForm(panelGestorUser);
         }
 
         /**
@@ -152,24 +154,6 @@ namespace Vistas
             txtBusqueda_TextChanged(sender, e);
         }
 
-        private void dataGridUser_SelectionChanged(object sender, EventArgs e)
-        {
-            if (dataGridUser.SelectedRows.Count > 0 && !dataGridUser.CurrentRow.IsNewRow)
-            {
-                DataGridViewRow selectedRow = dataGridUser.SelectedRows[0];
-                idSeleccionado = (int)selectedRow.Cells["Usu_ID"].Value;
-                rolCodigo = (int)selectedRow.Cells["Rol_Codigo"].Value;
-                userSeleccionado = selectedRow.Cells["Usuario"].Value.ToString();
-                txtRol.SelectedValue = dataGridUser.CurrentRow.Cells["Rol_Codigo"].Value.ToString();
-                txtApellidoNomb.Text = dataGridUser.CurrentRow.Cells["Apellido y Nombre"].Value.ToString();
-                txtNameUser.Text = dataGridUser.CurrentRow.Cells["Usuario"].Value.ToString();
-                txtPassword.Text = dataGridUser.CurrentRow.Cells["Contraseña"].Value.ToString();
-                txtEmail.Text = dataGridUser.CurrentRow.Cells["Email"].Value.ToString();
-                imgUserNew.Image = UtilImagen.ByteToImage((byte[])dataGridUser.CurrentRow.Cells["Imagen"].Value);
-                btnGuardarUser.Enabled = false;
-                btnEditUser.Enabled = true;
-            }
-        }
 
         /**
          * Elimina un usuario
@@ -225,8 +209,8 @@ namespace Vistas
                 if (nuevoNombreUsuario != nombreUsuarioActual && rolCodigoExistente != -1)
                 {
                     Util.messageYesNo("Ya existe el usuario "+nuevoNombreUsuario, "Modificar Usuario", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    Util.clearTextBox(panelGestorUser);
-                    imgUserNew.Image = null;
+                    //Util.clearTextBox(panelGestorUser);
+                    //imgUserNew.Image = null;
                 }
                 else
                 {
@@ -259,8 +243,24 @@ namespace Vistas
             btnGuardarUser.Enabled = true;
         }
 
-
-
+        private void dataGridUser_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dataGridUser.SelectedRows.Count > 0 && !dataGridUser.CurrentRow.IsNewRow)
+            {
+                DataGridViewRow selectedRow = dataGridUser.SelectedRows[0];
+                idSeleccionado = (int)selectedRow.Cells["Usu_ID"].Value;
+                rolCodigo = (int)selectedRow.Cells["Rol_Codigo"].Value;
+                userSeleccionado = selectedRow.Cells["Usuario"].Value.ToString();
+                txtRol.SelectedValue = dataGridUser.CurrentRow.Cells["Rol_Codigo"].Value.ToString();
+                txtApellidoNomb.Text = dataGridUser.CurrentRow.Cells["Apellido y Nombre"].Value.ToString();
+                txtNameUser.Text = dataGridUser.CurrentRow.Cells["Usuario"].Value.ToString();
+                txtPassword.Text = dataGridUser.CurrentRow.Cells["Contraseña"].Value.ToString();
+                txtEmail.Text = dataGridUser.CurrentRow.Cells["Email"].Value.ToString();
+                imgUserNew.Image = UtilImagen.ByteToImage((byte[])dataGridUser.CurrentRow.Cells["Imagen"].Value);
+                btnGuardarUser.Enabled = false;
+                btnEditUser.Enabled = true;
+            }
+        }
 
     }
 }
