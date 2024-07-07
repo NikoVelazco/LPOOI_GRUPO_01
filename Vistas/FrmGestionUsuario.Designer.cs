@@ -31,6 +31,7 @@
             this.lblTitleUser = new System.Windows.Forms.Panel();
             this.lblGestion = new System.Windows.Forms.Label();
             this.panelGestorUser = new System.Windows.Forms.Panel();
+            this.btnLimpiar = new System.Windows.Forms.Button();
             this.btnDeleteUser = new System.Windows.Forms.Button();
             this.btnEditUser = new System.Windows.Forms.Button();
             this.btnGuardarUser = new System.Windows.Forms.Button();
@@ -55,7 +56,6 @@
             this.rbtnAsc = new System.Windows.Forms.RadioButton();
             this.lblConsulta = new System.Windows.Forms.Label();
             this.dataGridUser = new System.Windows.Forms.DataGridView();
-            this.btnLimpiar = new System.Windows.Forms.Button();
             this.lblTitleUser.SuspendLayout();
             this.panelGestorUser.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgUserNew)).BeginInit();
@@ -80,9 +80,9 @@
             this.lblGestion.ForeColor = System.Drawing.Color.Gold;
             this.lblGestion.Location = new System.Drawing.Point(257, 5);
             this.lblGestion.Name = "lblGestion";
-            this.lblGestion.Size = new System.Drawing.Size(180, 22);
+            this.lblGestion.Size = new System.Drawing.Size(190, 22);
             this.lblGestion.TabIndex = 18;
-            this.lblGestion.Text = "GESTIÓN DE USARIO";
+            this.lblGestion.Text = "GESTIÓN DE USUARIO";
             // 
             // panelGestorUser
             // 
@@ -108,6 +108,25 @@
             this.panelGestorUser.Name = "panelGestorUser";
             this.panelGestorUser.Size = new System.Drawing.Size(330, 388);
             this.panelGestorUser.TabIndex = 1;
+            // 
+            // btnLimpiar
+            // 
+            this.btnLimpiar.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnLimpiar.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnLimpiar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLimpiar.FlatAppearance.BorderSize = 0;
+            this.btnLimpiar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkCyan;
+            this.btnLimpiar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkCyan;
+            this.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLimpiar.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLimpiar.ForeColor = System.Drawing.Color.White;
+            this.btnLimpiar.Location = new System.Drawing.Point(124, 349);
+            this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.Size = new System.Drawing.Size(80, 30);
+            this.btnLimpiar.TabIndex = 42;
+            this.btnLimpiar.Text = "Reiniciar";
+            this.btnLimpiar.UseVisualStyleBackColor = false;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
             // btnDeleteUser
             // 
@@ -412,25 +431,6 @@
             this.dataGridUser.Size = new System.Drawing.Size(372, 274);
             this.dataGridUser.TabIndex = 3;
             this.dataGridUser.SelectionChanged += new System.EventHandler(this.dataGridUser_SelectionChanged);
-            // 
-            // btnLimpiar
-            // 
-            this.btnLimpiar.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnLimpiar.BackColor = System.Drawing.Color.DodgerBlue;
-            this.btnLimpiar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnLimpiar.FlatAppearance.BorderSize = 0;
-            this.btnLimpiar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkCyan;
-            this.btnLimpiar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkCyan;
-            this.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLimpiar.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLimpiar.ForeColor = System.Drawing.Color.White;
-            this.btnLimpiar.Location = new System.Drawing.Point(124, 349);
-            this.btnLimpiar.Name = "btnLimpiar";
-            this.btnLimpiar.Size = new System.Drawing.Size(80, 30);
-            this.btnLimpiar.TabIndex = 42;
-            this.btnLimpiar.Text = "Reiniciar";
-            this.btnLimpiar.UseVisualStyleBackColor = false;
-            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
             // FrmGestionUsuario
             // 

@@ -31,8 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPrincipal));
             this.pnlWindowTopBar = new System.Windows.Forms.Panel();
-            this.btnMinimize = new System.Windows.Forms.PictureBox();
-            this.btnClose = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -42,12 +40,15 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lblDate = new System.Windows.Forms.Label();
             this.lblTime = new System.Windows.Forms.Label();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.dateTimer = new System.Windows.Forms.Timer(this.components);
             this.btnExit = new System.Windows.Forms.Button();
             this.txtRol = new System.Windows.Forms.Label();
             this.txtUser = new System.Windows.Forms.Label();
             this.menuVertical = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.panelContenedor = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.imgUser = new System.Windows.Forms.PictureBox();
             this.btnEventos = new System.Windows.Forms.Button();
             this.btnDisciplinas = new System.Windows.Forms.Button();
             this.btnCategorias = new System.Windows.Forms.Button();
@@ -56,21 +57,20 @@
             this.btnUsuarios = new System.Windows.Forms.Button();
             this.btnHome = new System.Windows.Forms.Button();
             this.btnSlide = new System.Windows.Forms.PictureBox();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.imgUser = new System.Windows.Forms.PictureBox();
-            this.panelContenedor = new System.Windows.Forms.Panel();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.btnMinimize = new System.Windows.Forms.PictureBox();
+            this.btnClose = new System.Windows.Forms.PictureBox();
             this.pnlWindowTopBar.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnMinimize)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnClose)).BeginInit();
             this.panel1.SuspendLayout();
             this.pnlDate.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.menuVertical.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnSlide)).BeginInit();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgUser)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnSlide)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnMinimize)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnClose)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlWindowTopBar
@@ -84,30 +84,6 @@
             this.pnlWindowTopBar.Size = new System.Drawing.Size(940, 37);
             this.pnlWindowTopBar.TabIndex = 1;
             this.pnlWindowTopBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlWindowTopBar_MouseDown);
-            // 
-            // btnMinimize
-            // 
-            this.btnMinimize.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMinimize.Image = global::Vistas.Properties.Resources.btnMinimize_Image;
-            this.btnMinimize.Location = new System.Drawing.Point(850, 3);
-            this.btnMinimize.Name = "btnMinimize";
-            this.btnMinimize.Size = new System.Drawing.Size(57, 32);
-            this.btnMinimize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnMinimize.TabIndex = 6;
-            this.btnMinimize.TabStop = false;
-            this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
-            // 
-            // btnClose
-            // 
-            this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnClose.Image = global::Vistas.Properties.Resources.btnClose_Image;
-            this.btnClose.Location = new System.Drawing.Point(892, 3);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(57, 32);
-            this.btnClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnClose.TabIndex = 5;
-            this.btnClose.TabStop = false;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // panel1
             // 
@@ -215,21 +191,6 @@
             this.lblTime.Text = "lblTime";
             this.lblTime.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox3.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(14, 10);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(0);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(57, 49);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 7;
-            this.pictureBox3.TabStop = false;
-            // 
             // dateTimer
             // 
             this.dateTimer.Enabled = true;
@@ -298,6 +259,46 @@
             this.menuVertical.Size = new System.Drawing.Size(200, 436);
             this.menuVertical.TabIndex = 26;
             // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(8)))), ((int)(((byte)(8)))));
+            this.panel5.Controls.Add(this.pictureBox1);
+            this.panel5.Controls.Add(this.imgUser);
+            this.panel5.Controls.Add(this.btnExit);
+            this.panel5.Controls.Add(this.txtRol);
+            this.panel5.Controls.Add(this.txtUser);
+            this.panel5.Location = new System.Drawing.Point(10, 37);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(920, 88);
+            this.panel5.TabIndex = 27;
+            // 
+            // panelContenedor
+            // 
+            this.panelContenedor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(213)))), ((int)(((byte)(217)))));
+            this.panelContenedor.Location = new System.Drawing.Point(210, 125);
+            this.panelContenedor.Name = "panelContenedor";
+            this.panelContenedor.Size = new System.Drawing.Size(720, 435);
+            this.panelContenedor.TabIndex = 28;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Vistas.Properties.Resources.Atthlete;
+            this.pictureBox1.Location = new System.Drawing.Point(6, 5);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(157, 76);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 7;
+            this.pictureBox1.TabStop = false;
+            // 
+            // imgUser
+            // 
+            this.imgUser.Location = new System.Drawing.Point(636, 7);
+            this.imgUser.Name = "imgUser";
+            this.imgUser.Size = new System.Drawing.Size(68, 74);
+            this.imgUser.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.imgUser.TabIndex = 7;
+            this.imgUser.TabStop = false;
+            // 
             // btnEventos
             // 
             this.btnEventos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(111)))), ((int)(((byte)(109)))));
@@ -335,6 +336,7 @@
             this.btnDisciplinas.TabIndex = 33;
             this.btnDisciplinas.Text = "       Disciplina";
             this.btnDisciplinas.UseVisualStyleBackColor = false;
+            this.btnDisciplinas.Click += new System.EventHandler(this.btnDisciplinas_Click);
             // 
             // btnCategorias
             // 
@@ -354,6 +356,7 @@
             this.btnCategorias.TabIndex = 32;
             this.btnCategorias.Text = "      Categoria";
             this.btnCategorias.UseVisualStyleBackColor = false;
+            this.btnCategorias.Click += new System.EventHandler(this.btnCategorias_Click);
             // 
             // btnCompetencia
             // 
@@ -373,6 +376,7 @@
             this.btnCompetencia.TabIndex = 31;
             this.btnCompetencia.Text = "       Competencia";
             this.btnCompetencia.UseVisualStyleBackColor = false;
+            this.btnCompetencia.Click += new System.EventHandler(this.btnCompetencia_Click);
             // 
             // btnAtletas
             // 
@@ -445,45 +449,44 @@
             this.btnSlide.TabStop = false;
             this.btnSlide.Click += new System.EventHandler(this.btnSlide_Click);
             // 
-            // panel5
+            // pictureBox3
             // 
-            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(8)))), ((int)(((byte)(8)))));
-            this.panel5.Controls.Add(this.pictureBox1);
-            this.panel5.Controls.Add(this.imgUser);
-            this.panel5.Controls.Add(this.btnExit);
-            this.panel5.Controls.Add(this.txtRol);
-            this.panel5.Controls.Add(this.txtUser);
-            this.panel5.Location = new System.Drawing.Point(10, 37);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(920, 88);
-            this.panel5.TabIndex = 27;
+            this.pictureBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox3.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(14, 10);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(0);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(57, 49);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 7;
+            this.pictureBox3.TabStop = false;
             // 
-            // pictureBox1
+            // btnMinimize
             // 
-            this.pictureBox1.Image = global::Vistas.Properties.Resources.Atthlete;
-            this.pictureBox1.Location = new System.Drawing.Point(6, 5);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(157, 76);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 7;
-            this.pictureBox1.TabStop = false;
+            this.btnMinimize.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMinimize.Image = global::Vistas.Properties.Resources.btnMinimize_Image;
+            this.btnMinimize.Location = new System.Drawing.Point(835, 3);
+            this.btnMinimize.Name = "btnMinimize";
+            this.btnMinimize.Size = new System.Drawing.Size(57, 32);
+            this.btnMinimize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnMinimize.TabIndex = 6;
+            this.btnMinimize.TabStop = false;
+            this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
             // 
-            // imgUser
+            // btnClose
             // 
-            this.imgUser.Location = new System.Drawing.Point(636, 7);
-            this.imgUser.Name = "imgUser";
-            this.imgUser.Size = new System.Drawing.Size(68, 74);
-            this.imgUser.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.imgUser.TabIndex = 7;
-            this.imgUser.TabStop = false;
-            // 
-            // panelContenedor
-            // 
-            this.panelContenedor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(213)))), ((int)(((byte)(217)))));
-            this.panelContenedor.Location = new System.Drawing.Point(210, 125);
-            this.panelContenedor.Name = "panelContenedor";
-            this.panelContenedor.Size = new System.Drawing.Size(720, 435);
-            this.panelContenedor.TabIndex = 28;
+            this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnClose.Image = global::Vistas.Properties.Resources.btnClose_Image;
+            this.btnClose.Location = new System.Drawing.Point(892, 3);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(57, 32);
+            this.btnClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnClose.TabIndex = 5;
+            this.btnClose.TabStop = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // FrmPrincipal
             // 
@@ -506,16 +509,16 @@
             this.Text = "FrmPrincipal";
             this.Load += new System.EventHandler(this.FrmPrincipal_Load);
             this.pnlWindowTopBar.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.btnMinimize)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnClose)).EndInit();
             this.panel1.ResumeLayout(false);
             this.pnlDate.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.menuVertical.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.btnSlide)).EndInit();
             this.panel5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgUser)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnSlide)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnMinimize)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnClose)).EndInit();
             this.ResumeLayout(false);
 
         }

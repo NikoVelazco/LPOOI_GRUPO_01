@@ -88,6 +88,14 @@ namespace Vistas
             Util.openFormInPanel(new FrmGestionUsuario(), panelContenedor);
             imgUser.Visible = true;
         }
+        /*
+         * Lleva a la gestion de competencia
+         */
+        private void btnCompetencia_Click(object sender, EventArgs e)
+        {
+            Util.openFormInPanel(new FrmGestionCompetencia(), panelContenedor);
+            imgUser.Visible = true;
+        }
 
         /**
          * Pantalla Principal
@@ -122,6 +130,18 @@ namespace Vistas
             {
                 Util.disabledButton(btnUsuarios);
             }
+        }
+
+        private void btnDisciplinas_Click(object sender, EventArgs e)
+        {
+            Util.openFormInPanel(new FrmGestionDisciplina(),panelContenedor);
+            imgUser.Visible = true;
+        }
+        
+        private void btnCategorias_Click(object sender, EventArgs e)
+        {
+            Util.openFormInPanel(new FrmGestionCategoria(), panelContenedor);
+            imgUser.Visible = true;
         }
 
     }

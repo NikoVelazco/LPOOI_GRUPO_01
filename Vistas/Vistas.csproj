@@ -53,6 +53,24 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>comdepDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="FrmGestionCompetencia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmGestionCompetencia.Designer.cs">
+      <DependentUpon>FrmGestionCompetencia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmGestionDisciplina.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmGestionDisciplina.Designer.cs">
+      <DependentUpon>FrmGestionDisciplina.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmGestionCategoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmGestionCategoria.Designer.cs">
+      <DependentUpon>FrmGestionCategoria.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmGestionUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -87,6 +105,15 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RecoverEmail.cs" />
     <Compile Include="Util.cs" />
+      <EmbeddedResource Include="FrmGestionCompetencia.resx">
+        <DependentUpon>FrmGestionCompetencia.cs</DependentUpon>
+      </EmbeddedResource>
+    <EmbeddedResource Include="FrmGestionDisciplina.resx">
+      <DependentUpon>FrmGestionDisciplina.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmGestionCategoria.resx">
+      <DependentUpon>FrmGestionCategoria.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmGestionUsuario.resx">
       <DependentUpon>FrmGestionUsuario.cs</DependentUpon>
     </EmbeddedResource>
