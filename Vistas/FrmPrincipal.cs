@@ -131,5 +131,12 @@ namespace Vistas
                 Util.disabledButton(btnUsuarios);
             }
         }
+
+        private void btnDisciplinas_Click(object sender, EventArgs e)
+        {
+            Util.openFormInPanel(new FrmGestionDisciplina(),panelContenedor);
+            imgUser.Visible = true;
+        }
+
     }
 }

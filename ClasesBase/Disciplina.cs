@@ -44,6 +44,5 @@ namespace ClasesBase
                                   "Descripcion: " + Dis_Descripcion;
             return disciplinaString;
         }
-
     }
 }

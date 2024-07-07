@@ -58,6 +58,11 @@
     </Compile>
     <Compile Include="FrmGestionCompetencia.Designer.cs">
       <DependentUpon>FrmGestionCompetencia.cs</DependentUpon>
+    <Compile Include="FrmGestionDisciplina.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmGestionDisciplina.Designer.cs">
+      <DependentUpon>FrmGestionDisciplina.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmGestionUsuario.cs">
       <SubType>Form</SubType>
@@ -95,6 +100,8 @@
     <Compile Include="Util.cs" />
     <EmbeddedResource Include="FrmGestionCompetencia.resx">
       <DependentUpon>FrmGestionCompetencia.cs</DependentUpon>
+    <EmbeddedResource Include="FrmGestionDisciplina.resx">
+      <DependentUpon>FrmGestionDisciplina.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmGestionUsuario.resx">
       <DependentUpon>FrmGestionUsuario.cs</DependentUpon>
