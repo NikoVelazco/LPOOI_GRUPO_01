@@ -107,6 +107,7 @@ namespace Vistas
             imgUser.Image = userLogueado.Usu_Imagen;
             imgUser.Visible = false;
             disabledButtonByRol();
+            menuVertical.Width = 70;
         }
 
         public void disabledButtonByRol()
