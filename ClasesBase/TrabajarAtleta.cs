@@ -12,12 +12,11 @@ namespace ClasesBase
         /**
          * Obtiene la lista de atletas
          * */
-        public static DataTable listAtleta()
+        public static DataTable getAllAtletas()
         {
-            string consulta = @"SELECT Atl_DNI AS 'DNI', Atl_Apellido AS 'Apellido', Atl_Nombre AS 'Nombre', Atl_Nacionalidad AS 'Nacionalidad', Atl_Entrenador AS 'Entrenador', Atl_Genero AS 'Genero',
-                               Atl_Altura AS 'Altura', Atl_Peso AS 'Peso', Atl_FechaNac AS 'Fecha Nacimiento', Atl_Direccion AS 'Direccion', Atl_Email AS 'Email', Atl_ID FROM Atleta";
             SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.comdepConnectionString);
-            SqlCommand cmd = new SqlCommand(consulta, cnn);
+            SqlCommand cmd = new SqlCommand("ListarAtletas", cnn);
+            cmd.CommandType = CommandType.StoredProcedure;
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);
@@ -29,20 +28,20 @@ namespace ClasesBase
          * */
         public static void addAtleta(Atleta atleta)
         {
-            string sentencia = @"INSERT INTO Atleta(Atl_DNI, Atl_Apellido, Atl_Nombre, Atl_Nacionalidad, Atl_Entrenador, Atl_Genero, Atl_Altura, Atl_Peso, Atl_FechaNac, Atl_Direccion, Atl_Email) VALUES(@dni, @apell, @nomb, @nac, @entre, @gene, @altura, @peso, @fechanac, @dire, @email)";
             SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.comdepConnectionString);
-            SqlCommand cmd = new SqlCommand(sentencia, cnn);
-            cmd.Parameters.AddWithValue("@dni", atleta.Atl_DNI);
-            cmd.Parameters.AddWithValue("@apell", atleta.Atl_Apellido);
-            cmd.Parameters.AddWithValue("@nomb", atleta.Atl_Nombre);
-            cmd.Parameters.AddWithValue("@nac", atleta.Atl_Nacionalidad);
-            cmd.Parameters.AddWithValue("@entre", atleta.Atl_Entrenador);
-            cmd.Parameters.AddWithValue("@gene", atleta.Atl_Genero);
-            cmd.Parameters.AddWithValue("@altura", atleta.Atl_Altura);
-            cmd.Parameters.AddWithValue("@peso", atleta.Atl_Peso);
-            cmd.Parameters.AddWithValue("@fechanac", atleta.Atl_FechaNac);
-            cmd.Parameters.AddWithValue("@dire", atleta.Atl_Direccion);
-            cmd.Parameters.AddWithValue("@email", atleta.Atl_Email);
+            SqlCommand cmd = new SqlCommand("InsertarAtleta", cnn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@Dni", atleta.Atl_DNI);
+            cmd.Parameters.AddWithValue("@Apellido", atleta.Atl_Apellido);
+            cmd.Parameters.AddWithValue("@Nombre", atleta.Atl_Nombre);
+            cmd.Parameters.AddWithValue("@Nacionalidad", atleta.Atl_Nacionalidad);
+            cmd.Parameters.AddWithValue("@Entrenador", atleta.Atl_Entrenador);
+            cmd.Parameters.AddWithValue("@Genero", atleta.Atl_Genero);
+            cmd.Parameters.AddWithValue("@Altura", atleta.Atl_Altura);
+            cmd.Parameters.AddWithValue("@Peso", atleta.Atl_Peso);
+            cmd.Parameters.AddWithValue("@FechaNac", atleta.Atl_FechaNac);
+            cmd.Parameters.AddWithValue("@Direccion", atleta.Atl_Direccion);
+            cmd.Parameters.AddWithValue("@Email", atleta.Atl_Email);
             cnn.Open();
             cmd.ExecuteNonQuery();
             cnn.Close();
@@ -141,5 +140,33 @@ namespace ClasesBase
             }
         }
 
+        public static Boolean atletaIsFound(int atl_Id)
+        {
+            Boolean isFound;
+            SqlConnection sqlConnection;
+            SqlCommand sqlCommand;
+            string connectionString = ClasesBase.Properties.Settings.Default.comdepConnectionString;
+
+            using (sqlConnection = new SqlConnection(connectionString))
+            {
+                sqlConnection.Open();
+                sqlCommand = new SqlCommand();
+
+                sqlCommand.CommandText = @"
+                    SELECT COUNT (a.Atl_ID)
+                    FROM Evento AS e
+                    JOIN Atleta a ON e.Atl_ID = a.Atl_ID
+                    WHERE e.Atl_ID = (@atl_Id)
+                ";
+                sqlCommand.CommandType = CommandType.Text;
+                sqlCommand.Connection = sqlConnection;
+
+                sqlCommand.Parameters.AddWithValue("@atl_Id", atl_Id);
+
+                isFound = Convert.ToBoolean((int)sqlCommand.ExecuteScalar());
+            }
+
+            return isFound;
+        }
     }
 }

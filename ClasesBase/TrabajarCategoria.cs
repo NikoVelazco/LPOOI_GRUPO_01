@@ -12,46 +12,40 @@ namespace ClasesBase
      *-----------------*/
     public class TrabajarCategoria
     {
-        readonly string connectionString;
-
-        SqlConnection sqlConnection;
-        SqlCommand sqlCommand;
-        SqlDataAdapter sqlDataAdapter;
-        Categoria oCategoria;
-
-        public TrabajarCategoria()
-        {
-            connectionString = ClasesBase.Properties.Settings.Default.comdepConnectionString;
-        }
+        static readonly string connectionString = ClasesBase.Properties.Settings.Default.comdepConnectionString;
+        static SqlConnection sqlConnection;
+        static SqlCommand sqlCommand;
+        static SqlDataAdapter sqlDataAdapter;
+        static Categoria oCategoria;
 
         /*----------------------------------*
          | Obtiene el listado de categorias |
          *----------------------------------*/
-        public DataTable getListOfCategories()
+        public static DataTable getAllCategorias()
         {
             using (sqlConnection = new SqlConnection(connectionString))
             {
-                sqlConnection.Open();
-                sqlCommand = new SqlCommand();
+                using(sqlCommand = new SqlCommand("ListarCategorias", sqlConnection))
+	            {
+                    sqlConnection.Open();
+                    sqlCommand.CommandType = CommandType.StoredProcedure;
 
-                sqlCommand.CommandText = "getAllCategories";
-                sqlCommand.CommandType = CommandType.StoredProcedure;
-                sqlCommand.Connection = sqlConnection;
+		            using(sqlDataAdapter = new SqlDataAdapter(sqlCommand))
+	                {
+                        DataTable dataTable = new DataTable();
 
-                sqlDataAdapter = new SqlDataAdapter(sqlCommand);
-
-                DataTable dataTable = new DataTable();
-
-                sqlDataAdapter.Fill(dataTable);
-
-                return dataTable;
+                        sqlDataAdapter.Fill(dataTable);
+                
+                        return dataTable;
+	                }
+	            }
             }
         }
 
         /*----------------------*
          | Agrega una categoria |
          *----------------------*/
-        public void addCategory(string nombre, string descripcion)
+        public static void addCategory(string nombre, string descripcion)
         {
             oCategoria = new Categoria();
 
@@ -60,24 +54,21 @@ namespace ClasesBase
 
             using (sqlConnection = new SqlConnection(connectionString))
             {
-                sqlConnection.Open();
-                sqlCommand = new SqlCommand();
-
-                sqlCommand.CommandText = "addCategory";
-                sqlCommand.CommandType = CommandType.StoredProcedure;
-                sqlCommand.Connection = sqlConnection;
-
-                sqlCommand.Parameters.AddWithValue("@Nombre", oCategoria.Cat_Nombre);
-                sqlCommand.Parameters.AddWithValue("@Descripcion", oCategoria.Cat_Descripcion);
-
-                sqlCommand.ExecuteNonQuery();
+                using(sqlCommand = new SqlCommand("InsertarCategoria", sqlConnection))
+	            {
+                    sqlConnection.Open();
+                    sqlCommand.CommandType = CommandType.StoredProcedure;
+                    sqlCommand.Parameters.AddWithValue("@Nombre", oCategoria.Cat_Nombre);
+                    sqlCommand.Parameters.AddWithValue("@Descripcion", oCategoria.Cat_Descripcion);
+                    sqlCommand.ExecuteNonQuery();
+                }
             }
         }
 
         /*-------------------------*
          | Modificar una categoria |
          *-------------------------*/
-        public void updateCategory(int id, string nombre, string descripcion)
+        public static void updateCategory(int id, string nombre, string descripcion)
         {
             oCategoria = new Categoria();
 
@@ -85,40 +76,35 @@ namespace ClasesBase
             oCategoria.Cat_Nombre = nombre;
             oCategoria.Cat_Descripcion = descripcion;
 
-            using (sqlConnection = new SqlConnection(connectionString))
+            using (SqlConnection sqlConnection = new SqlConnection(connectionString))
             {
-                sqlConnection.Open();
-                sqlCommand = new SqlCommand();
-
-                sqlCommand.CommandText = "updateCategory";
-                sqlCommand.CommandType = CommandType.StoredProcedure;
-                sqlCommand.Connection = sqlConnection;
-
-                sqlCommand.Parameters.AddWithValue("@Id", oCategoria.Cat_ID);
-                sqlCommand.Parameters.AddWithValue("@Nombre", oCategoria.Cat_Nombre);
-                sqlCommand.Parameters.AddWithValue("@Descripcion", oCategoria.Cat_Descripcion);
-
-                sqlCommand.ExecuteNonQuery();
+                using(SqlCommand sqlCommand = new SqlCommand("ActualizarCategoria", sqlConnection))
+                {
+                    sqlCommand.CommandType = CommandType.StoredProcedure;
+                    sqlCommand.Parameters.AddWithValue("@Id", oCategoria.Cat_ID);
+                    sqlCommand.Parameters.AddWithValue("@Nombre", oCategoria.Cat_Nombre);
+                    sqlCommand.Parameters.AddWithValue("@Descripcion", oCategoria.Cat_Descripcion);
+                    sqlConnection.Open();
+                    // Executes INSERT, UPDATE or DELETE
+                    sqlCommand.ExecuteNonQuery();
+                }
             }
         }
 
         /*------------------------*
          | Eliminar una categoria |
          *------------------------*/
-        public void deleteCategory(int id)
+        public static void deleteCategory(int id)
         {
             using (sqlConnection = new SqlConnection(connectionString))
             {
-                sqlConnection.Open();
-                sqlCommand = new SqlCommand();
-
-                sqlCommand.CommandText = "deleteCategory";
-                sqlCommand.CommandType = CommandType.StoredProcedure;
-                sqlCommand.Connection = sqlConnection;
-
-                sqlCommand.Parameters.AddWithValue("@Id", id);
-
-                sqlCommand.ExecuteNonQuery();
+                using(sqlCommand = new SqlCommand("EliminarCategoria", sqlConnection))
+                {
+                    sqlCommand.CommandType = CommandType.StoredProcedure;
+                    sqlCommand.Parameters.AddWithValue("@Id", id);
+                    sqlConnection.Open();
+                    sqlCommand.ExecuteNonQuery();
+                }
             }
         }
 

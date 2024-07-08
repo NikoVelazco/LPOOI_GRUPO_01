@@ -266,6 +266,7 @@
             this.btnEventos.TabIndex = 34;
             this.btnEventos.Text = "   Evento";
             this.btnEventos.UseVisualStyleBackColor = false;
+            this.btnEventos.Click += new System.EventHandler(this.btnEventos_Click);
             // 
             // btnDisciplinas
             // 
