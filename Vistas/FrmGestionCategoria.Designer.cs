@@ -40,10 +40,10 @@
             this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.lblGestorCategoria = new System.Windows.Forms.Label();
-            this.dataGridCategoria = new System.Windows.Forms.DataGridView();
+            this.dgvCategoria = new System.Windows.Forms.DataGridView();
             this.lblTitleCategoria.SuspendLayout();
             this.panelContenedor.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridCategoria)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCategoria)).BeginInit();
             this.SuspendLayout();
             // 
             // lblTitleCategoria
@@ -213,15 +213,15 @@
             this.lblGestorCategoria.Text = "FORMULARIO CATEGORÍA";
             this.lblGestorCategoria.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // dataGridCategoria
+            // dgvCategoria
             // 
-            this.dataGridCategoria.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridCategoria.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridCategoria.Location = new System.Drawing.Point(12, 37);
-            this.dataGridCategoria.Name = "dataGridCategoria";
-            this.dataGridCategoria.Size = new System.Drawing.Size(327, 249);
-            this.dataGridCategoria.TabIndex = 3;
-            this.dataGridCategoria.SelectionChanged += new System.EventHandler(this.dataGridCategoria_SelectionChanged);
+            this.dgvCategoria.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvCategoria.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCategoria.Location = new System.Drawing.Point(12, 37);
+            this.dgvCategoria.Name = "dgvCategoria";
+            this.dgvCategoria.Size = new System.Drawing.Size(327, 249);
+            this.dgvCategoria.TabIndex = 3;
+            this.dgvCategoria.SelectionChanged += new System.EventHandler(this.dataGridCategoria_SelectionChanged);
             // 
             // FrmGestionCategoria
             // 
@@ -229,7 +229,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(248)))), ((int)(((byte)(241)))));
             this.ClientSize = new System.Drawing.Size(720, 435);
-            this.Controls.Add(this.dataGridCategoria);
+            this.Controls.Add(this.dgvCategoria);
             this.Controls.Add(this.panelContenedor);
             this.Controls.Add(this.lblTitleCategoria);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -241,7 +241,7 @@
             this.lblTitleCategoria.PerformLayout();
             this.panelContenedor.ResumeLayout(false);
             this.panelContenedor.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridCategoria)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCategoria)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -251,7 +251,7 @@
         private System.Windows.Forms.Panel lblTitleCategoria;
         private System.Windows.Forms.Label lblGestionCategoria;
         private System.Windows.Forms.Panel panelContenedor;
-        private System.Windows.Forms.DataGridView dataGridCategoria;
+        private System.Windows.Forms.DataGridView dgvCategoria;
         public System.Windows.Forms.Label lblGestorCategoria;
         private System.Windows.Forms.Label lblDescripcion;
         private System.Windows.Forms.Label lblNombre;

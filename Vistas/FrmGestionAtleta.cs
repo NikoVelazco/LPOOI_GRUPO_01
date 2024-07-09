@@ -48,9 +48,8 @@ namespace Vistas
 
         private void dataGridAtleta_SelectionChanged(object sender, EventArgs e)
         {
-            if (dataGridAtleta.CurrentRow != null && !dataGridAtleta.CurrentRow.IsNewRow)
+            if (dataGridAtleta.SelectedRows.Count > 0 && !dataGridAtleta.CurrentRow.IsNewRow)
             {
-
                 txtApellido.Text = dataGridAtleta.CurrentRow.Cells["Apellido"].Value.ToString();
                 txtName.Text = dataGridAtleta.CurrentRow.Cells["Nombre"].Value.ToString();
                 txtDni.Text = dataGridAtleta.CurrentRow.Cells["DNI"].Value.ToString();
@@ -63,6 +62,9 @@ namespace Vistas
                 txtEntrenador.Text = dataGridAtleta.CurrentRow.Cells["Entrenador"].Value.ToString();
                 txtFechaNac.Text = dataGridAtleta.CurrentRow.Cells["Fecha Nacimiento"].Value.ToString();
                 idSeleccionado = (int)dataGridAtleta.CurrentRow.Cells["Atl_ID"].Value;
+
+                btnAgregarAtl.Enabled = false;
+                btnEditarAtl.Enabled = true;
             }
         }
         /**

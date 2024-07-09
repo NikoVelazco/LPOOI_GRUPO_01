@@ -12,18 +12,9 @@ namespace Vistas
 {
     public partial class FrmGestionCategoria : Form
     {
-        private TrabajarCategoria trabajarCategoria;
-
         public FrmGestionCategoria()
         {
             InitializeComponent();
-            trabajarCategoria = new TrabajarCategoria();
-        }
-
-        private void loadListOfCategories()
-        {
-            dataGridCategoria.DataSource = trabajarCategoria.getListOfCategories();
-            dataGridCategoria.Columns["Id"].Visible = false;
         }
 
         /**
@@ -34,6 +25,12 @@ namespace Vistas
             loadListOfCategories();
             btnEditCategoria.Enabled = false;
             Util.responsiveForm(panelContenedor);
+        }
+
+        private void loadListOfCategories()
+        {
+            dgvCategoria.DataSource = TrabajarCategoria.getAllCategorias();
+            dgvCategoria.Columns["Id"].Visible = false;
         }
 
         /**
@@ -47,9 +44,8 @@ namespace Vistas
                 DialogResult message = Util.messageYesNo("¿Deseas registrar una Categoria?", "Alta Categoría", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (message == DialogResult.Yes)
                 {
-                    trabajarCategoria.addCategory(
-                        txtNombre.Text,
-                        txtDescripcion.Text
+                    TrabajarCategoria.addCategory(
+                        txtNombre.Text, txtDescripcion.Text
                     );
                     Util.startSound("sound-correct.mp3");
                     Util.messageYesNo("Categoría agregada correctamente", "Alta de Categoría", MessageBoxButtons.OK, MessageBoxIcon.None);
@@ -72,16 +68,16 @@ namespace Vistas
          * Carga los datos de la grilla
          * en el form de categoría
          * */
-        /*private void dataGridCategoria_CurrentCellChanged(object sender, EventArgs e)
+        private void dataGridCategoria_SelectionChanged(object sender, EventArgs e)
         {
-            if (dataGridCategoria.CurrentRow != null)
+            if (dgvCategoria.SelectedRows.Count > 0 && !dgvCategoria.CurrentRow.IsNewRow)
             {
-                txtNombre.Text = dataGridCategoria.CurrentRow.Cells["Nombre"].Value.ToString();
-                txtDescripcion.Text = dataGridCategoria.CurrentRow.Cells["Descripcion"].Value.ToString();
+                txtNombre.Text = dgvCategoria.CurrentRow.Cells["Nombre"].Value.ToString();
+                txtDescripcion.Text = dgvCategoria.CurrentRow.Cells["Descripcion"].Value.ToString();
                 btnGuardarCategoria.Enabled = false;
                 btnEditCategoria.Enabled = true;
             }
-        }*/
+        }
 
         /**
          * Edita una categoría
@@ -94,8 +90,8 @@ namespace Vistas
                 DialogResult message = Util.messageYesNo("¿Deseas modificar una Categoria?", "Modificar Categoría", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (message == DialogResult.Yes)
                 {
-                    trabajarCategoria.updateCategory(
-                        int.Parse(dataGridCategoria.CurrentRow.Cells["Id"].Value.ToString()),
+                    TrabajarCategoria.updateCategory(
+                        int.Parse(dgvCategoria.CurrentRow.Cells["Id"].Value.ToString()),
                         txtNombre.Text,
                         txtDescripcion.Text
                     );
@@ -128,8 +124,8 @@ namespace Vistas
                 Util.startSound("alerta.mp3");
                 if (message == DialogResult.Yes)
                 {
-                    trabajarCategoria.deleteCategory(
-                        int.Parse(dataGridCategoria.CurrentRow.Cells["Id"].Value.ToString())
+                    TrabajarCategoria.deleteCategory(
+                        int.Parse(dgvCategoria.CurrentRow.Cells["Id"].Value.ToString())
                     );
                     Util.startSound("sound-correct.mp3");
                     Util.messageYesNo("Categoría eliminada correctamente", "Eliminar Categoría", MessageBoxButtons.OK, MessageBoxIcon.None);
@@ -149,18 +145,5 @@ namespace Vistas
             btnEditCategoria.Enabled = false;
             btnGuardarCategoria.Enabled = true;
         }
-
-        private void dataGridCategoria_SelectionChanged(object sender, EventArgs e)
-        {
-            if (dataGridCategoria.SelectedRows.Count > 0 && !dataGridCategoria.CurrentRow.IsNewRow)
-            {
-                txtNombre.Text = dataGridCategoria.CurrentRow.Cells["Nombre"].Value.ToString();
-                txtDescripcion.Text = dataGridCategoria.CurrentRow.Cells["Descripcion"].Value.ToString();
-                btnGuardarCategoria.Enabled = false;
-                btnEditCategoria.Enabled = true;
-            }
-        }
-
-
     }
 }

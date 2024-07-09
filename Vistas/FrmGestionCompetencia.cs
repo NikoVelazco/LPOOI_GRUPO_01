@@ -13,12 +13,10 @@ namespace Vistas
     public partial class FrmGestionCompetencia : Form
     {
         private int idSeleccionado = 0;
-        private TrabajarCategoria trabajarCategoria;
 
         public FrmGestionCompetencia()
         {
             InitializeComponent();
-            trabajarCategoria = new TrabajarCategoria();
         }
 
         private void FrmGestionCompetencia_Load(object sender, EventArgs e)
@@ -51,7 +49,7 @@ namespace Vistas
 
         private void loadCategorias()
         {
-            cmbCategoria.DataSource = trabajarCategoria.getListOfCategories();
+            cmbCategoria.DataSource = TrabajarCategoria.getAllCategorias();
             cmbCategoria.DisplayMember = "Nombre";
             cmbCategoria.ValueMember = "Id";
             cmbCategoria.SelectedIndex = 0;
