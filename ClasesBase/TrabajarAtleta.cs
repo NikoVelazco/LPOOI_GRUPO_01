@@ -52,7 +52,12 @@ namespace ClasesBase
          * */
         public static int searchAtletaByDNI(string dni)
         {
-            string consulta = @"SELECT Atl_ID FROM Atleta WHERE Atl_DNI = @dni";
+            string consulta = @"
+                SELECT
+                    Atl_ID
+                FROM Atleta
+                WHERE Atl_DNI = @dni
+            ";
             SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.comdepConnectionString);
             SqlCommand cmd = new SqlCommand(consulta, cnn);
             cmd.Parameters.AddWithValue("@dni", dni);
