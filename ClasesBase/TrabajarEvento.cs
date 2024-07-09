@@ -142,5 +142,49 @@ namespace ClasesBase
                 }
             }
         }
+
+        public static DataTable getResultadosByComId(int id)
+        {
+            SqlConnection cnn = new SqlConnection(connectionString);
+            SqlDataAdapter da = new SqlDataAdapter();
+            da.SelectCommand = new SqlCommand();
+            da.SelectCommand.Connection = cnn;
+
+            da.SelectCommand.CommandText = "getResultadosCompetencia";
+            da.SelectCommand.CommandType = CommandType.StoredProcedure;
+
+            SqlParameter param;
+            param = new SqlParameter("@id", SqlDbType.Int);
+            param.Direction = ParameterDirection.Input;
+            param.Value = id;
+
+            da.SelectCommand.Parameters.Add(param);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+
+            return dt;
+        }
+
+        public static DataTable getTotales(int id) 
+        {
+            SqlConnection cnn = new SqlConnection(connectionString);
+            SqlDataAdapter da = new SqlDataAdapter();
+            da.SelectCommand = new SqlCommand();
+            da.SelectCommand.Connection = cnn;
+
+            da.SelectCommand.CommandText = "contarEstadosEventos";
+            da.SelectCommand.CommandType = CommandType.StoredProcedure;
+
+            SqlParameter param;
+            param = new SqlParameter("@id", SqlDbType.Int);
+            param.Direction = ParameterDirection.Input;
+            param.Value = id;
+
+            da.SelectCommand.Parameters.Add(param);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+
+            return dt;
+        }
     }
 }

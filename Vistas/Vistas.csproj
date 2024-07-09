@@ -53,12 +53,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>comdepDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="FrmCronometraje.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmCronometraje.Designer.cs">
-      <DependentUpon>FrmCronometraje.cs</DependentUpon>
-    </Compile>
     <Compile Include="FrmGestionAtleta.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -119,13 +113,16 @@
     <Compile Include="FrmRecoverEmail.Designer.cs">
       <DependentUpon>FrmRecoverEmail.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmResultados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmResultados.Designer.cs">
+      <DependentUpon>FrmResultados.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RecoverEmail.cs" />
     <Compile Include="Util.cs" />
-    <EmbeddedResource Include="FrmCronometraje.resx">
-      <DependentUpon>FrmCronometraje.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FrmGestionAtleta.resx">
       <DependentUpon>FrmGestionAtleta.cs</DependentUpon>
     </EmbeddedResource>
@@ -155,6 +152,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmRecoverEmail.resx">
       <DependentUpon>FrmRecoverEmail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmResultados.resx">
+      <DependentUpon>FrmResultados.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
