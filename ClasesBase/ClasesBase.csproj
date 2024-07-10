@@ -56,10 +56,13 @@
     <Compile Include="TrabajarAtleta.cs" />
     <Compile Include="TrabajarCategoria.cs" />
     <Compile Include="TrabajarCompetencia.cs" />
+    <Compile Include="TrabajarCronometraje.cs" />
     <Compile Include="TrabajarDisciplina.cs" />
     <Compile Include="TrabajarEvento.cs" />
+    <Compile Include="TrabajarResultado.cs" />
     <Compile Include="TrabajarUsuario.cs" />
     <Compile Include="Usuario.cs" />
+    <Compile Include="Utilidades.cs" />
     <Compile Include="UtilImagen.cs" />
   </ItemGroup>
   <ItemGroup>

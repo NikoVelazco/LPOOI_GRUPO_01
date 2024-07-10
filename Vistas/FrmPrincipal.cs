@@ -160,7 +160,7 @@ namespace Vistas
 
         private void btnEventos_Click(object sender, EventArgs e)
         {
-            Util.openFormInPanel(new FrmInscripcionEvento(), panelContenedor);
+            Util.openFormInPanel(new FrmGestionEvento(), panelContenedor);
             imgUser.Visible = true;
             btnSlide.BackColor = Color.FromArgb(22, 111, 109);
         }

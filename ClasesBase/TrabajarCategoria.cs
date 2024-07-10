@@ -7,9 +7,7 @@ using System.Data.SqlClient;
 
 namespace ClasesBase
 {
-    /*-----------------*
-     | Categoria (ABM) |
-     *-----------------*/
+    /* # == Categoria (ABM) -------------------------------------- */
     public class TrabajarCategoria
     {
         static readonly string connectionString = ClasesBase.Properties.Settings.Default.comdepConnectionString;
@@ -18,9 +16,7 @@ namespace ClasesBase
         static SqlDataAdapter sqlDataAdapter;
         static Categoria oCategoria;
 
-        /*----------------------------------*
-         | Obtiene el listado de categorias |
-         *----------------------------------*/
+        /* # == Get a list of Categorias ------------------------- */
         public static DataTable getAllCategorias()
         {
             using (sqlConnection = new SqlConnection(connectionString))
@@ -42,9 +38,7 @@ namespace ClasesBase
             }
         }
 
-        /*----------------------*
-         | Agrega una categoria |
-         *----------------------*/
+        /* # == Add a Categoria ---------------------------------- */
         public static void addCategory(string nombre, string descripcion)
         {
             oCategoria = new Categoria();
@@ -65,9 +59,7 @@ namespace ClasesBase
             }
         }
 
-        /*-------------------------*
-         | Modificar una categoria |
-         *-------------------------*/
+        /* # == Update a Categoria ------------------------------- */
         public static void updateCategory(int id, string nombre, string descripcion)
         {
             oCategoria = new Categoria();
@@ -85,15 +77,12 @@ namespace ClasesBase
                     sqlCommand.Parameters.AddWithValue("@Nombre", oCategoria.Cat_Nombre);
                     sqlCommand.Parameters.AddWithValue("@Descripcion", oCategoria.Cat_Descripcion);
                     sqlConnection.Open();
-                    // Executes INSERT, UPDATE or DELETE
                     sqlCommand.ExecuteNonQuery();
                 }
             }
         }
 
-        /*------------------------*
-         | Eliminar una categoria |
-         *------------------------*/
+        /* # == Delete a Categoria ------------------------------- */
         public static void deleteCategory(int id)
         {
             using (sqlConnection = new SqlConnection(connectionString))
@@ -107,33 +96,5 @@ namespace ClasesBase
                 }
             }
         }
-
-        /*------------------------*
-         | Cantidad de categorias | 
-         *------------------------*/
-        //public int getListOfCategoriesSize()
-        //{
-        //    Int32 size = 0;
-
-        //    using (sqlConnection = new SqlConnection(connectionString))
-        //    {
-        //        sqlConnection.Open();
-        //        sqlCommand = new SqlCommand();
-
-        //        sqlCommand.CommandText = "cantidadDeCategorias";
-        //        sqlCommand.CommandType = CommandType.StoredProcedure;
-        //        sqlCommand.Connection = sqlConnection;
-
-        //        SqlParameter sqlParameter = new SqlParameter("@Cantidad", SqlDbType.Int);
-        //        sqlParameter.Direction = ParameterDirection.Output;
-        //        sqlCommand.Parameters.Add(sqlParameter);
-
-        //        sqlCommand.ExecuteNonQuery();
-
-        //        size = (int)sqlCommand.Parameters["@Cantidad"].Value;
-        //    }
-
-        //    return size;
-        //}
     }
 }
