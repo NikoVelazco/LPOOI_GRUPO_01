@@ -17,7 +17,7 @@ namespace Vistas
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new FrmLogin());
             //Application.Run(new FrmPrincipal());
-            Application.Run(new FrmInscripcionEvento());
+            Application.Run(new FrmCronometraje());
         }
     }
 }

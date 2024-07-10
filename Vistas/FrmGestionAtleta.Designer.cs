@@ -33,16 +33,7 @@
             this.dataGridAtleta = new System.Windows.Forms.DataGridView();
             this.lblEditAtleta = new System.Windows.Forms.Label();
             this.panelContenedor = new System.Windows.Forms.Panel();
-            this.btnDeleteAtleta = new System.Windows.Forms.Button();
-            this.btnAgregarAtl = new System.Windows.Forms.Button();
-            this.btnBorrarFiltro = new System.Windows.Forms.Button();
-            this.lblBusqueda = new System.Windows.Forms.Label();
-            this.txtBusqueda = new System.Windows.Forms.TextBox();
-            this.rbtnDni = new System.Windows.Forms.RadioButton();
-            this.rbtnApellido = new System.Windows.Forms.RadioButton();
-            this.btnOrdenar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnEditarAtl = new System.Windows.Forms.Button();
             this.txtFechaNac = new System.Windows.Forms.DateTimePicker();
             this.txtDir = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
@@ -65,6 +56,15 @@
             this.lblGenero = new System.Windows.Forms.Label();
             this.lblAltura = new System.Windows.Forms.Label();
             this.lblDni = new System.Windows.Forms.Label();
+            this.btnDeleteAtleta = new System.Windows.Forms.Button();
+            this.btnAgregarAtl = new System.Windows.Forms.Button();
+            this.btnBorrarFiltro = new System.Windows.Forms.Button();
+            this.lblBusqueda = new System.Windows.Forms.Label();
+            this.txtBusqueda = new System.Windows.Forms.TextBox();
+            this.rbtnDni = new System.Windows.Forms.RadioButton();
+            this.rbtnApellido = new System.Windows.Forms.RadioButton();
+            this.btnOrdenar = new System.Windows.Forms.Button();
+            this.btnEditarAtl = new System.Windows.Forms.Button();
             this.lblTitleCategoria.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridAtleta)).BeginInit();
             this.panelContenedor.SuspendLayout();
@@ -146,130 +146,6 @@
             this.panelContenedor.Size = new System.Drawing.Size(615, 181);
             this.panelContenedor.TabIndex = 48;
             // 
-            // btnDeleteAtleta
-            // 
-            this.btnDeleteAtleta.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnDeleteAtleta.BackColor = System.Drawing.Color.Crimson;
-            this.btnDeleteAtleta.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDeleteAtleta.FlatAppearance.BorderSize = 0;
-            this.btnDeleteAtleta.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkViolet;
-            this.btnDeleteAtleta.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkViolet;
-            this.btnDeleteAtleta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDeleteAtleta.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDeleteAtleta.ForeColor = System.Drawing.Color.White;
-            this.btnDeleteAtleta.Location = new System.Drawing.Point(359, 358);
-            this.btnDeleteAtleta.Name = "btnDeleteAtleta";
-            this.btnDeleteAtleta.Size = new System.Drawing.Size(80, 30);
-            this.btnDeleteAtleta.TabIndex = 70;
-            this.btnDeleteAtleta.Text = "Eliminar";
-            this.btnDeleteAtleta.UseVisualStyleBackColor = false;
-            this.btnDeleteAtleta.Click += new System.EventHandler(this.btnDeleteAtleta_Click);
-            // 
-            // btnAgregarAtl
-            // 
-            this.btnAgregarAtl.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnAgregarAtl.BackColor = System.Drawing.Color.DodgerBlue;
-            this.btnAgregarAtl.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAgregarAtl.FlatAppearance.BorderSize = 0;
-            this.btnAgregarAtl.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkCyan;
-            this.btnAgregarAtl.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkCyan;
-            this.btnAgregarAtl.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAgregarAtl.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregarAtl.ForeColor = System.Drawing.Color.White;
-            this.btnAgregarAtl.Location = new System.Drawing.Point(563, 358);
-            this.btnAgregarAtl.Name = "btnAgregarAtl";
-            this.btnAgregarAtl.Size = new System.Drawing.Size(80, 30);
-            this.btnAgregarAtl.TabIndex = 69;
-            this.btnAgregarAtl.Text = "Agregar";
-            this.btnAgregarAtl.UseVisualStyleBackColor = false;
-            this.btnAgregarAtl.Click += new System.EventHandler(this.btnAgregarAtl_Click);
-            // 
-            // btnBorrarFiltro
-            // 
-            this.btnBorrarFiltro.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnBorrarFiltro.BackColor = System.Drawing.Color.DodgerBlue;
-            this.btnBorrarFiltro.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnBorrarFiltro.FlatAppearance.BorderSize = 0;
-            this.btnBorrarFiltro.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkCyan;
-            this.btnBorrarFiltro.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkCyan;
-            this.btnBorrarFiltro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBorrarFiltro.Font = new System.Drawing.Font("Consolas", 8F, System.Drawing.FontStyle.Bold);
-            this.btnBorrarFiltro.ForeColor = System.Drawing.Color.White;
-            this.btnBorrarFiltro.Location = new System.Drawing.Point(216, 380);
-            this.btnBorrarFiltro.Name = "btnBorrarFiltro";
-            this.btnBorrarFiltro.Size = new System.Drawing.Size(105, 31);
-            this.btnBorrarFiltro.TabIndex = 68;
-            this.btnBorrarFiltro.Text = "Borrar Filtro";
-            this.btnBorrarFiltro.UseVisualStyleBackColor = false;
-            this.btnBorrarFiltro.Click += new System.EventHandler(this.btnBorrarFiltro_Click);
-            // 
-            // lblBusqueda
-            // 
-            this.lblBusqueda.AutoSize = true;
-            this.lblBusqueda.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Bold);
-            this.lblBusqueda.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.lblBusqueda.Location = new System.Drawing.Point(30, 394);
-            this.lblBusqueda.Name = "lblBusqueda";
-            this.lblBusqueda.Size = new System.Drawing.Size(133, 14);
-            this.lblBusqueda.TabIndex = 67;
-            this.lblBusqueda.Text = "Filtre por Nombre:";
-            this.lblBusqueda.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // txtBusqueda
-            // 
-            this.txtBusqueda.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBusqueda.Location = new System.Drawing.Point(28, 417);
-            this.txtBusqueda.Name = "txtBusqueda";
-            this.txtBusqueda.Size = new System.Drawing.Size(293, 23);
-            this.txtBusqueda.TabIndex = 50;
-            this.txtBusqueda.TextChanged += new System.EventHandler(this.txtBusqueda_TextChanged);
-            // 
-            // rbtnDni
-            // 
-            this.rbtnDni.AutoSize = true;
-            this.rbtnDni.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.rbtnDni.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Bold);
-            this.rbtnDni.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.rbtnDni.Location = new System.Drawing.Point(273, 358);
-            this.rbtnDni.Name = "rbtnDni";
-            this.rbtnDni.Size = new System.Drawing.Size(45, 18);
-            this.rbtnDni.TabIndex = 65;
-            this.rbtnDni.TabStop = true;
-            this.rbtnDni.Text = "DNI";
-            this.rbtnDni.UseVisualStyleBackColor = true;
-            // 
-            // rbtnApellido
-            // 
-            this.rbtnApellido.AutoSize = true;
-            this.rbtnApellido.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Bold);
-            this.rbtnApellido.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.rbtnApellido.Location = new System.Drawing.Point(186, 358);
-            this.rbtnApellido.Name = "rbtnApellido";
-            this.rbtnApellido.Size = new System.Drawing.Size(81, 18);
-            this.rbtnApellido.TabIndex = 64;
-            this.rbtnApellido.TabStop = true;
-            this.rbtnApellido.Text = "Apellido";
-            this.rbtnApellido.UseVisualStyleBackColor = true;
-            // 
-            // btnOrdenar
-            // 
-            this.btnOrdenar.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnOrdenar.BackColor = System.Drawing.Color.DodgerBlue;
-            this.btnOrdenar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnOrdenar.FlatAppearance.BorderSize = 0;
-            this.btnOrdenar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkCyan;
-            this.btnOrdenar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkCyan;
-            this.btnOrdenar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnOrdenar.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOrdenar.ForeColor = System.Drawing.Color.White;
-            this.btnOrdenar.Location = new System.Drawing.Point(30, 355);
-            this.btnOrdenar.Name = "btnOrdenar";
-            this.btnOrdenar.Size = new System.Drawing.Size(80, 24);
-            this.btnOrdenar.TabIndex = 63;
-            this.btnOrdenar.Text = "Ordenar";
-            this.btnOrdenar.UseVisualStyleBackColor = false;
-            this.btnOrdenar.Click += new System.EventHandler(this.btnOrdenar_Click);
-            // 
             // label1
             // 
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
@@ -283,25 +159,6 @@
             this.label1.TabIndex = 49;
             this.label1.Text = "DATOS DEL ATLETA";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // btnEditarAtl
-            // 
-            this.btnEditarAtl.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnEditarAtl.BackColor = System.Drawing.Color.DodgerBlue;
-            this.btnEditarAtl.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEditarAtl.FlatAppearance.BorderSize = 0;
-            this.btnEditarAtl.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkCyan;
-            this.btnEditarAtl.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkCyan;
-            this.btnEditarAtl.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEditarAtl.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditarAtl.ForeColor = System.Drawing.Color.White;
-            this.btnEditarAtl.Location = new System.Drawing.Point(465, 358);
-            this.btnEditarAtl.Name = "btnEditarAtl";
-            this.btnEditarAtl.Size = new System.Drawing.Size(80, 30);
-            this.btnEditarAtl.TabIndex = 61;
-            this.btnEditarAtl.Text = "Editar";
-            this.btnEditarAtl.UseVisualStyleBackColor = false;
-            this.btnEditarAtl.Click += new System.EventHandler(this.btnEditarAtl_Click);
             // 
             // txtFechaNac
             // 
@@ -506,7 +363,150 @@
             this.lblDni.TabIndex = 39;
             this.lblDni.Text = "DNI:";
             // 
-            // FormEditAtleta
+            // btnDeleteAtleta
+            // 
+            this.btnDeleteAtleta.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnDeleteAtleta.BackColor = System.Drawing.Color.Crimson;
+            this.btnDeleteAtleta.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDeleteAtleta.FlatAppearance.BorderSize = 0;
+            this.btnDeleteAtleta.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkViolet;
+            this.btnDeleteAtleta.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkViolet;
+            this.btnDeleteAtleta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDeleteAtleta.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeleteAtleta.ForeColor = System.Drawing.Color.White;
+            this.btnDeleteAtleta.Location = new System.Drawing.Point(359, 358);
+            this.btnDeleteAtleta.Name = "btnDeleteAtleta";
+            this.btnDeleteAtleta.Size = new System.Drawing.Size(80, 30);
+            this.btnDeleteAtleta.TabIndex = 70;
+            this.btnDeleteAtleta.Text = "Eliminar";
+            this.btnDeleteAtleta.UseVisualStyleBackColor = false;
+            this.btnDeleteAtleta.Click += new System.EventHandler(this.btnDeleteAtleta_Click);
+            // 
+            // btnAgregarAtl
+            // 
+            this.btnAgregarAtl.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnAgregarAtl.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnAgregarAtl.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAgregarAtl.FlatAppearance.BorderSize = 0;
+            this.btnAgregarAtl.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkCyan;
+            this.btnAgregarAtl.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkCyan;
+            this.btnAgregarAtl.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgregarAtl.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregarAtl.ForeColor = System.Drawing.Color.White;
+            this.btnAgregarAtl.Location = new System.Drawing.Point(563, 358);
+            this.btnAgregarAtl.Name = "btnAgregarAtl";
+            this.btnAgregarAtl.Size = new System.Drawing.Size(80, 30);
+            this.btnAgregarAtl.TabIndex = 69;
+            this.btnAgregarAtl.Text = "Agregar";
+            this.btnAgregarAtl.UseVisualStyleBackColor = false;
+            this.btnAgregarAtl.Click += new System.EventHandler(this.btnAgregarAtl_Click);
+            // 
+            // btnBorrarFiltro
+            // 
+            this.btnBorrarFiltro.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnBorrarFiltro.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnBorrarFiltro.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBorrarFiltro.FlatAppearance.BorderSize = 0;
+            this.btnBorrarFiltro.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkCyan;
+            this.btnBorrarFiltro.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkCyan;
+            this.btnBorrarFiltro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBorrarFiltro.Font = new System.Drawing.Font("Consolas", 8F, System.Drawing.FontStyle.Bold);
+            this.btnBorrarFiltro.ForeColor = System.Drawing.Color.White;
+            this.btnBorrarFiltro.Location = new System.Drawing.Point(216, 380);
+            this.btnBorrarFiltro.Name = "btnBorrarFiltro";
+            this.btnBorrarFiltro.Size = new System.Drawing.Size(105, 31);
+            this.btnBorrarFiltro.TabIndex = 68;
+            this.btnBorrarFiltro.Text = "Borrar Filtro";
+            this.btnBorrarFiltro.UseVisualStyleBackColor = false;
+            this.btnBorrarFiltro.Click += new System.EventHandler(this.btnBorrarFiltro_Click);
+            // 
+            // lblBusqueda
+            // 
+            this.lblBusqueda.AutoSize = true;
+            this.lblBusqueda.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Bold);
+            this.lblBusqueda.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.lblBusqueda.Location = new System.Drawing.Point(30, 394);
+            this.lblBusqueda.Name = "lblBusqueda";
+            this.lblBusqueda.Size = new System.Drawing.Size(133, 14);
+            this.lblBusqueda.TabIndex = 67;
+            this.lblBusqueda.Text = "Filtre por Nombre:";
+            this.lblBusqueda.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // txtBusqueda
+            // 
+            this.txtBusqueda.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBusqueda.Location = new System.Drawing.Point(28, 417);
+            this.txtBusqueda.Name = "txtBusqueda";
+            this.txtBusqueda.Size = new System.Drawing.Size(293, 23);
+            this.txtBusqueda.TabIndex = 50;
+            this.txtBusqueda.TextChanged += new System.EventHandler(this.txtBusqueda_TextChanged);
+            // 
+            // rbtnDni
+            // 
+            this.rbtnDni.AutoSize = true;
+            this.rbtnDni.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.rbtnDni.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Bold);
+            this.rbtnDni.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.rbtnDni.Location = new System.Drawing.Point(273, 358);
+            this.rbtnDni.Name = "rbtnDni";
+            this.rbtnDni.Size = new System.Drawing.Size(45, 18);
+            this.rbtnDni.TabIndex = 65;
+            this.rbtnDni.TabStop = true;
+            this.rbtnDni.Text = "DNI";
+            this.rbtnDni.UseVisualStyleBackColor = true;
+            // 
+            // rbtnApellido
+            // 
+            this.rbtnApellido.AutoSize = true;
+            this.rbtnApellido.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Bold);
+            this.rbtnApellido.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.rbtnApellido.Location = new System.Drawing.Point(186, 358);
+            this.rbtnApellido.Name = "rbtnApellido";
+            this.rbtnApellido.Size = new System.Drawing.Size(81, 18);
+            this.rbtnApellido.TabIndex = 64;
+            this.rbtnApellido.TabStop = true;
+            this.rbtnApellido.Text = "Apellido";
+            this.rbtnApellido.UseVisualStyleBackColor = true;
+            // 
+            // btnOrdenar
+            // 
+            this.btnOrdenar.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnOrdenar.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnOrdenar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnOrdenar.FlatAppearance.BorderSize = 0;
+            this.btnOrdenar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkCyan;
+            this.btnOrdenar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkCyan;
+            this.btnOrdenar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnOrdenar.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOrdenar.ForeColor = System.Drawing.Color.White;
+            this.btnOrdenar.Location = new System.Drawing.Point(30, 355);
+            this.btnOrdenar.Name = "btnOrdenar";
+            this.btnOrdenar.Size = new System.Drawing.Size(80, 24);
+            this.btnOrdenar.TabIndex = 63;
+            this.btnOrdenar.Text = "Ordenar";
+            this.btnOrdenar.UseVisualStyleBackColor = false;
+            this.btnOrdenar.Click += new System.EventHandler(this.btnOrdenar_Click);
+            // 
+            // btnEditarAtl
+            // 
+            this.btnEditarAtl.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnEditarAtl.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnEditarAtl.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEditarAtl.FlatAppearance.BorderSize = 0;
+            this.btnEditarAtl.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkCyan;
+            this.btnEditarAtl.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkCyan;
+            this.btnEditarAtl.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEditarAtl.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditarAtl.ForeColor = System.Drawing.Color.White;
+            this.btnEditarAtl.Location = new System.Drawing.Point(465, 358);
+            this.btnEditarAtl.Name = "btnEditarAtl";
+            this.btnEditarAtl.Size = new System.Drawing.Size(80, 30);
+            this.btnEditarAtl.TabIndex = 61;
+            this.btnEditarAtl.Text = "Editar";
+            this.btnEditarAtl.UseVisualStyleBackColor = false;
+            this.btnEditarAtl.Click += new System.EventHandler(this.btnEditarAtl_Click);
+            // 
+            // FrmGestionAtleta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -526,7 +526,7 @@
             this.Controls.Add(this.dataGridAtleta);
             this.Controls.Add(this.lblTitleCategoria);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "FormEditAtleta";
+            this.Name = "FrmGestionAtleta";
             this.Opacity = 0.95D;
             this.Text = "FrmGestionCategoria";
             this.lblTitleCategoria.ResumeLayout(false);
