@@ -33,6 +33,13 @@
             this.grpListaCompetencias = new System.Windows.Forms.GroupBox();
             this.cmbListaCompetencias = new System.Windows.Forms.ComboBox();
             this.pnlInicioEvento = new System.Windows.Forms.Panel();
+            this.pnlRegistroCronometrajeHoraFin = new System.Windows.Forms.Panel();
+            this.grpFinalizarEvento = new System.Windows.Forms.GroupBox();
+            this.lblValorFechaFinEvento = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.lblValorHoraFinEvento = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.btnFinalizarEvento = new System.Windows.Forms.Button();
             this.grpIniciarEvento = new System.Windows.Forms.GroupBox();
             this.lblValorFechaInicioEvento = new System.Windows.Forms.Label();
             this.lblFechaInicioEvento = new System.Windows.Forms.Label();
@@ -42,24 +49,18 @@
             this.lblGestionCronometrajes = new System.Windows.Forms.Label();
             this.btnBuscarEvento = new System.Windows.Forms.Button();
             this.pnlRegistroCronometrajeHoraInicio = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.dgvEventoSegunAtletaCompetencia = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
-            this.pnlRegistroCronometrajeHoraFin = new System.Windows.Forms.Panel();
-            this.grpFinalizarEvento = new System.Windows.Forms.GroupBox();
-            this.lblValorFechaFinEvento = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.lblValorHoraFinEvento = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.lblFinalizarEvento = new System.Windows.Forms.Button();
+            this.dgvEventoSegunAtletaCompetencia = new System.Windows.Forms.DataGridView();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lblUltimoParticipante = new System.Windows.Forms.Label();
             this.gtpListaAtletas.SuspendLayout();
             this.grpListaCompetencias.SuspendLayout();
             this.pnlInicioEvento.SuspendLayout();
+            this.pnlRegistroCronometrajeHoraFin.SuspendLayout();
+            this.grpFinalizarEvento.SuspendLayout();
             this.grpIniciarEvento.SuspendLayout();
             this.pnlRegistroCronometrajeHoraInicio.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEventoSegunAtletaCompetencia)).BeginInit();
-            this.pnlRegistroCronometrajeHoraFin.SuspendLayout();
-            this.grpFinalizarEvento.SuspendLayout();
             this.SuspendLayout();
             // 
             // gtpListaAtletas
@@ -113,6 +114,80 @@
             this.pnlInicioEvento.Name = "pnlInicioEvento";
             this.pnlInicioEvento.Size = new System.Drawing.Size(600, 125);
             this.pnlInicioEvento.TabIndex = 3;
+            // 
+            // pnlRegistroCronometrajeHoraFin
+            // 
+            this.pnlRegistroCronometrajeHoraFin.Controls.Add(this.grpFinalizarEvento);
+            this.pnlRegistroCronometrajeHoraFin.Location = new System.Drawing.Point(236, 25);
+            this.pnlRegistroCronometrajeHoraFin.Name = "pnlRegistroCronometrajeHoraFin";
+            this.pnlRegistroCronometrajeHoraFin.Size = new System.Drawing.Size(364, 100);
+            this.pnlRegistroCronometrajeHoraFin.TabIndex = 13;
+            this.pnlRegistroCronometrajeHoraFin.Visible = false;
+            // 
+            // grpFinalizarEvento
+            // 
+            this.grpFinalizarEvento.Controls.Add(this.lblUltimoParticipante);
+            this.grpFinalizarEvento.Controls.Add(this.lblValorFechaFinEvento);
+            this.grpFinalizarEvento.Controls.Add(this.label4);
+            this.grpFinalizarEvento.Controls.Add(this.lblValorHoraFinEvento);
+            this.grpFinalizarEvento.Controls.Add(this.label6);
+            this.grpFinalizarEvento.Controls.Add(this.btnFinalizarEvento);
+            this.grpFinalizarEvento.Location = new System.Drawing.Point(134, 0);
+            this.grpFinalizarEvento.Name = "grpFinalizarEvento";
+            this.grpFinalizarEvento.Size = new System.Drawing.Size(230, 103);
+            this.grpFinalizarEvento.TabIndex = 14;
+            this.grpFinalizarEvento.TabStop = false;
+            this.grpFinalizarEvento.Text = "Finalizar Evento";
+            // 
+            // lblValorFechaFinEvento
+            // 
+            this.lblValorFechaFinEvento.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblValorFechaFinEvento.Location = new System.Drawing.Point(109, 45);
+            this.lblValorFechaFinEvento.Name = "lblValorFechaFinEvento";
+            this.lblValorFechaFinEvento.Size = new System.Drawing.Size(100, 23);
+            this.lblValorFechaFinEvento.TabIndex = 4;
+            this.lblValorFechaFinEvento.Text = "- - - -";
+            this.lblValorFechaFinEvento.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label4
+            // 
+            this.label4.Location = new System.Drawing.Point(3, 45);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(100, 23);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "Fecha de fin:";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblValorHoraFinEvento
+            // 
+            this.lblValorHoraFinEvento.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblValorHoraFinEvento.Location = new System.Drawing.Point(109, 20);
+            this.lblValorHoraFinEvento.Name = "lblValorHoraFinEvento";
+            this.lblValorHoraFinEvento.Size = new System.Drawing.Size(100, 23);
+            this.lblValorHoraFinEvento.TabIndex = 2;
+            this.lblValorHoraFinEvento.Text = "- - - -";
+            this.lblValorHoraFinEvento.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label6
+            // 
+            this.label6.Location = new System.Drawing.Point(3, 20);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(100, 23);
+            this.label6.TabIndex = 1;
+            this.label6.Text = "Hora de fin:";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // btnFinalizarEvento
+            // 
+            this.btnFinalizarEvento.AutoSize = true;
+            this.btnFinalizarEvento.Enabled = false;
+            this.btnFinalizarEvento.Location = new System.Drawing.Point(6, 71);
+            this.btnFinalizarEvento.Name = "btnFinalizarEvento";
+            this.btnFinalizarEvento.Size = new System.Drawing.Size(92, 23);
+            this.btnFinalizarEvento.TabIndex = 0;
+            this.btnFinalizarEvento.Text = "Finalizar Evento";
+            this.btnFinalizarEvento.UseVisualStyleBackColor = true;
+            this.btnFinalizarEvento.Click += new System.EventHandler(this.lblFinalizarEvento_Click);
             // 
             // grpIniciarEvento
             // 
@@ -194,7 +269,7 @@
             // 
             this.btnBuscarEvento.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnBuscarEvento.AutoSize = true;
-            this.btnBuscarEvento.Location = new System.Drawing.Point(0, 107);
+            this.btnBuscarEvento.Location = new System.Drawing.Point(257, 105);
             this.btnBuscarEvento.Name = "btnBuscarEvento";
             this.btnBuscarEvento.Size = new System.Drawing.Size(87, 23);
             this.btnBuscarEvento.TabIndex = 3;
@@ -216,30 +291,6 @@
             this.pnlRegistroCronometrajeHoraInicio.TabIndex = 13;
             this.pnlRegistroCronometrajeHoraInicio.Visible = false;
             // 
-            // label1
-            // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label1.Location = new System.Drawing.Point(0, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(600, 23);
-            this.label1.TabIndex = 13;
-            this.label1.Text = "Registro de tiempos de llegada";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // dgvEventoSegunAtletaCompetencia
-            // 
-            this.dgvEventoSegunAtletaCompetencia.AllowUserToAddRows = false;
-            this.dgvEventoSegunAtletaCompetencia.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvEventoSegunAtletaCompetencia.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvEventoSegunAtletaCompetencia.Location = new System.Drawing.Point(0, 134);
-            this.dgvEventoSegunAtletaCompetencia.Name = "dgvEventoSegunAtletaCompetencia";
-            this.dgvEventoSegunAtletaCompetencia.ReadOnly = true;
-            this.dgvEventoSegunAtletaCompetencia.Size = new System.Drawing.Size(293, 151);
-            this.dgvEventoSegunAtletaCompetencia.TabIndex = 14;
-            // 
             // label2
             // 
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
@@ -253,77 +304,39 @@
             this.label2.Text = "Evento";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // pnlRegistroCronometrajeHoraFin
+            // dgvEventoSegunAtletaCompetencia
             // 
-            this.pnlRegistroCronometrajeHoraFin.Controls.Add(this.grpFinalizarEvento);
-            this.pnlRegistroCronometrajeHoraFin.Location = new System.Drawing.Point(236, 25);
-            this.pnlRegistroCronometrajeHoraFin.Name = "pnlRegistroCronometrajeHoraFin";
-            this.pnlRegistroCronometrajeHoraFin.Size = new System.Drawing.Size(364, 100);
-            this.pnlRegistroCronometrajeHoraFin.TabIndex = 13;
-            this.pnlRegistroCronometrajeHoraFin.Visible = false;
+            this.dgvEventoSegunAtletaCompetencia.AllowUserToAddRows = false;
+            this.dgvEventoSegunAtletaCompetencia.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvEventoSegunAtletaCompetencia.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvEventoSegunAtletaCompetencia.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvEventoSegunAtletaCompetencia.Location = new System.Drawing.Point(129, 134);
+            this.dgvEventoSegunAtletaCompetencia.Name = "dgvEventoSegunAtletaCompetencia";
+            this.dgvEventoSegunAtletaCompetencia.ReadOnly = true;
+            this.dgvEventoSegunAtletaCompetencia.Size = new System.Drawing.Size(350, 150);
+            this.dgvEventoSegunAtletaCompetencia.TabIndex = 14;
+            this.dgvEventoSegunAtletaCompetencia.RowStateChanged += new System.Windows.Forms.DataGridViewRowStateChangedEventHandler(this.dgvEventoSegunAtletaCompetencia_RowStateChanged);
             // 
-            // grpFinalizarEvento
+            // label1
             // 
-            this.grpFinalizarEvento.Controls.Add(this.lblValorFechaFinEvento);
-            this.grpFinalizarEvento.Controls.Add(this.label4);
-            this.grpFinalizarEvento.Controls.Add(this.lblValorHoraFinEvento);
-            this.grpFinalizarEvento.Controls.Add(this.label6);
-            this.grpFinalizarEvento.Controls.Add(this.lblFinalizarEvento);
-            this.grpFinalizarEvento.Location = new System.Drawing.Point(134, 0);
-            this.grpFinalizarEvento.Name = "grpFinalizarEvento";
-            this.grpFinalizarEvento.Size = new System.Drawing.Size(230, 103);
-            this.grpFinalizarEvento.TabIndex = 14;
-            this.grpFinalizarEvento.TabStop = false;
-            this.grpFinalizarEvento.Text = "Finalizar Evento";
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label1.Location = new System.Drawing.Point(0, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(600, 23);
+            this.label1.TabIndex = 13;
+            this.label1.Text = "Registro de tiempos de llegada";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // lblValorFechaFinEvento
+            // lblUltimoParticipante
             // 
-            this.lblValorFechaFinEvento.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblValorFechaFinEvento.Location = new System.Drawing.Point(109, 45);
-            this.lblValorFechaFinEvento.Name = "lblValorFechaFinEvento";
-            this.lblValorFechaFinEvento.Size = new System.Drawing.Size(100, 23);
-            this.lblValorFechaFinEvento.TabIndex = 4;
-            this.lblValorFechaFinEvento.Text = "- - - -";
-            this.lblValorFechaFinEvento.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label4
-            // 
-            this.label4.Location = new System.Drawing.Point(3, 45);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(100, 23);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Fecha de fin:";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lblValorHoraFinEvento
-            // 
-            this.lblValorHoraFinEvento.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblValorHoraFinEvento.Location = new System.Drawing.Point(109, 20);
-            this.lblValorHoraFinEvento.Name = "lblValorHoraFinEvento";
-            this.lblValorHoraFinEvento.Size = new System.Drawing.Size(100, 23);
-            this.lblValorHoraFinEvento.TabIndex = 2;
-            this.lblValorHoraFinEvento.Text = "- - - -";
-            this.lblValorHoraFinEvento.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label6
-            // 
-            this.label6.Location = new System.Drawing.Point(3, 20);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(100, 23);
-            this.label6.TabIndex = 1;
-            this.label6.Text = "Hora de fin:";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lblFinalizarEvento
-            // 
-            this.lblFinalizarEvento.AutoSize = true;
-            this.lblFinalizarEvento.Location = new System.Drawing.Point(6, 71);
-            this.lblFinalizarEvento.Name = "lblFinalizarEvento";
-            this.lblFinalizarEvento.Size = new System.Drawing.Size(92, 23);
-            this.lblFinalizarEvento.TabIndex = 0;
-            this.lblFinalizarEvento.Text = "Finalizar Evento";
-            this.lblFinalizarEvento.UseVisualStyleBackColor = true;
-            this.lblFinalizarEvento.Click += new System.EventHandler(this.lblFinalizarEvento_Click);
+            this.lblUltimoParticipante.Location = new System.Drawing.Point(109, 72);
+            this.lblUltimoParticipante.Name = "lblUltimoParticipante";
+            this.lblUltimoParticipante.Size = new System.Drawing.Size(100, 23);
+            this.lblUltimoParticipante.TabIndex = 5;
+            this.lblUltimoParticipante.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // FrmCronometrajes
             // 
@@ -334,19 +347,19 @@
             this.Controls.Add(this.pnlRegistroCronometrajeHoraInicio);
             this.Name = "FrmCronometrajes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmCronometrajes";
+            this.Text = "Gestión Cronometrajes";
             this.Load += new System.EventHandler(this.FrmCronometrajes_Load);
             this.gtpListaAtletas.ResumeLayout(false);
             this.grpListaCompetencias.ResumeLayout(false);
             this.pnlInicioEvento.ResumeLayout(false);
+            this.pnlRegistroCronometrajeHoraFin.ResumeLayout(false);
+            this.grpFinalizarEvento.ResumeLayout(false);
+            this.grpFinalizarEvento.PerformLayout();
             this.grpIniciarEvento.ResumeLayout(false);
             this.grpIniciarEvento.PerformLayout();
             this.pnlRegistroCronometrajeHoraInicio.ResumeLayout(false);
             this.pnlRegistroCronometrajeHoraInicio.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEventoSegunAtletaCompetencia)).EndInit();
-            this.pnlRegistroCronometrajeHoraFin.ResumeLayout(false);
-            this.grpFinalizarEvento.ResumeLayout(false);
-            this.grpFinalizarEvento.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -376,6 +389,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lblValorHoraFinEvento;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button lblFinalizarEvento;
+        private System.Windows.Forms.Button btnFinalizarEvento;
+        private System.Windows.Forms.Label lblUltimoParticipante;
     }
 }

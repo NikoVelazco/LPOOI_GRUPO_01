@@ -12,7 +12,7 @@ namespace Vistas
 {
     public partial class FrmCronometrajes : Form
     {
-        private DateTime initializeHoraInicioEvento;
+        private static DateTime initializeHoraInicioEvento;
 
         public FrmCronometrajes()
         {
@@ -66,14 +66,36 @@ namespace Vistas
             int com_Id = (int)cmbListaCompetencias.SelectedValue;
             
             dgvEventoSegunAtletaCompetencia.DataSource = TrabajarCronometraje.SearchEventoByAtletaAndCompetencia(atl_Id, com_Id);
-            dgvEventoSegunAtletaCompetencia.Columns[0].Visible = false;
+            dgvEventoSegunAtletaCompetencia.Columns["Id"].Visible = false;
         }
 
         private void lblFinalizarEvento_Click(object sender, EventArgs e)
         {
-            DateTime dateTimeHoraFin = DateTime.Now;
             // Buscar evento y mostrarlo cuando se haga click
+            int eve_Id = (int)dgvEventoSegunAtletaCompetencia.CurrentRow.Cells[0].Value;
 
+            if (eve_Id > 0)
+            {
+                DateTime initializeHoraFinEvento = DateTime.Now;
+                
+                TrabajarCronometraje.UpdateHoraFinEvent(
+                    eve_Id,
+                    initializeHoraInicioEvento,
+                    initializeHoraFinEvento
+                );
+                
+                lblValorHoraFinEvento.Text = initializeHoraFinEvento.ToString("hh:mm:ss");
+                lblValorFechaFinEvento.Text = initializeHoraFinEvento.ToString("dd MMMM yyyy");
+                loadEventoSegunAtletaCompetencia();
+            }
+
+            lblUltimoParticipante.Text = "Último participante";
+            lblUltimoParticipante.ForeColor = Color.Red;
+        }
+
+        private void dgvEventoSegunAtletaCompetencia_RowStateChanged(object sender, DataGridViewRowStateChangedEventArgs e)
+        {
+            btnFinalizarEvento.Enabled = !btnFinalizarEvento.Enabled;
         }
     }
 }
