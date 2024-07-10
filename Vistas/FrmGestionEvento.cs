@@ -10,9 +10,9 @@ using ClasesBase;
 
 namespace Vistas
 {
-    public partial class FrmInscripcionEvento : Form
+    public partial class FrmGestionEvento : Form
     {
-        public FrmInscripcionEvento()
+        public FrmGestionEvento()
         {
             InitializeComponent();
         }
@@ -56,27 +56,25 @@ namespace Vistas
         private void btnRegistrarEvento_Click(object sender, EventArgs e)
         {
             Boolean athleteWasFound = TrabajarAtleta.atletaIsFound(Int32.Parse(cmbListaAtletas.SelectedValue.ToString()));
+            Boolean dateIsAllowed = isEventoDateTimeBeforeOrEqualToCompetenciaDateTime();
 
             if (athleteWasFound)
             {
-                lblAtletaRegistrado.Visible = true;
-                lblAtletaRegistrado.Text = "El atleta se encuentra inscripto a una competencia";
+                MessageBox.Show("El Atleta ya se encuentra inscripto a un evento", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            else
+            
+            if (dateIsAllowed)
             {
-                if (isEventoDateTimeBeforeCompetenciaDateTime())
-                {
-                    lblFechaCompetenciaIncorrecta.Visible = true;
-                    lblFechaCompetenciaIncorrecta.Text = "Fecha incompatible con el evento";
-                }
-                else
-                {
-                    TrabajarEvento.insertEvento(
-                        Int32.Parse(cmbListaCompetencias.SelectedValue.ToString()),
-                        Int32.Parse(cmbListaAtletas.SelectedValue.ToString())
-                    );
-                    loadListOfEventos();
-                }
+                MessageBox.Show("La fecha de la Competencia es incorrecta", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            if (!athleteWasFound && !dateIsAllowed)
+            {
+                TrabajarEvento.insertEvento(
+                    Int32.Parse(cmbListaCompetencias.SelectedValue.ToString()),
+                    Int32.Parse(cmbListaAtletas.SelectedValue.ToString())
+                );
+                loadListOfEventos();
             }
         }
 
@@ -95,7 +93,7 @@ namespace Vistas
         /* # ==========================================================================
            # = Load Eventos (DataTable), Atletas (ComboBox) y Competencias (ComboBox) =
            # ========================================================================== */
-        private Boolean isEventoDateTimeBeforeCompetenciaDateTime()
+        private Boolean isEventoDateTimeBeforeOrEqualToCompetenciaDateTime()
         {
             DateTime dateTime = Convert.ToDateTime(txtFechaInicioCompetencia.Text);
             return (DateTime.Today <= dateTime);
@@ -106,7 +104,7 @@ namespace Vistas
             DataTable dataTable = TrabajarEvento.searchAtletaByDNI(txtBuscarAtleta.Text);
             dgvAnularInscripcion.DataSource = dataTable;
             dgvAnularInscripcion.Columns["Id"].Visible = false;
-            getInformacionAtleta(dataTable, txtInformacionAtletaAnularInscripcion);
+            getInformacionAtleta(dataTable, lblInformacionAtletaAnularInscripcion);
         }
 
         private void txtBuscarAtleta_Enter(object sender, EventArgs e)
@@ -143,13 +141,12 @@ namespace Vistas
         }
 
         private void txtBuscarAtletaAcredicacion_TextChanged(object sender, EventArgs e)
-        {   
+        {
             DataTable dataTable = TrabajarEvento.searchAtletaByDNI(txtBuscarAtletaAcredicacion.Text);
             dgvRegistrarAcreditacion.DataSource = dataTable;
             dgvRegistrarAcreditacion.Columns["Id"].Visible = false;
             dgvRegistrarAcreditacion.Columns["Atleta"].Visible = false;
-            getInformacionAtleta(dataTable, txtInformacionAtletaAcreditarInscripcion);
-            
+            getInformacionAtleta(dataTable, lblInformacionAtletaRegistrarAcreditacion);
         }
 
         private void txtBuscarAtletaAcredicacion_Enter(object sender, EventArgs e)
@@ -170,11 +167,11 @@ namespace Vistas
             }
         }
 
-        private void getInformacionAtleta(DataTable dataTable, TextBox textBox)
+        private void getInformacionAtleta(DataTable dataTable, Label label)
         {
             foreach (DataRow row in dataTable.Rows)
             {
-                textBox.Text = row["Atleta"].ToString();
+                label.Text = row["Atleta"].ToString();
             }
         }
     }
