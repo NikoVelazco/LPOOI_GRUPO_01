@@ -133,6 +133,16 @@ namespace Vistas.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap cronometraje {
+            get {
+                object obj = ResourceManager.GetObject("cronometraje", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap disciplina {
             get {
                 object obj = ResourceManager.GetObject("disciplina", resourceCulture);
