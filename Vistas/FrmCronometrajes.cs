@@ -53,11 +53,12 @@ namespace Vistas
         private void btnIniciarEvento_Click(object sender, EventArgs e)
         {
             pnlRegistroCronometrajeHoraInicio.Visible = true;
-            pnlRegistroCronometrajeHoraFin.Visible = true;
+            pnlRegistroCronometrajeHoraFechaFin.Visible = true;
             initializeHoraFechaInicioEvento = DateTime.Now;
             lblValorHoraInicioEvento.Text = initializeHoraFechaInicioEvento.ToString("h:mm:ss tt");
             lblValorFechaInicioEvento.Text = initializeHoraFechaInicioEvento.ToString("dd MMMM yyyy");
             btnIniciarEvento.Enabled = false;
+            btnAsignarFechaHoraInicio.Enabled = true;
         }
 
         private void btnBuscarEvento_Click(object sender, EventArgs e)
@@ -68,29 +69,25 @@ namespace Vistas
             dgvEventoSegunAtletaCompetencia.DataSource = TrabajarEvento.SearchEventoByAtletaAndCompetencia(atletaId, competenciaId);
 
             dgvEventoSegunAtletaCompetencia.Columns[0].Visible = false;
-
-            if (dgvEventoSegunAtletaCompetencia.RowCount > 0 && !dgvEventoSegunAtletaCompetencia.CurrentRow.IsNewRow)
-            {
-                btnFinalizarEvento.Enabled = !btnFinalizarEvento.Enabled;
-                lblValorHoraFinEvento.Enabled = !lblValorHoraFinEvento.Enabled;
-                lblValorFechaFinEvento.Enabled = !lblValorFechaFinEvento.Enabled;
-            }
-            else
-            {
-                btnFinalizarEvento.Enabled = false;
-            }
         }
 
         private void btnFinalizarEvento_Click(object sender, EventArgs e)
         {
-            initializeHoraFechaFinEvento = DateTime.Now;
-
             if (dgvEventoSegunAtletaCompetencia.RowCount > 0 && !dgvEventoSegunAtletaCompetencia.CurrentRow.IsNewRow)
             {
-                int eventoId = (int)dgvEventoSegunAtletaCompetencia.CurrentRow.Cells["Id"].Value;
-                
-                if (eventoId > 0)
+                initializeHoraFechaFinEvento = DateTime.Now;
+
+                DialogResult confirmationMessage = MessageBox.Show(
+                    "Desea asignar fecha-hora del fin del evento",
+                    "Fin Evento",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question
+                );
+
+                if (confirmationMessage == DialogResult.Yes)
                 {
+                    int eventoId = (int)dgvEventoSegunAtletaCompetencia.CurrentRow.Cells["Id"].Value;
+
                     if (rdoIngresoManual.Checked)
                     {
                         initializeHoraFechaFinEvento = Convert.ToDateTime(
@@ -113,6 +110,12 @@ namespace Vistas
                             initializeHoraFechaFinEvento
                         );
                     }
+                    MessageBox.Show(
+                        "El Atleta ha finalizado el evento",
+                        "Fin del evento",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.None
+                    );
 
                     lblValorHoraFinEvento.Text = initializeHoraFechaFinEvento.ToString("h:mm:ss tt");
                     lblValorFechaFinEvento.Text = initializeHoraFechaFinEvento.ToString("dd MMMM yyyy");
@@ -121,7 +124,12 @@ namespace Vistas
             }
             else
             {
-                MessageBox.Show("Debe seleccionar una competencia", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(
+                    "No es posible realizar esta operacíon, antes debe buscar un evento y seleccionarlo",
+                    "ERROR",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                );
             }
         }
 
@@ -141,43 +149,195 @@ namespace Vistas
         {
             if (dgvEventoSegunAtletaCompetencia.RowCount > 0 && !dgvEventoSegunAtletaCompetencia.CurrentRow.IsNewRow)
             {
-                TrabajarEvento.UpdateEventoEstado(int.Parse(dgvEventoSegunAtletaCompetencia.CurrentRow.Cells["Id"].Value.ToString()), EventoEstado.ABANDONO);
+                DialogResult confirmationMessage = MessageBox.Show(
+                    "Desea asignar abandono al Atleta",
+                    "Abandono",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question
+                );
+
+                if (confirmationMessage == DialogResult.Yes)
+                {
+                    TrabajarEvento.UpdateEventoEstado(int.Parse(dgvEventoSegunAtletaCompetencia.CurrentRow.Cells["Id"].Value.ToString()), EventoEstado.ABANDONO);
+                    MessageBox.Show(
+                        "El Atleta ha abandonado el evento",
+                        "Abandono",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.None
+                    );
+                    loadEventoSegunAtletaCompetencia();
+                }
             }
-            loadEventoSegunAtletaCompetencia();
+            else
+            {
+                MessageBox.Show(
+                    "No es posible realizar esta operacíon, antes debe buscar un evento y seleccionarlo",
+                    "ERROR",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                );
+            }
         }
 
         private void btnActualizarEventoDescalificado_Click(object sender, EventArgs e)
         {
             if (dgvEventoSegunAtletaCompetencia.RowCount > 0 && !dgvEventoSegunAtletaCompetencia.CurrentRow.IsNewRow)
             {
-                TrabajarEvento.UpdateEventoEstado(int.Parse(dgvEventoSegunAtletaCompetencia.CurrentRow.Cells["Id"].Value.ToString()), EventoEstado.DESCALIFICADO);
+                DialogResult confirmationMessage = MessageBox.Show(
+                    "Desea descalificar al Atleta",
+                    "Descalificación",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question
+                );
+
+                if (confirmationMessage == DialogResult.Yes)
+                {
+                    TrabajarEvento.UpdateEventoEstado(int.Parse(dgvEventoSegunAtletaCompetencia.CurrentRow.Cells["Id"].Value.ToString()), EventoEstado.DESCALIFICADO);
+                    MessageBox.Show(
+                        "Atleta ha sido descalificado del evento",
+                        "Descalificación",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.None
+                    );
+
+                    loadEventoSegunAtletaCompetencia();
+                }
             }
-            loadEventoSegunAtletaCompetencia();
+            else
+            {
+                MessageBox.Show(
+                    "No es posible realizar esta operacíon, antes debe buscar un evento y seleccionarlo",
+                    "ERROR",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                );
+            }
         }
 
         private void btnActualizarFechaInicio_Click(object sender, EventArgs e)
         {
-            int eventoId = (int)dgvEventoSegunAtletaCompetencia.CurrentRow.Cells["Id"].Value;
-
-            initializeHoraFechaInicioEvento = Convert.ToDateTime(
-                dtpActualizarHoraInicio.Value.ToString("h:mm:ss tt") +
-                " " +
-                dtpActualizarFechaInicio.Value.ToString("MM/dd/yyyy")
-            );
-
-            if (initializeHoraFechaInicioEvento <= Convert.ToDateTime(dgvEventoSegunAtletaCompetencia.CurrentRow.Cells["Hora Fin"].Value))
+            if (dgvEventoSegunAtletaCompetencia.RowCount > 0 && !dgvEventoSegunAtletaCompetencia.CurrentRow.IsNewRow)
             {
-                TrabajarCronometraje.UpdateHoraInicioEvento(
-                    eventoId,
-                    initializeHoraFechaInicioEvento
-                );
+                dgvEventoSegunAtletaCompetencia.CurrentRow.Selected = true;
+
+                if (string.IsNullOrWhiteSpace(Convert.ToString(dgvEventoSegunAtletaCompetencia.CurrentRow.Cells["Hora Fin"].Value)))
+                {
+                    DialogResult confirmationMessage = MessageBox.Show(
+                        "Desea actualizar la fecha de inicio del evento",
+                        "Actualizar",
+                        MessageBoxButtons.YesNo,
+                        MessageBoxIcon.Question
+                    );
+
+                    if (confirmationMessage == DialogResult.Yes)
+                    {
+                        int eventoId = (int)dgvEventoSegunAtletaCompetencia.CurrentRow.Cells["Id"].Value;
+
+                        initializeHoraFechaInicioEvento = Convert.ToDateTime(
+                            dtpActualizarHoraInicio.Value.ToString("h:mm:ss tt") +
+                            " " +
+                            dtpActualizarFechaInicio.Value.ToString("MM/dd/yyyy")
+                        );
+
+                        TrabajarCronometraje.UpdateHoraInicioEvento(
+                            eventoId,
+                            initializeHoraFechaInicioEvento
+                        );
+
+                        MessageBox.Show(
+                            "La hora del inicio del evento ha sido actualizada",
+                            "Actualización",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.None
+                        );
+                    }
+                }
+                else
+                {
+                    if (initializeHoraFechaInicioEvento <= Convert.ToDateTime(dgvEventoSegunAtletaCompetencia.CurrentRow.Cells["Hora Fin"].Value))
+                    {
+                        DialogResult confirmationMessage = MessageBox.Show(
+                            "Desea actualizar la fecha de inicio del evento",
+                            "Actualizar",
+                            MessageBoxButtons.YesNo,
+                            MessageBoxIcon.Question
+                         );
+
+                        if (confirmationMessage == DialogResult.Yes)
+                        {
+                            int eventoId = (int)dgvEventoSegunAtletaCompetencia.CurrentRow.Cells["Id"].Value;
+
+                            initializeHoraFechaInicioEvento = Convert.ToDateTime(
+                                dtpActualizarHoraInicio.Value.ToString("h:mm:ss tt") +
+                                " " +
+                                dtpActualizarFechaInicio.Value.ToString("MM/dd/yyyy")
+                            );
+
+                            TrabajarCronometraje.UpdateHoraInicioEvento(
+                                eventoId,
+                                initializeHoraFechaInicioEvento
+                            );
+
+                            MessageBox.Show(
+                                "La hora del inicio del evento ha sido actualizada",
+                                "Actualización",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.None
+                            );
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show(
+                            "No es posible realizar esta operacíon, antes debe buscar un evento y seleccionarlo",
+                            "ERROR",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Error
+                        );
+                    }
+                }
+                loadEventoSegunAtletaCompetencia();
             }
             else
             {
-                MessageBox.Show("La fecha debe ser anterior a la fecha de fin del evento", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(
+                    "No es posible realizar esta operacíon, antes debe buscar un evento y seleccionarlo",
+                    "ERROR",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                );
             }
+        }
 
-            loadEventoSegunAtletaCompetencia();            
+        private void btnAsignarFechaHoraInicio_Click(object sender, EventArgs e)
+        {
+            if (dgvEventoSegunAtletaCompetencia.RowCount > 0 && !dgvEventoSegunAtletaCompetencia.CurrentRow.IsNewRow)
+            {
+                int eventoId = (int)dgvEventoSegunAtletaCompetencia.CurrentRow.Cells["Id"].Value;
+
+                TrabajarCronometraje.UpdateHoraInicioEvento(
+                        eventoId,
+                        initializeHoraFechaInicioEvento
+                );
+
+                MessageBox.Show(
+                    "La hora del inicio del evento ha sido asignada",
+                    "Asigncación",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.None
+                );
+
+                loadEventoSegunAtletaCompetencia();
+            }
+            else
+            {
+                MessageBox.Show(
+                    "No es posible realizar esta operacíon, antes debe buscar un evento y seleccionarlo",
+                    "ERROR",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                );
+            }
         }
     }
 }

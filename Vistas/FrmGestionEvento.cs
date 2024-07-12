@@ -39,8 +39,6 @@ namespace Vistas
             cmbListaAtletas.ValueMember = "Id";
         }
 
-
-
         private void loadComboBoxWithCompetencias()
         {
             DataTable dataTable = TrabajarCompetencia.getAllowedCompetencias();
@@ -61,29 +59,52 @@ namespace Vistas
             
             if (dateIsAllowed)
             {
-                MessageBox.Show("La fecha de la Competencia es incorrecta", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("La fecha de la Competencia es incorrecta, debe ser anterior al día de hoy", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             if (!athleteWasFound && !dateIsAllowed)
             {
-                TrabajarEvento.InsertEvento(
-                    Int32.Parse(cmbListaCompetencias.SelectedValue.ToString()),
-                    Int32.Parse(cmbListaAtletas.SelectedValue.ToString())
-                );
-                loadListOfEventos();
+                DialogResult confirmationMessage = MessageBox.Show("Desea registrar inscripción del Atleta", "Registrar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (confirmationMessage == DialogResult.Yes)
+                {
+                    TrabajarEvento.InsertEvento(
+                        Int32.Parse(cmbListaCompetencias.SelectedValue.ToString()),
+                        Int32.Parse(cmbListaAtletas.SelectedValue.ToString())
+                    );
+                    
+                    MessageBox.Show("Atleta registrado correctamente", "Registro inscripción", MessageBoxButtons.OK, MessageBoxIcon.None);
+                    
+                    loadListOfEventos();    
+                }
             }
         }
 
         private void btnAnularInscripcionEvento_Click(object sender, EventArgs e)
         {
-            TrabajarEvento.UpdateEventoEstado(int.Parse(dgvAnularInscripcion.CurrentRow.Cells["Id"].Value.ToString()), EventoEstado.ANULADO);
-            loadListOfEventos();
+            DialogResult confirmationMessage = MessageBox.Show("Desea anular inscripción del Atleta", "Anular", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (confirmationMessage == DialogResult.Yes)
+            {
+                TrabajarEvento.UpdateEventoEstado(int.Parse(dgvAnularInscripcion.CurrentRow.Cells["Id"].Value.ToString()), EventoEstado.ANULADO);
+                
+                MessageBox.Show("Inscripción a evento anulada", "Anulación inscripción", MessageBoxButtons.OK, MessageBoxIcon.None);
+                
+                loadListOfEventos();    
+            }
         }
 
         private void btnRegistrarAcreditacionEvento_Click(object sender, EventArgs e)
         {
-            TrabajarEvento.RegisterEvento(int.Parse(dgvRegistrarAcreditacion.CurrentRow.Cells["Id"].Value.ToString()));
-            loadListOfEventos();
+            DialogResult confirmationMessage = MessageBox.Show("Desea acreditar inscripción del Atleta", "Acreditar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (confirmationMessage == DialogResult.Yes)
+            {
+                TrabajarEvento.RegisterEvento(int.Parse(dgvRegistrarAcreditacion.CurrentRow.Cells["Id"].Value.ToString()));
+
+                MessageBox.Show("Adreditación a evento confirmada", "Acreditar inscripción", MessageBoxButtons.OK, MessageBoxIcon.None);
+
+                loadListOfEventos();    
+            }
         }
 
         private Boolean isEventoDateTimeBeforeOrEqualToCompetenciaDateTime()
