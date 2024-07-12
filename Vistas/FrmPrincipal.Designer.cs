@@ -43,6 +43,7 @@
             this.txtRol = new System.Windows.Forms.Label();
             this.txtUser = new System.Windows.Forms.Label();
             this.menuVertical = new System.Windows.Forms.Panel();
+            this.btnCronometraje = new System.Windows.Forms.Button();
             this.btnEventos = new System.Windows.Forms.Button();
             this.btnDisciplinas = new System.Windows.Forms.Button();
             this.btnCategorias = new System.Windows.Forms.Button();
@@ -235,6 +236,7 @@
             // menuVertical
             // 
             this.menuVertical.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(111)))), ((int)(((byte)(109)))));
+            this.menuVertical.Controls.Add(this.btnCronometraje);
             this.menuVertical.Controls.Add(this.btnEventos);
             this.menuVertical.Controls.Add(this.btnDisciplinas);
             this.menuVertical.Controls.Add(this.btnCategorias);
@@ -248,6 +250,26 @@
             this.menuVertical.Size = new System.Drawing.Size(200, 444);
             this.menuVertical.TabIndex = 26;
             // 
+            // btnCronometraje
+            // 
+            this.btnCronometraje.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(111)))), ((int)(((byte)(109)))));
+            this.btnCronometraje.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCronometraje.FlatAppearance.BorderSize = 0;
+            this.btnCronometraje.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(43)))), ((int)(((byte)(44)))));
+            this.btnCronometraje.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(43)))), ((int)(((byte)(44)))));
+            this.btnCronometraje.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCronometraje.Font = new System.Drawing.Font("Consolas", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCronometraje.ForeColor = System.Drawing.Color.White;
+            this.btnCronometraje.Image = global::Vistas.Properties.Resources.cronometraje;
+            this.btnCronometraje.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCronometraje.Location = new System.Drawing.Point(-2, 389);
+            this.btnCronometraje.Name = "btnCronometraje";
+            this.btnCronometraje.Size = new System.Drawing.Size(200, 46);
+            this.btnCronometraje.TabIndex = 35;
+            this.btnCronometraje.Text = "      Cronometraje";
+            this.btnCronometraje.UseVisualStyleBackColor = false;
+            this.btnCronometraje.Click += new System.EventHandler(this.btnCronometraje_Click);
+            // 
             // btnEventos
             // 
             this.btnEventos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(111)))), ((int)(((byte)(109)))));
@@ -260,7 +282,7 @@
             this.btnEventos.ForeColor = System.Drawing.Color.White;
             this.btnEventos.Image = global::Vistas.Properties.Resources.evento;
             this.btnEventos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEventos.Location = new System.Drawing.Point(-1, 364);
+            this.btnEventos.Location = new System.Drawing.Point(-3, 337);
             this.btnEventos.Name = "btnEventos";
             this.btnEventos.Size = new System.Drawing.Size(200, 46);
             this.btnEventos.TabIndex = 34;
@@ -280,7 +302,7 @@
             this.btnDisciplinas.ForeColor = System.Drawing.Color.White;
             this.btnDisciplinas.Image = global::Vistas.Properties.Resources.disciplina;
             this.btnDisciplinas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDisciplinas.Location = new System.Drawing.Point(-1, 312);
+            this.btnDisciplinas.Location = new System.Drawing.Point(-3, 285);
             this.btnDisciplinas.Name = "btnDisciplinas";
             this.btnDisciplinas.Size = new System.Drawing.Size(200, 46);
             this.btnDisciplinas.TabIndex = 33;
@@ -300,7 +322,7 @@
             this.btnCategorias.ForeColor = System.Drawing.Color.White;
             this.btnCategorias.Image = global::Vistas.Properties.Resources.categoria;
             this.btnCategorias.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCategorias.Location = new System.Drawing.Point(-3, 260);
+            this.btnCategorias.Location = new System.Drawing.Point(-5, 233);
             this.btnCategorias.Name = "btnCategorias";
             this.btnCategorias.Size = new System.Drawing.Size(200, 46);
             this.btnCategorias.TabIndex = 32;
@@ -320,7 +342,7 @@
             this.btnCompetencia.ForeColor = System.Drawing.Color.White;
             this.btnCompetencia.Image = global::Vistas.Properties.Resources.competencia;
             this.btnCompetencia.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCompetencia.Location = new System.Drawing.Point(0, 204);
+            this.btnCompetencia.Location = new System.Drawing.Point(-2, 177);
             this.btnCompetencia.Name = "btnCompetencia";
             this.btnCompetencia.Size = new System.Drawing.Size(200, 46);
             this.btnCompetencia.TabIndex = 31;
@@ -340,7 +362,7 @@
             this.btnAtletas.ForeColor = System.Drawing.Color.White;
             this.btnAtletas.Image = global::Vistas.Properties.Resources.atleta;
             this.btnAtletas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAtletas.Location = new System.Drawing.Point(0, 149);
+            this.btnAtletas.Location = new System.Drawing.Point(-2, 122);
             this.btnAtletas.Name = "btnAtletas";
             this.btnAtletas.Size = new System.Drawing.Size(200, 46);
             this.btnAtletas.TabIndex = 30;
@@ -360,7 +382,7 @@
             this.btnUsuarios.ForeColor = System.Drawing.Color.White;
             this.btnUsuarios.Image = global::Vistas.Properties.Resources.usuario;
             this.btnUsuarios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUsuarios.Location = new System.Drawing.Point(0, 90);
+            this.btnUsuarios.Location = new System.Drawing.Point(-2, 63);
             this.btnUsuarios.Name = "btnUsuarios";
             this.btnUsuarios.Size = new System.Drawing.Size(200, 46);
             this.btnUsuarios.TabIndex = 29;
@@ -380,7 +402,7 @@
             this.btnHome.ForeColor = System.Drawing.Color.White;
             this.btnHome.Image = ((System.Drawing.Image)(resources.GetObject("btnHome.Image")));
             this.btnHome.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHome.Location = new System.Drawing.Point(-1, 30);
+            this.btnHome.Location = new System.Drawing.Point(-3, 3);
             this.btnHome.Name = "btnHome";
             this.btnHome.Size = new System.Drawing.Size(200, 46);
             this.btnHome.TabIndex = 28;
@@ -525,5 +547,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panelContenedor;
         public System.Windows.Forms.PictureBox btnSlide;
+        private System.Windows.Forms.Button btnCronometraje;
     }
 }

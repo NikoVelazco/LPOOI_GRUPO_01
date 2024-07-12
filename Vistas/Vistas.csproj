@@ -222,6 +222,7 @@
     <Content Include="Recursos\btnMinimize.Image.png" />
     <Content Include="Recursos\categoria.png" />
     <Content Include="Recursos\competencia.png" />
+    <None Include="Recursos\cronometraje.png" />
     <Content Include="Recursos\disciplina.png" />
     <Content Include="Recursos\evento.png" />
     <Content Include="Recursos\Mobile-Menu-Icon.png" />

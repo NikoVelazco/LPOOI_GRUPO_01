@@ -126,12 +126,14 @@
             // 
             this.btnRegistrarEvento.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.btnRegistrarEvento.AutoSize = true;
+            this.btnRegistrarEvento.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnRegistrarEvento.ForeColor = System.Drawing.Color.White;
             this.btnRegistrarEvento.Location = new System.Drawing.Point(460, 207);
             this.btnRegistrarEvento.Name = "btnRegistrarEvento";
             this.btnRegistrarEvento.Size = new System.Drawing.Size(123, 23);
             this.btnRegistrarEvento.TabIndex = 3;
             this.btnRegistrarEvento.Text = "Registrar Inscripción";
-            this.btnRegistrarEvento.UseVisualStyleBackColor = true;
+            this.btnRegistrarEvento.UseVisualStyleBackColor = false;
             this.btnRegistrarEvento.Click += new System.EventHandler(this.btnRegistrarEvento_Click);
             // 
             // dgvEvento
@@ -151,12 +153,14 @@
             // 
             this.btnAnularInscripcionEvento.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.btnAnularInscripcionEvento.AutoSize = true;
+            this.btnAnularInscripcionEvento.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnAnularInscripcionEvento.ForeColor = System.Drawing.Color.White;
             this.btnAnularInscripcionEvento.Location = new System.Drawing.Point(482, 207);
             this.btnAnularInscripcionEvento.Name = "btnAnularInscripcionEvento";
             this.btnAnularInscripcionEvento.Size = new System.Drawing.Size(101, 23);
             this.btnAnularInscripcionEvento.TabIndex = 6;
             this.btnAnularInscripcionEvento.Text = "Anular Inscripción";
-            this.btnAnularInscripcionEvento.UseVisualStyleBackColor = true;
+            this.btnAnularInscripcionEvento.UseVisualStyleBackColor = false;
             this.btnAnularInscripcionEvento.Click += new System.EventHandler(this.btnAnularInscripcionEvento_Click);
             // 
             // grpHoraInicioCompetencia
@@ -235,7 +239,7 @@
             // 
             // pnlRegistrarInscripcionEvento
             // 
-            this.pnlRegistrarInscripcionEvento.BackColor = System.Drawing.SystemColors.Control;
+            this.pnlRegistrarInscripcionEvento.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(248)))), ((int)(((byte)(241)))));
             this.pnlRegistrarInscripcionEvento.Controls.Add(this.btnRegistrarEvento);
             this.pnlRegistrarInscripcionEvento.Controls.Add(this.grpHoraFinCompetencia);
             this.pnlRegistrarInscripcionEvento.Controls.Add(this.grpCompetencias);
@@ -248,7 +252,7 @@
             // 
             // pnlAnularInscripcionEvento
             // 
-            this.pnlAnularInscripcionEvento.BackColor = System.Drawing.SystemColors.Control;
+            this.pnlAnularInscripcionEvento.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(248)))), ((int)(((byte)(241)))));
             this.pnlAnularInscripcionEvento.Controls.Add(this.grpInformacionAtletaAnularInscripcion);
             this.pnlAnularInscripcionEvento.Controls.Add(this.grpBuscarAtletaPorDniAnularInscripcion);
             this.pnlAnularInscripcionEvento.Controls.Add(this.dgvAnularInscripcion);
@@ -344,13 +348,14 @@
             this.tpAnularInscripcionEvento.Location = new System.Drawing.Point(4, 25);
             this.tpAnularInscripcionEvento.Name = "tpAnularInscripcionEvento";
             this.tpAnularInscripcionEvento.Padding = new System.Windows.Forms.Padding(3);
-            this.tpAnularInscripcionEvento.Size = new System.Drawing.Size(586, 239);
+            this.tpAnularInscripcionEvento.Size = new System.Drawing.Size(592, 239);
             this.tpAnularInscripcionEvento.TabIndex = 1;
             this.tpAnularInscripcionEvento.Text = "Anular inscripción";
             this.tpAnularInscripcionEvento.UseVisualStyleBackColor = true;
             // 
             // tpRegistrarAcreditacionEvento
             // 
+            this.tpRegistrarAcreditacionEvento.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(248)))), ((int)(((byte)(241)))));
             this.tpRegistrarAcreditacionEvento.Controls.Add(this.grpInformacionAtletaAcreditarInscripcion);
             this.tpRegistrarAcreditacionEvento.Controls.Add(this.btnRegistrarAcreditacionEvento);
             this.tpRegistrarAcreditacionEvento.Controls.Add(this.dgvRegistrarAcreditacion);
@@ -358,10 +363,9 @@
             this.tpRegistrarAcreditacionEvento.Location = new System.Drawing.Point(4, 25);
             this.tpRegistrarAcreditacionEvento.Name = "tpRegistrarAcreditacionEvento";
             this.tpRegistrarAcreditacionEvento.Padding = new System.Windows.Forms.Padding(3);
-            this.tpRegistrarAcreditacionEvento.Size = new System.Drawing.Size(586, 239);
+            this.tpRegistrarAcreditacionEvento.Size = new System.Drawing.Size(592, 239);
             this.tpRegistrarAcreditacionEvento.TabIndex = 2;
             this.tpRegistrarAcreditacionEvento.Text = "Registrar acreditación";
-            this.tpRegistrarAcreditacionEvento.UseVisualStyleBackColor = true;
             // 
             // grpInformacionAtletaAcreditarInscripcion
             // 
@@ -387,12 +391,14 @@
             // 
             this.btnRegistrarAcreditacionEvento.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.btnRegistrarAcreditacionEvento.AutoSize = true;
+            this.btnRegistrarAcreditacionEvento.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnRegistrarAcreditacionEvento.ForeColor = System.Drawing.Color.White;
             this.btnRegistrarAcreditacionEvento.Location = new System.Drawing.Point(465, 210);
             this.btnRegistrarAcreditacionEvento.Name = "btnRegistrarAcreditacionEvento";
             this.btnRegistrarAcreditacionEvento.Size = new System.Drawing.Size(121, 23);
             this.btnRegistrarAcreditacionEvento.TabIndex = 12;
             this.btnRegistrarAcreditacionEvento.Text = "Registrar Acreditación";
-            this.btnRegistrarAcreditacionEvento.UseVisualStyleBackColor = true;
+            this.btnRegistrarAcreditacionEvento.UseVisualStyleBackColor = false;
             this.btnRegistrarAcreditacionEvento.Click += new System.EventHandler(this.btnRegistrarAcreditacionEvento_Click);
             // 
             // dgvRegistrarAcreditacion
@@ -449,6 +455,8 @@
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.lblListaDeEventos.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.lblListaDeEventos.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblListaDeEventos.Font = new System.Drawing.Font("Consolas", 11F, System.Drawing.FontStyle.Bold);
+            this.lblListaDeEventos.ForeColor = System.Drawing.SystemColors.Highlight;
             this.lblListaDeEventos.Location = new System.Drawing.Point(4, 3);
             this.lblListaDeEventos.Name = "lblListaDeEventos";
             this.lblListaDeEventos.Size = new System.Drawing.Size(593, 23);
@@ -460,7 +468,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Control;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(248)))), ((int)(((byte)(241)))));
             this.ClientSize = new System.Drawing.Size(624, 441);
             this.Controls.Add(this.pnlEventos);
             this.Controls.Add(this.tabControlEvento);

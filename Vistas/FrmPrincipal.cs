@@ -123,6 +123,7 @@ namespace Vistas
                 Util.disabledButton(btnDisciplinas);
                 Util.disabledButton(btnCompetencia);
                 Util.disabledButton(btnEventos);
+                Util.disabledButton(btnCronometraje);
             }
             if (TrabajarUsuario.getRolCodigo(txtUser.Text) == 2)
             {
@@ -164,5 +165,14 @@ namespace Vistas
             imgUser.Visible = true;
             btnSlide.BackColor = Color.FromArgb(22, 111, 109);
         }
+
+        private void btnCronometraje_Click(object sender, EventArgs e)
+        {
+            Util.openFormInPanel(new FrmCronometrajes(), panelContenedor);
+            imgUser.Visible = true;
+            btnSlide.BackColor = Color.FromArgb(22, 111, 109);
+        }
+
+
     }
 }

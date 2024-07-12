@@ -153,12 +153,14 @@
             // btnActualizarFechaInicio
             // 
             this.btnActualizarFechaInicio.AutoSize = true;
+            this.btnActualizarFechaInicio.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnActualizarFechaInicio.ForeColor = System.Drawing.Color.White;
             this.btnActualizarFechaInicio.Location = new System.Drawing.Point(6, 74);
             this.btnActualizarFechaInicio.Name = "btnActualizarFechaInicio";
-            this.btnActualizarFechaInicio.Size = new System.Drawing.Size(150, 23);
+            this.btnActualizarFechaInicio.Size = new System.Drawing.Size(162, 29);
             this.btnActualizarFechaInicio.TabIndex = 18;
             this.btnActualizarFechaInicio.Text = "Actualizar Fecha-Hora Inicio";
-            this.btnActualizarFechaInicio.UseVisualStyleBackColor = true;
+            this.btnActualizarFechaInicio.UseVisualStyleBackColor = false;
             this.btnActualizarFechaInicio.Click += new System.EventHandler(this.btnActualizarFechaInicio_Click);
             // 
             // pnlActualizarFechaInicio
@@ -214,23 +216,27 @@
             // 
             // ActualizarEventoAbandono
             // 
+            this.ActualizarEventoAbandono.BackColor = System.Drawing.Color.DodgerBlue;
+            this.ActualizarEventoAbandono.ForeColor = System.Drawing.Color.White;
             this.ActualizarEventoAbandono.Location = new System.Drawing.Point(6, 19);
             this.ActualizarEventoAbandono.Name = "ActualizarEventoAbandono";
             this.ActualizarEventoAbandono.Size = new System.Drawing.Size(75, 23);
             this.ActualizarEventoAbandono.TabIndex = 16;
             this.ActualizarEventoAbandono.Text = "Abandono";
-            this.ActualizarEventoAbandono.UseVisualStyleBackColor = true;
+            this.ActualizarEventoAbandono.UseVisualStyleBackColor = false;
             this.ActualizarEventoAbandono.Click += new System.EventHandler(this.ActualizarEventoAbandono_Click);
             // 
             // btnActualizarEventoDescalificado
             // 
             this.btnActualizarEventoDescalificado.AutoSize = true;
+            this.btnActualizarEventoDescalificado.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnActualizarEventoDescalificado.ForeColor = System.Drawing.Color.White;
             this.btnActualizarEventoDescalificado.Location = new System.Drawing.Point(87, 19);
             this.btnActualizarEventoDescalificado.Name = "btnActualizarEventoDescalificado";
             this.btnActualizarEventoDescalificado.Size = new System.Drawing.Size(81, 23);
             this.btnActualizarEventoDescalificado.TabIndex = 17;
             this.btnActualizarEventoDescalificado.Text = "Descalificado";
-            this.btnActualizarEventoDescalificado.UseVisualStyleBackColor = true;
+            this.btnActualizarEventoDescalificado.UseVisualStyleBackColor = false;
             this.btnActualizarEventoDescalificado.Click += new System.EventHandler(this.btnActualizarEventoDescalificado_Click);
             // 
             // lblInformacionEvento
@@ -318,12 +324,14 @@
             // 
             this.btnBuscarEvento.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnBuscarEvento.AutoSize = true;
+            this.btnBuscarEvento.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnBuscarEvento.ForeColor = System.Drawing.Color.White;
             this.btnBuscarEvento.Location = new System.Drawing.Point(0, 106);
             this.btnBuscarEvento.Name = "btnBuscarEvento";
-            this.btnBuscarEvento.Size = new System.Drawing.Size(87, 23);
+            this.btnBuscarEvento.Size = new System.Drawing.Size(103, 23);
             this.btnBuscarEvento.TabIndex = 3;
             this.btnBuscarEvento.Text = "Buscar Evento";
-            this.btnBuscarEvento.UseVisualStyleBackColor = true;
+            this.btnBuscarEvento.UseVisualStyleBackColor = false;
             this.btnBuscarEvento.Click += new System.EventHandler(this.btnBuscarEvento_Click);
             // 
             // groupBox3
@@ -649,12 +657,14 @@
             // btnFinalizarEvento
             // 
             this.btnFinalizarEvento.AutoSize = true;
+            this.btnFinalizarEvento.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnFinalizarEvento.ForeColor = System.Drawing.Color.White;
             this.btnFinalizarEvento.Location = new System.Drawing.Point(6, 71);
             this.btnFinalizarEvento.Name = "btnFinalizarEvento";
             this.btnFinalizarEvento.Size = new System.Drawing.Size(92, 23);
             this.btnFinalizarEvento.TabIndex = 0;
             this.btnFinalizarEvento.Text = "Finalizar Evento";
-            this.btnFinalizarEvento.UseVisualStyleBackColor = true;
+            this.btnFinalizarEvento.UseVisualStyleBackColor = false;
             this.btnFinalizarEvento.Click += new System.EventHandler(this.btnFinalizarEvento_Click);
             // 
             // grpIniciarEvento
@@ -675,13 +685,15 @@
             // btnAsignarFechaHoraInicio
             // 
             this.btnAsignarFechaHoraInicio.AutoSize = true;
+            this.btnAsignarFechaHoraInicio.BackColor = System.Drawing.Color.DodgerBlue;
             this.btnAsignarFechaHoraInicio.Enabled = false;
+            this.btnAsignarFechaHoraInicio.ForeColor = System.Drawing.Color.White;
             this.btnAsignarFechaHoraInicio.Location = new System.Drawing.Point(94, 71);
             this.btnAsignarFechaHoraInicio.Name = "btnAsignarFechaHoraInicio";
             this.btnAsignarFechaHoraInicio.Size = new System.Drawing.Size(130, 23);
             this.btnAsignarFechaHoraInicio.TabIndex = 5;
             this.btnAsignarFechaHoraInicio.Text = "Asignar Hora Inicio";
-            this.btnAsignarFechaHoraInicio.UseVisualStyleBackColor = true;
+            this.btnAsignarFechaHoraInicio.UseVisualStyleBackColor = false;
             this.btnAsignarFechaHoraInicio.Click += new System.EventHandler(this.btnAsignarFechaHoraInicio_Click);
             // 
             // lblValorFechaInicioEvento
@@ -725,12 +737,14 @@
             // btnIniciarEvento
             // 
             this.btnIniciarEvento.AutoSize = true;
+            this.btnIniciarEvento.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnIniciarEvento.ForeColor = System.Drawing.Color.White;
             this.btnIniciarEvento.Location = new System.Drawing.Point(6, 71);
             this.btnIniciarEvento.Name = "btnIniciarEvento";
             this.btnIniciarEvento.Size = new System.Drawing.Size(82, 23);
             this.btnIniciarEvento.TabIndex = 0;
             this.btnIniciarEvento.Text = "Iniciar Evento";
-            this.btnIniciarEvento.UseVisualStyleBackColor = true;
+            this.btnIniciarEvento.UseVisualStyleBackColor = false;
             this.btnIniciarEvento.Click += new System.EventHandler(this.btnIniciarEvento_Click);
             // 
             // lblGestionCronometrajes
@@ -739,6 +753,8 @@
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.lblGestionCronometrajes.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.lblGestionCronometrajes.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblGestionCronometrajes.Font = new System.Drawing.Font("Consolas", 11F, System.Drawing.FontStyle.Bold);
+            this.lblGestionCronometrajes.ForeColor = System.Drawing.SystemColors.Highlight;
             this.lblGestionCronometrajes.Location = new System.Drawing.Point(0, 0);
             this.lblGestionCronometrajes.Name = "lblGestionCronometrajes";
             this.lblGestionCronometrajes.Size = new System.Drawing.Size(600, 23);
@@ -946,6 +962,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(248)))), ((int)(((byte)(241)))));
             this.ClientSize = new System.Drawing.Size(624, 441);
             this.Controls.Add(this.pnlInicioEvento);
             this.Controls.Add(this.pnlRegistroCronometrajeHoraInicio);

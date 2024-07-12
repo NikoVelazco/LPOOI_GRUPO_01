@@ -15,11 +15,11 @@ namespace Vistas
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new FrmLogin());
+            Application.Run(new FrmLogin());
             //Application.Run(new FrmPrincipal());
             //Application.Run(new FrmGestionEvento());
             //Application.Run(new FrmResultados());
-            Application.Run(new FrmCronometrajes());
+            //Application.Run(new FrmCronometrajes());
         }
     }
 }
