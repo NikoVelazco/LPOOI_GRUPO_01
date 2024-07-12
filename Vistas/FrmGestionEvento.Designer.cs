@@ -59,7 +59,8 @@
             this.grpBuscarAtletaAcreditacion = new System.Windows.Forms.GroupBox();
             this.txtBuscarAtletaAcredicacion = new System.Windows.Forms.TextBox();
             this.pnlEventos = new System.Windows.Forms.Panel();
-            this.lblListaDeEventos = new System.Windows.Forms.Label();
+            this.lblTitleUser = new System.Windows.Forms.Panel();
+            this.lblGestion = new System.Windows.Forms.Label();
             this.grpAtletas.SuspendLayout();
             this.grpCompetencias.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEvento)).BeginInit();
@@ -78,6 +79,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvRegistrarAcreditacion)).BeginInit();
             this.grpBuscarAtletaAcreditacion.SuspendLayout();
             this.pnlEventos.SuspendLayout();
+            this.lblTitleUser.SuspendLayout();
             this.SuspendLayout();
             // 
             // grpAtletas
@@ -442,27 +444,32 @@
             // 
             // pnlEventos
             // 
-            this.pnlEventos.Controls.Add(this.lblListaDeEventos);
             this.pnlEventos.Controls.Add(this.dgvEvento);
             this.pnlEventos.Location = new System.Drawing.Point(12, 12);
             this.pnlEventos.Name = "pnlEventos";
             this.pnlEventos.Size = new System.Drawing.Size(600, 143);
             this.pnlEventos.TabIndex = 10;
             // 
-            // lblListaDeEventos
+            // lblTitleUser
             // 
-            this.lblListaDeEventos.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblListaDeEventos.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblListaDeEventos.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblListaDeEventos.Font = new System.Drawing.Font("Consolas", 11F, System.Drawing.FontStyle.Bold);
-            this.lblListaDeEventos.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.lblListaDeEventos.Location = new System.Drawing.Point(4, 3);
-            this.lblListaDeEventos.Name = "lblListaDeEventos";
-            this.lblListaDeEventos.Size = new System.Drawing.Size(593, 23);
-            this.lblListaDeEventos.TabIndex = 11;
-            this.lblListaDeEventos.Text = "Eventos";
-            this.lblListaDeEventos.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblTitleUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(111)))), ((int)(((byte)(109)))));
+            this.lblTitleUser.Controls.Add(this.lblGestion);
+            this.lblTitleUser.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblTitleUser.Location = new System.Drawing.Point(0, 0);
+            this.lblTitleUser.Name = "lblTitleUser";
+            this.lblTitleUser.Size = new System.Drawing.Size(624, 31);
+            this.lblTitleUser.TabIndex = 11;
+            // 
+            // lblGestion
+            // 
+            this.lblGestion.AutoSize = true;
+            this.lblGestion.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGestion.ForeColor = System.Drawing.Color.Gold;
+            this.lblGestion.Location = new System.Drawing.Point(257, 5);
+            this.lblGestion.Name = "lblGestion";
+            this.lblGestion.Size = new System.Drawing.Size(190, 22);
+            this.lblGestion.TabIndex = 18;
+            this.lblGestion.Text = "GESTIÓN DE EVENTOS";
             // 
             // FrmGestionEvento
             // 
@@ -470,6 +477,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(248)))), ((int)(((byte)(241)))));
             this.ClientSize = new System.Drawing.Size(624, 441);
+            this.Controls.Add(this.lblTitleUser);
             this.Controls.Add(this.pnlEventos);
             this.Controls.Add(this.tabControlEvento);
             this.Name = "FrmGestionEvento";
@@ -501,6 +509,8 @@
             this.grpBuscarAtletaAcreditacion.ResumeLayout(false);
             this.grpBuscarAtletaAcreditacion.PerformLayout();
             this.pnlEventos.ResumeLayout(false);
+            this.lblTitleUser.ResumeLayout(false);
+            this.lblTitleUser.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -534,10 +544,11 @@
         private System.Windows.Forms.GroupBox grpBuscarAtletaAcreditacion;
         private System.Windows.Forms.TextBox txtBuscarAtletaAcredicacion;
         private System.Windows.Forms.Panel pnlEventos;
-        private System.Windows.Forms.Label lblListaDeEventos;
         private System.Windows.Forms.GroupBox grpInformacionAtletaAcreditarInscripcion;
         private System.Windows.Forms.GroupBox grpInformacionAtletaAnularInscripcion;
         private System.Windows.Forms.Label lblInformacionAtletaAnularInscripcion;
         private System.Windows.Forms.Label lblInformacionAtletaRegistrarAcreditacion;
+        private System.Windows.Forms.Panel lblTitleUser;
+        private System.Windows.Forms.Label lblGestion;
     }
 }

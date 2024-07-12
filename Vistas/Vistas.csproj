@@ -227,6 +227,7 @@
     <Content Include="Recursos\evento.png" />
     <Content Include="Recursos\Mobile-Menu-Icon.png" />
     <Content Include="Recursos\password.png" />
+    <None Include="Recursos\resultados.png" />
     <Content Include="Recursos\sistema.png" />
     <Content Include="Recursos\sounds\alerta.mp3" />
     <Content Include="Recursos\sounds\Login-sound.mp3" />

@@ -124,9 +124,6 @@
   <data name="password" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\recursos\password.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="usuario" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\usuario.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="atleta" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\atleta.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -145,11 +142,17 @@
   <data name="sistema" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\recursos\sistema.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Mobile_Menu_Icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\recursos\mobile-menu-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="usuario" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\usuario.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="cronometraje" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Recursos\cronometraje.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Atthlete" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\recursos\atthlete.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Mobile_Menu_Icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\recursos\mobile-menu-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="evento" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\recursos\evento.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -160,7 +163,7 @@
   <data name="btnClose_Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\recursos\btnclose.image.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="cronometraje" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Recursos\cronometraje.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="resultados" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Recursos\resultados.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

@@ -84,7 +84,6 @@
             this.lblValorHoraInicioEvento = new System.Windows.Forms.Label();
             this.lblHoraInicioEvento = new System.Windows.Forms.Label();
             this.btnIniciarEvento = new System.Windows.Forms.Button();
-            this.lblGestionCronometrajes = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
@@ -105,6 +104,8 @@
             this.label8 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
+            this.lblTitleUser = new System.Windows.Forms.Panel();
+            this.lblGestion = new System.Windows.Forms.Label();
             this.pnlRegistroCronometrajeHoraInicio.SuspendLayout();
             this.gtpActualizarFechaHoraInicio.SuspendLayout();
             this.pnlActualizarFechaInicio.SuspendLayout();
@@ -120,6 +121,7 @@
             this.pnlIngresarHoraFinEvento.SuspendLayout();
             this.pnlIngresarFechaFinEvento.SuspendLayout();
             this.grpIniciarEvento.SuspendLayout();
+            this.lblTitleUser.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlRegistroCronometrajeHoraInicio
@@ -513,7 +515,6 @@
             // 
             this.pnlInicioEvento.Controls.Add(this.pnlRegistroCronometrajeHoraFechaFin);
             this.pnlInicioEvento.Controls.Add(this.grpIniciarEvento);
-            this.pnlInicioEvento.Controls.Add(this.lblGestionCronometrajes);
             this.pnlInicioEvento.Location = new System.Drawing.Point(12, 12);
             this.pnlInicioEvento.Name = "pnlInicioEvento";
             this.pnlInicioEvento.Size = new System.Drawing.Size(600, 125);
@@ -747,21 +748,6 @@
             this.btnIniciarEvento.UseVisualStyleBackColor = false;
             this.btnIniciarEvento.Click += new System.EventHandler(this.btnIniciarEvento_Click);
             // 
-            // lblGestionCronometrajes
-            // 
-            this.lblGestionCronometrajes.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblGestionCronometrajes.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblGestionCronometrajes.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblGestionCronometrajes.Font = new System.Drawing.Font("Consolas", 11F, System.Drawing.FontStyle.Bold);
-            this.lblGestionCronometrajes.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.lblGestionCronometrajes.Location = new System.Drawing.Point(0, 0);
-            this.lblGestionCronometrajes.Name = "lblGestionCronometrajes";
-            this.lblGestionCronometrajes.Size = new System.Drawing.Size(600, 23);
-            this.lblGestionCronometrajes.TabIndex = 12;
-            this.lblGestionCronometrajes.Text = "Cronometrajes";
-            this.lblGestionCronometrajes.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // panel3
             // 
             this.panel3.Location = new System.Drawing.Point(236, 25);
@@ -958,12 +944,34 @@
             this.label9.Text = "Cronometrajes";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // lblTitleUser
+            // 
+            this.lblTitleUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(111)))), ((int)(((byte)(109)))));
+            this.lblTitleUser.Controls.Add(this.lblGestion);
+            this.lblTitleUser.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblTitleUser.Location = new System.Drawing.Point(0, 0);
+            this.lblTitleUser.Name = "lblTitleUser";
+            this.lblTitleUser.Size = new System.Drawing.Size(624, 31);
+            this.lblTitleUser.TabIndex = 14;
+            // 
+            // lblGestion
+            // 
+            this.lblGestion.AutoSize = true;
+            this.lblGestion.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGestion.ForeColor = System.Drawing.Color.Gold;
+            this.lblGestion.Location = new System.Drawing.Point(257, 5);
+            this.lblGestion.Name = "lblGestion";
+            this.lblGestion.Size = new System.Drawing.Size(130, 22);
+            this.lblGestion.TabIndex = 18;
+            this.lblGestion.Text = "CRONOMETRAJE";
+            // 
             // FrmCronometrajes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(248)))), ((int)(((byte)(241)))));
             this.ClientSize = new System.Drawing.Size(624, 441);
+            this.Controls.Add(this.lblTitleUser);
             this.Controls.Add(this.pnlInicioEvento);
             this.Controls.Add(this.pnlRegistroCronometrajeHoraInicio);
             this.Name = "FrmCronometrajes";
@@ -990,6 +998,8 @@
             this.pnlIngresarFechaFinEvento.ResumeLayout(false);
             this.grpIniciarEvento.ResumeLayout(false);
             this.grpIniciarEvento.PerformLayout();
+            this.lblTitleUser.ResumeLayout(false);
+            this.lblTitleUser.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1051,7 +1061,6 @@
         private System.Windows.Forms.Label lblValorHoraInicioEvento;
         private System.Windows.Forms.Label lblHoraInicioEvento;
         private System.Windows.Forms.Button btnIniciarEvento;
-        private System.Windows.Forms.Label lblGestionCronometrajes;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.RadioButton radioButton1;
@@ -1073,6 +1082,8 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button btnAsignarFechaHoraInicio;
+        private System.Windows.Forms.Panel lblTitleUser;
+        private System.Windows.Forms.Label lblGestion;
 
     }
 }

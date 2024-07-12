@@ -187,5 +187,10 @@ namespace Vistas
                 label.Text = row["Atleta"].ToString();
             }
         }
+
+        private void btnResultados_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }
