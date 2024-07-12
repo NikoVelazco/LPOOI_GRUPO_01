@@ -7,31 +7,28 @@ using System.Data;
 
 namespace ClasesBase
 {
-    /*--------------*
-     | Evento (ABM) |
-     *--------------*/
+    /* #== Evento (ABM) ==================================================== */
     public class TrabajarEvento
     {
-        static readonly string connectionString = ClasesBase.Properties.Settings.Default.comdepConnectionString;
-        static SqlConnection sqlConnection;
-        static SqlCommand sqlCommand;
-        static SqlDataAdapter sqlDataAdapter;
-        static Evento oEvento;
+        static readonly string s_connectionString = ClasesBase.Properties.Settings.Default.comdepConnectionString;
+        static SqlConnection s_sqlConnection;
+        static SqlCommand s_sqlCommand;
+        static SqlDataAdapter s_sqlDataAdapter;
 
-        public static DataTable getAllEventos()
+        public static DataTable GetAllEventos()
         {
-            using (sqlConnection = new SqlConnection(connectionString))
+            using (s_sqlConnection = new SqlConnection(s_connectionString))
             {
-                using (sqlCommand = new SqlCommand("ListarEventos", sqlConnection))
+                using (s_sqlCommand = new SqlCommand("ListarEventos", s_sqlConnection))
                 {
-                    sqlConnection.Open();
-                    sqlCommand.CommandType = CommandType.StoredProcedure;
+                    s_sqlConnection.Open();
+                    s_sqlCommand.CommandType = CommandType.StoredProcedure;
 
-                    using (sqlDataAdapter = new SqlDataAdapter(sqlCommand))
+                    using (s_sqlDataAdapter = new SqlDataAdapter(s_sqlCommand))
                     {
                         DataTable dataTable = new DataTable();
 
-                        sqlDataAdapter.Fill(dataTable);
+                        s_sqlDataAdapter.Fill(dataTable);
 
                         return dataTable;
                     }
@@ -39,29 +36,28 @@ namespace ClasesBase
             }
         }
 
-        public static void insertEvento(int com_Id, int atl_Id)
+        public static void InsertEvento(int com_Id, int atl_Id)
         {
-            oEvento = new Evento();
+            Evento oEvento = new Evento();
             oEvento.Com_ID = com_Id;
             oEvento.Atl_ID = atl_Id;
-            string state = "Inscripto";
+            string state = EventoEstado.INSCRIPTO;
 
-            using (sqlConnection = new SqlConnection(connectionString))
+            using (s_sqlConnection = new SqlConnection(s_connectionString))
             {
-                using (sqlCommand = new SqlCommand("InsertarEvento", sqlConnection))
+                using (s_sqlCommand = new SqlCommand("InsertarEvento", s_sqlConnection))
                 {
-                    sqlConnection.Open();
-                    sqlCommand.CommandType = CommandType.StoredProcedure;
-                    sqlCommand.Parameters.AddWithValue("@Com_ID", oEvento.Com_ID);
-                    sqlCommand.Parameters.AddWithValue("@Atl_ID", oEvento.Atl_ID);
-                    sqlCommand.Parameters.AddWithValue("@Estado", state);
-                    
-                    sqlCommand.ExecuteNonQuery();
+                    s_sqlConnection.Open();
+                    s_sqlCommand.CommandType = CommandType.StoredProcedure;
+                    s_sqlCommand.Parameters.AddWithValue("@Com_ID", oEvento.Com_ID);
+                    s_sqlCommand.Parameters.AddWithValue("@Atl_ID", oEvento.Atl_ID);
+                    s_sqlCommand.Parameters.AddWithValue("@Estado", state);
+                    s_sqlCommand.ExecuteNonQuery();
                 }
             }
         }
 
-        public static void cancelEvento(int eve_Id)
+        public static void UpdateEventoEstado(int eventoId, string eventoEstado)
         {
             string sqlQuery = @"
                 UPDATE Evento
@@ -69,23 +65,22 @@ namespace ClasesBase
                     Eve_Estado = @Estado
                 WHERE Eve_ID = @Id;
             ";
-            string state = "Anulado";
+            string state = EventoEstado.ANULADO;
 
-            using (sqlConnection = new SqlConnection(connectionString))
+            using (s_sqlConnection = new SqlConnection(s_connectionString))
             {
-                using (sqlCommand = new SqlCommand(sqlQuery, sqlConnection))
+                using (s_sqlCommand = new SqlCommand(sqlQuery, s_sqlConnection))
                 {
-                    sqlConnection.Open();
-                    sqlCommand.CommandType = CommandType.Text;
-                    //sqlCommand.CommandType = CommandType.StoredProcedure;
-                    sqlCommand.Parameters.AddWithValue("@Id", eve_Id);
-                    sqlCommand.Parameters.AddWithValue("@Estado", state);
-                    sqlCommand.ExecuteNonQuery();
+                    s_sqlConnection.Open();
+                    s_sqlCommand.CommandType = CommandType.Text;
+                    s_sqlCommand.Parameters.AddWithValue("@Id", eventoId);
+                    s_sqlCommand.Parameters.AddWithValue("@Estado", eventoEstado);
+                    s_sqlCommand.ExecuteNonQuery();
                 }
             }
         }
 
-        public static void registerEvento(int eve_Id)
+        public static void RegisterEvento(int eve_Id)
         {
             string sqlQuery = @"
                 UPDATE Evento
@@ -93,23 +88,22 @@ namespace ClasesBase
                     Eve_Estado = @Estado
                 WHERE Eve_ID = @Id
             ";
-            string state = "Acreditado";
+            string state = EventoEstado.ACREDITADO;
 
-            using (sqlConnection = new SqlConnection(connectionString))
+            using (s_sqlConnection = new SqlConnection(s_connectionString))
             {
-                using (sqlCommand = new SqlCommand(sqlQuery, sqlConnection))
+                using (s_sqlCommand = new SqlCommand(sqlQuery, s_sqlConnection))
                 {
-                    sqlConnection.Open();
-                    sqlCommand.CommandType = CommandType.Text;
-                    //sqlCommand.CommandType = CommandType.StoredProcedure;
-                    sqlCommand.Parameters.AddWithValue("@Id", eve_Id);
-                    sqlCommand.Parameters.AddWithValue("@Estado", state);
-                    sqlCommand.ExecuteNonQuery();
+                    s_sqlConnection.Open();
+                    s_sqlCommand.CommandType = CommandType.Text;
+                    s_sqlCommand.Parameters.AddWithValue("@Id", eve_Id);
+                    s_sqlCommand.Parameters.AddWithValue("@Estado", state);
+                    s_sqlCommand.ExecuteNonQuery();
                 }
             }
         }
 
-        public static DataTable searchAtletaByDNI(string atl_Dni)
+        public static DataTable searchAtletaByDNI(string dni)
         {
             string sqlQuery = @"
                 SELECT
@@ -121,22 +115,59 @@ namespace ClasesBase
                 INNER JOIN Competencia ON Evento.Com_ID = Competencia.Com_ID
                 WHERE Atleta.Atl_DNI = @Dni AND Evento.Eve_Estado = @Estado
             ";
+            string state = EventoEstado.INSCRIPTO;
 
-            string state = "Inscripto";
-
-            using (sqlConnection = new SqlConnection(connectionString))
+            using (s_sqlConnection = new SqlConnection(s_connectionString))
             {
-                using (sqlCommand = new SqlCommand(sqlQuery, sqlConnection))
+                using (s_sqlCommand = new SqlCommand(sqlQuery, s_sqlConnection))
                 {
-                    sqlConnection.Open();
-                    sqlCommand.CommandType = CommandType.Text;
-                    sqlCommand.Parameters.AddWithValue("@Dni", atl_Dni);
-                    sqlCommand.Parameters.AddWithValue("@Estado", state);
+                    s_sqlConnection.Open();
+                    s_sqlCommand.CommandType = CommandType.Text;
+                    s_sqlCommand.Parameters.AddWithValue("@Dni", dni);
+                    s_sqlCommand.Parameters.AddWithValue("@Estado", state);
 
-                    using (sqlDataAdapter = new SqlDataAdapter(sqlCommand))
+                    using (s_sqlDataAdapter = new SqlDataAdapter(s_sqlCommand))
                     {
                         DataTable dataTable = new DataTable();
-                        sqlDataAdapter.Fill(dataTable);
+                        
+                        s_sqlDataAdapter.Fill(dataTable);
+                        
+                        return dataTable;
+                    }
+                }
+            }
+        }
+
+        public static DataTable SearchEventoByAtletaAndCompetencia(int atletaId, int competenciaId)
+        {
+            string sqlQuery = @"
+                SELECT
+                    Evento.Eve_ID AS 'Id',
+                    Evento.Eve_HoraInicio AS 'Hora Inicio',
+                    Evento.Eve_HoraFin AS 'Hora Fin',
+                    Evento.Eve_Estado AS 'Estado'
+                FROM
+                    Atleta
+                INNER JOIN Evento ON Atleta.Atl_ID = Evento.Atl_ID
+                INNER JOIN Competencia ON Evento.Com_ID = Competencia.Com_ID
+                WHERE (Atleta.Atl_ID = @Atl_ID) AND (Competencia.Com_ID = @Com_Id)
+            ";
+
+            using (s_sqlConnection = new SqlConnection(s_connectionString))
+            {
+                using (s_sqlCommand = new SqlCommand(sqlQuery, s_sqlConnection))
+                {
+                    s_sqlConnection.Open();
+                    s_sqlCommand.CommandType = CommandType.Text;
+                    s_sqlCommand.Parameters.AddWithValue("@Atl_ID", atletaId);
+                    s_sqlCommand.Parameters.AddWithValue("@Com_ID", competenciaId);
+
+                    using (s_sqlDataAdapter = new SqlDataAdapter(s_sqlCommand))
+                    {
+                        DataTable dataTable = new DataTable();
+
+                        s_sqlDataAdapter.Fill(dataTable);
+
                         return dataTable;
                     }
                 }

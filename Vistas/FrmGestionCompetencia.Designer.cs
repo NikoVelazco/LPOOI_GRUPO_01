@@ -31,6 +31,18 @@
             this.lblTitleUser = new System.Windows.Forms.Panel();
             this.lblGestion = new System.Windows.Forms.Label();
             this.panelGestorCompetencia = new System.Windows.Forms.Panel();
+            this.cmbDisciplina = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.cmbCategoria = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.cmbEstado = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtSponsors = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.dtpFechaFin = new System.Windows.Forms.DateTimePicker();
+            this.label3 = new System.Windows.Forms.Label();
+            this.dtpFechaInicio = new System.Windows.Forms.DateTimePicker();
+            this.label2 = new System.Windows.Forms.Label();
             this.btnReset = new System.Windows.Forms.Button();
             this.btnDeleteCompetencia = new System.Windows.Forms.Button();
             this.btnEditCompetencia = new System.Windows.Forms.Button();
@@ -45,18 +57,6 @@
             this.txtOrganizador = new System.Windows.Forms.TextBox();
             this.lblGestorUser = new System.Windows.Forms.Label();
             this.dataGridCompetencia = new System.Windows.Forms.DataGridView();
-            this.label2 = new System.Windows.Forms.Label();
-            this.dtpFechaInicio = new System.Windows.Forms.DateTimePicker();
-            this.label3 = new System.Windows.Forms.Label();
-            this.dtpFechaFin = new System.Windows.Forms.DateTimePicker();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtSponsors = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.cmbEstado = new System.Windows.Forms.ComboBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.cmbCategoria = new System.Windows.Forms.ComboBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.cmbDisciplina = new System.Windows.Forms.ComboBox();
             this.lblTitleUser.SuspendLayout();
             this.panelGestorCompetencia.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridCompetencia)).BeginInit();
@@ -114,6 +114,145 @@
             this.panelGestorCompetencia.Name = "panelGestorCompetencia";
             this.panelGestorCompetencia.Size = new System.Drawing.Size(330, 388);
             this.panelGestorCompetencia.TabIndex = 2;
+            // 
+            // cmbDisciplina
+            // 
+            this.cmbDisciplina.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbDisciplina.FormattingEnabled = true;
+            this.cmbDisciplina.Location = new System.Drawing.Point(142, 272);
+            this.cmbDisciplina.Name = "cmbDisciplina";
+            this.cmbDisciplina.Size = new System.Drawing.Size(169, 21);
+            this.cmbDisciplina.TabIndex = 54;
+            // 
+            // label7
+            // 
+            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(248)))), ((int)(((byte)(241)))));
+            this.label7.Font = new System.Drawing.Font("Consolas", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.label7.Location = new System.Drawing.Point(30, 272);
+            this.label7.Margin = new System.Windows.Forms.Padding(4);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(105, 21);
+            this.label7.TabIndex = 53;
+            this.label7.Text = "Disciplina:";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // cmbCategoria
+            // 
+            this.cmbCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbCategoria.FormattingEnabled = true;
+            this.cmbCategoria.Location = new System.Drawing.Point(142, 245);
+            this.cmbCategoria.Name = "cmbCategoria";
+            this.cmbCategoria.Size = new System.Drawing.Size(169, 21);
+            this.cmbCategoria.TabIndex = 52;
+            // 
+            // label6
+            // 
+            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(248)))), ((int)(((byte)(241)))));
+            this.label6.Font = new System.Drawing.Font("Consolas", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.label6.Location = new System.Drawing.Point(30, 244);
+            this.label6.Margin = new System.Windows.Forms.Padding(4);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(105, 21);
+            this.label6.TabIndex = 51;
+            this.label6.Text = "Categoria:";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // cmbEstado
+            // 
+            this.cmbEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbEstado.FormattingEnabled = true;
+            this.cmbEstado.Items.AddRange(new object[] {
+            "programado",
+            "postergado",
+            "reprogramado",
+            "cancelado"});
+            this.cmbEstado.Location = new System.Drawing.Point(142, 218);
+            this.cmbEstado.Name = "cmbEstado";
+            this.cmbEstado.Size = new System.Drawing.Size(169, 21);
+            this.cmbEstado.TabIndex = 50;
+            // 
+            // label5
+            // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(248)))), ((int)(((byte)(241)))));
+            this.label5.Font = new System.Drawing.Font("Consolas", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.label5.Location = new System.Drawing.Point(30, 217);
+            this.label5.Margin = new System.Windows.Forms.Padding(4);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(105, 21);
+            this.label5.TabIndex = 49;
+            this.label5.Text = "Estado:";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // txtSponsors
+            // 
+            this.txtSponsors.Location = new System.Drawing.Point(142, 192);
+            this.txtSponsors.Name = "txtSponsors";
+            this.txtSponsors.Size = new System.Drawing.Size(169, 20);
+            this.txtSponsors.TabIndex = 48;
+            // 
+            // label4
+            // 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(248)))), ((int)(((byte)(241)))));
+            this.label4.Font = new System.Drawing.Font("Consolas", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.label4.Location = new System.Drawing.Point(30, 191);
+            this.label4.Margin = new System.Windows.Forms.Padding(4);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(105, 21);
+            this.label4.TabIndex = 47;
+            this.label4.Text = "Sponsors:";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // dtpFechaFin
+            // 
+            this.dtpFechaFin.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFechaFin.Location = new System.Drawing.Point(142, 163);
+            this.dtpFechaFin.Name = "dtpFechaFin";
+            this.dtpFechaFin.Size = new System.Drawing.Size(98, 20);
+            this.dtpFechaFin.TabIndex = 46;
+            // 
+            // label3
+            // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(248)))), ((int)(((byte)(241)))));
+            this.label3.Font = new System.Drawing.Font("Consolas", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.label3.Location = new System.Drawing.Point(30, 165);
+            this.label3.Margin = new System.Windows.Forms.Padding(4);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(105, 21);
+            this.label3.TabIndex = 45;
+            this.label3.Text = "Fec. Fin:";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // dtpFechaInicio
+            // 
+            this.dtpFechaInicio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFechaInicio.Location = new System.Drawing.Point(142, 134);
+            this.dtpFechaInicio.Name = "dtpFechaInicio";
+            this.dtpFechaInicio.Size = new System.Drawing.Size(98, 20);
+            this.dtpFechaInicio.TabIndex = 44;
+            // 
+            // label2
+            // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(248)))), ((int)(((byte)(241)))));
+            this.label2.Font = new System.Drawing.Font("Consolas", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.label2.Location = new System.Drawing.Point(30, 136);
+            this.label2.Margin = new System.Windows.Forms.Padding(4);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(105, 21);
+            this.label2.TabIndex = 43;
+            this.label2.Text = "Fec. Inicio:";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // btnReset
             // 
@@ -297,145 +436,6 @@
             this.dataGridCompetencia.Size = new System.Drawing.Size(366, 274);
             this.dataGridCompetencia.TabIndex = 4;
             this.dataGridCompetencia.SelectionChanged += new System.EventHandler(this.dataGridCompetencia_SelectionChanged);
-            // 
-            // label2
-            // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(248)))), ((int)(((byte)(241)))));
-            this.label2.Font = new System.Drawing.Font("Consolas", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.label2.Location = new System.Drawing.Point(30, 136);
-            this.label2.Margin = new System.Windows.Forms.Padding(4);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(105, 21);
-            this.label2.TabIndex = 43;
-            this.label2.Text = "Fec. Inicio:";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // dtpFechaInicio
-            // 
-            this.dtpFechaInicio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaInicio.Location = new System.Drawing.Point(142, 134);
-            this.dtpFechaInicio.Name = "dtpFechaInicio";
-            this.dtpFechaInicio.Size = new System.Drawing.Size(98, 20);
-            this.dtpFechaInicio.TabIndex = 44;
-            // 
-            // label3
-            // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(248)))), ((int)(((byte)(241)))));
-            this.label3.Font = new System.Drawing.Font("Consolas", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.label3.Location = new System.Drawing.Point(30, 165);
-            this.label3.Margin = new System.Windows.Forms.Padding(4);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(105, 21);
-            this.label3.TabIndex = 45;
-            this.label3.Text = "Fec. Fin:";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // dtpFechaFin
-            // 
-            this.dtpFechaFin.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaFin.Location = new System.Drawing.Point(142, 163);
-            this.dtpFechaFin.Name = "dtpFechaFin";
-            this.dtpFechaFin.Size = new System.Drawing.Size(98, 20);
-            this.dtpFechaFin.TabIndex = 46;
-            // 
-            // label4
-            // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(248)))), ((int)(((byte)(241)))));
-            this.label4.Font = new System.Drawing.Font("Consolas", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.label4.Location = new System.Drawing.Point(30, 191);
-            this.label4.Margin = new System.Windows.Forms.Padding(4);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(105, 21);
-            this.label4.TabIndex = 47;
-            this.label4.Text = "Sponsors:";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // txtSponsors
-            // 
-            this.txtSponsors.Location = new System.Drawing.Point(142, 192);
-            this.txtSponsors.Name = "txtSponsors";
-            this.txtSponsors.Size = new System.Drawing.Size(169, 20);
-            this.txtSponsors.TabIndex = 48;
-            // 
-            // label5
-            // 
-            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(248)))), ((int)(((byte)(241)))));
-            this.label5.Font = new System.Drawing.Font("Consolas", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.label5.Location = new System.Drawing.Point(30, 217);
-            this.label5.Margin = new System.Windows.Forms.Padding(4);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(105, 21);
-            this.label5.TabIndex = 49;
-            this.label5.Text = "Estado:";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // cmbEstado
-            // 
-            this.cmbEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbEstado.FormattingEnabled = true;
-            this.cmbEstado.Items.AddRange(new object[] {
-            "programado",
-            "postergado",
-            "reprogramado",
-            "cancelado"});
-            this.cmbEstado.Location = new System.Drawing.Point(142, 218);
-            this.cmbEstado.Name = "cmbEstado";
-            this.cmbEstado.Size = new System.Drawing.Size(169, 21);
-            this.cmbEstado.TabIndex = 50;
-            // 
-            // label6
-            // 
-            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(248)))), ((int)(((byte)(241)))));
-            this.label6.Font = new System.Drawing.Font("Consolas", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.label6.Location = new System.Drawing.Point(30, 244);
-            this.label6.Margin = new System.Windows.Forms.Padding(4);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(105, 21);
-            this.label6.TabIndex = 51;
-            this.label6.Text = "Categoria:";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // cmbCategoria
-            // 
-            this.cmbCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbCategoria.FormattingEnabled = true;
-            this.cmbCategoria.Location = new System.Drawing.Point(142, 245);
-            this.cmbCategoria.Name = "cmbCategoria";
-            this.cmbCategoria.Size = new System.Drawing.Size(169, 21);
-            this.cmbCategoria.TabIndex = 52;
-            // 
-            // label7
-            // 
-            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(248)))), ((int)(((byte)(241)))));
-            this.label7.Font = new System.Drawing.Font("Consolas", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.label7.Location = new System.Drawing.Point(30, 272);
-            this.label7.Margin = new System.Windows.Forms.Padding(4);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(105, 21);
-            this.label7.TabIndex = 53;
-            this.label7.Text = "Disciplina:";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // cmbDisciplina
-            // 
-            this.cmbDisciplina.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbDisciplina.FormattingEnabled = true;
-            this.cmbDisciplina.Location = new System.Drawing.Point(142, 272);
-            this.cmbDisciplina.Name = "cmbDisciplina";
-            this.cmbDisciplina.Size = new System.Drawing.Size(169, 21);
-            this.cmbDisciplina.TabIndex = 54;
             // 
             // FrmGestionCompetencia
             // 

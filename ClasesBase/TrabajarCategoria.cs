@@ -17,7 +17,7 @@ namespace ClasesBase
         static Categoria oCategoria;
 
         /* # == Get a list of Categorias ------------------------- */
-        public static DataTable getAllCategorias()
+        public static DataTable GetAllCategorias()
         {
             using (sqlConnection = new SqlConnection(connectionString))
             {
@@ -39,7 +39,7 @@ namespace ClasesBase
         }
 
         /* # == Add a Categoria ---------------------------------- */
-        public static void addCategory(string nombre, string descripcion)
+        public static void AddCategoria(string nombre, string descripcion)
         {
             oCategoria = new Categoria();
 
@@ -60,7 +60,7 @@ namespace ClasesBase
         }
 
         /* # == Update a Categoria ------------------------------- */
-        public static void updateCategory(int id, string nombre, string descripcion)
+        public static void UpdateCategoria(int id, string nombre, string descripcion)
         {
             oCategoria = new Categoria();
 
@@ -83,7 +83,7 @@ namespace ClasesBase
         }
 
         /* # == Delete a Categoria ------------------------------- */
-        public static void deleteCategory(int id)
+        public static void DeleteCategoria(int id)
         {
             using (sqlConnection = new SqlConnection(connectionString))
             {

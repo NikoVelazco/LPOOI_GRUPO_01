@@ -29,7 +29,7 @@ namespace Vistas
 
         private void loadListOfCategories()
         {
-            dgvCategoria.DataSource = TrabajarCategoria.getAllCategorias();
+            dgvCategoria.DataSource = TrabajarCategoria.GetAllCategorias();
             dgvCategoria.Columns["Id"].Visible = false;
         }
 
@@ -44,7 +44,7 @@ namespace Vistas
                 DialogResult message = Util.messageYesNo("¿Deseas registrar una Categoria?", "Alta Categoría", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (message == DialogResult.Yes)
                 {
-                    TrabajarCategoria.addCategory(
+                    TrabajarCategoria.AddCategoria(
                         txtNombre.Text, txtDescripcion.Text
                     );
                     Util.startSound("sound-correct.mp3");
@@ -90,7 +90,7 @@ namespace Vistas
                 DialogResult message = Util.messageYesNo("¿Deseas modificar una Categoria?", "Modificar Categoría", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (message == DialogResult.Yes)
                 {
-                    TrabajarCategoria.updateCategory(
+                    TrabajarCategoria.UpdateCategoria(
                         int.Parse(dgvCategoria.CurrentRow.Cells["Id"].Value.ToString()),
                         txtNombre.Text,
                         txtDescripcion.Text
@@ -124,7 +124,7 @@ namespace Vistas
                 Util.startSound("alerta.mp3");
                 if (message == DialogResult.Yes)
                 {
-                    TrabajarCategoria.deleteCategory(
+                    TrabajarCategoria.DeleteCategoria(
                         int.Parse(dgvCategoria.CurrentRow.Cells["Id"].Value.ToString())
                     );
                     Util.startSound("sound-correct.mp3");

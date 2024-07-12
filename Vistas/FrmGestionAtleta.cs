@@ -228,6 +228,7 @@ namespace Vistas
         private void txtBusqueda_TextChanged(object sender, EventArgs e)
         {
             currentPattern = txtBusqueda.Text;
+            Util.clearTextBox(panelContenedor);
             loadAtleta();
            /** if (!string.IsNullOrWhiteSpace(txtBusqueda.Text))
             {

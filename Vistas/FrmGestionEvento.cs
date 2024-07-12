@@ -24,12 +24,9 @@ namespace Vistas
             loadListOfEventos();
         }
 
-        /* # ==========================================================================
-           # = Load Eventos (DataTable), Atletas (ComboBox) y Competencias (ComboBox) =
-           # ========================================================================== */
         private void loadListOfEventos()
         {
-            dgvEvento.DataSource = TrabajarEvento.getAllEventos();
+            dgvEvento.DataSource = TrabajarEvento.GetAllEventos();
             dgvEvento.Columns["Id"].Visible = false;
         }
 
@@ -42,6 +39,8 @@ namespace Vistas
             cmbListaAtletas.ValueMember = "Id";
         }
 
+
+
         private void loadComboBoxWithCompetencias()
         {
             DataTable dataTable = TrabajarCompetencia.getAllowedCompetencias();
@@ -50,9 +49,6 @@ namespace Vistas
             cmbListaCompetencias.ValueMember = "Id";
         }
 
-        /* # =========================================
-           # = Registrar, Anular y Acreditar Eventos =
-           # ========================================= */
         private void btnRegistrarEvento_Click(object sender, EventArgs e)
         {
             Boolean athleteWasFound = TrabajarAtleta.atletaIsFound(Int32.Parse(cmbListaAtletas.SelectedValue.ToString()));
@@ -70,7 +66,7 @@ namespace Vistas
 
             if (!athleteWasFound && !dateIsAllowed)
             {
-                TrabajarEvento.insertEvento(
+                TrabajarEvento.InsertEvento(
                     Int32.Parse(cmbListaCompetencias.SelectedValue.ToString()),
                     Int32.Parse(cmbListaAtletas.SelectedValue.ToString())
                 );
@@ -80,19 +76,16 @@ namespace Vistas
 
         private void btnAnularInscripcionEvento_Click(object sender, EventArgs e)
         {
-            TrabajarEvento.cancelEvento(int.Parse(dgvAnularInscripcion.CurrentRow.Cells["Id"].Value.ToString()));
+            TrabajarEvento.UpdateEventoEstado(int.Parse(dgvAnularInscripcion.CurrentRow.Cells["Id"].Value.ToString()), EventoEstado.ANULADO);
             loadListOfEventos();
         }
 
         private void btnRegistrarAcreditacionEvento_Click(object sender, EventArgs e)
         {
-            TrabajarEvento.registerEvento(int.Parse(dgvRegistrarAcreditacion.CurrentRow.Cells["Id"].Value.ToString()));
+            TrabajarEvento.RegisterEvento(int.Parse(dgvRegistrarAcreditacion.CurrentRow.Cells["Id"].Value.ToString()));
             loadListOfEventos();
         }
 
-        /* # ==========================================================================
-           # = Load Eventos (DataTable), Atletas (ComboBox) y Competencias (ComboBox) =
-           # ========================================================================== */
         private Boolean isEventoDateTimeBeforeOrEqualToCompetenciaDateTime()
         {
             DateTime dateTime = Convert.ToDateTime(txtFechaInicioCompetencia.Text);
@@ -125,7 +118,6 @@ namespace Vistas
             }
         }
 
-        // For testing
         private void cmbListaCompetencias_SelectedIndexChanged(object sender, EventArgs e)
         {
             DataTable dataTable = TrabajarCompetencia.getAllowedCompetencias();

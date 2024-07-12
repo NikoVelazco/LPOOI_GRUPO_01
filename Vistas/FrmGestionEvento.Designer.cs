@@ -344,7 +344,7 @@
             this.tpAnularInscripcionEvento.Location = new System.Drawing.Point(4, 25);
             this.tpAnularInscripcionEvento.Name = "tpAnularInscripcionEvento";
             this.tpAnularInscripcionEvento.Padding = new System.Windows.Forms.Padding(3);
-            this.tpAnularInscripcionEvento.Size = new System.Drawing.Size(592, 239);
+            this.tpAnularInscripcionEvento.Size = new System.Drawing.Size(586, 239);
             this.tpAnularInscripcionEvento.TabIndex = 1;
             this.tpAnularInscripcionEvento.Text = "Anular inscripción";
             this.tpAnularInscripcionEvento.UseVisualStyleBackColor = true;
@@ -358,7 +358,7 @@
             this.tpRegistrarAcreditacionEvento.Location = new System.Drawing.Point(4, 25);
             this.tpRegistrarAcreditacionEvento.Name = "tpRegistrarAcreditacionEvento";
             this.tpRegistrarAcreditacionEvento.Padding = new System.Windows.Forms.Padding(3);
-            this.tpRegistrarAcreditacionEvento.Size = new System.Drawing.Size(592, 239);
+            this.tpRegistrarAcreditacionEvento.Size = new System.Drawing.Size(586, 239);
             this.tpRegistrarAcreditacionEvento.TabIndex = 2;
             this.tpRegistrarAcreditacionEvento.Text = "Registrar acreditación";
             this.tpRegistrarAcreditacionEvento.UseVisualStyleBackColor = true;
@@ -376,7 +376,7 @@
             // lblInformacionAtletaRegistrarAcreditacion
             // 
             this.lblInformacionAtletaRegistrarAcreditacion.BackColor = System.Drawing.SystemColors.Control;
-            this.lblInformacionAtletaRegistrarAcreditacion.Location = new System.Drawing.Point(6, 17);
+            this.lblInformacionAtletaRegistrarAcreditacion.Location = new System.Drawing.Point(6, 19);
             this.lblInformacionAtletaRegistrarAcreditacion.Name = "lblInformacionAtletaRegistrarAcreditacion";
             this.lblInformacionAtletaRegistrarAcreditacion.Size = new System.Drawing.Size(278, 20);
             this.lblInformacionAtletaRegistrarAcreditacion.TabIndex = 9;

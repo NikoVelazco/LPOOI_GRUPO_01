@@ -49,7 +49,7 @@ namespace Vistas
 
         private void loadCategorias()
         {
-            cmbCategoria.DataSource = TrabajarCategoria.getAllCategorias();
+            cmbCategoria.DataSource = TrabajarCategoria.GetAllCategorias();
             cmbCategoria.DisplayMember = "Nombre";
             cmbCategoria.ValueMember = "Id";
             cmbCategoria.SelectedIndex = 0;

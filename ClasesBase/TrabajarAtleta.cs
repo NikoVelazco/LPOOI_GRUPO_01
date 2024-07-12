@@ -9,6 +9,11 @@ namespace ClasesBase
 {
     public class TrabajarAtleta
     {
+        static readonly string s_connectionString = ClasesBase.Properties.Settings.Default.comdepConnectionString;
+        static SqlConnection s_sqlConnection;
+        static SqlCommand s_sqlCommand;
+        static SqlDataAdapter s_sqlDataAdapter;
+
         /**
          * Obtiene la lista de atletas
          * */
@@ -148,30 +153,83 @@ namespace ClasesBase
         public static Boolean atletaIsFound(int atl_Id)
         {
             Boolean isFound;
-            SqlConnection sqlConnection;
-            SqlCommand sqlCommand;
-            string connectionString = ClasesBase.Properties.Settings.Default.comdepConnectionString;
 
-            using (sqlConnection = new SqlConnection(connectionString))
+            string sqlQuery = @"
+                SELECT COUNT (a.Atl_ID)
+                FROM Evento AS e
+                JOIN Atleta a ON e.Atl_ID = a.Atl_ID
+                WHERE e.Atl_ID = (@Atl_Id)
+            ";
+
+            using (s_sqlConnection = new SqlConnection(s_connectionString))
             {
-                sqlConnection.Open();
-                sqlCommand = new SqlCommand();
+                using (s_sqlCommand = new SqlCommand(sqlQuery, s_sqlConnection))
+                {
+                    s_sqlConnection.Open();
+                    s_sqlCommand.CommandType = CommandType.Text;
+                    s_sqlCommand.Connection = s_sqlConnection;
+                    s_sqlCommand.Parameters.AddWithValue("@Atl_Id", atl_Id);
 
-                sqlCommand.CommandText = @"
-                    SELECT COUNT (a.Atl_ID)
-                    FROM Evento AS e
-                    JOIN Atleta a ON e.Atl_ID = a.Atl_ID
-                    WHERE e.Atl_ID = (@atl_Id)
-                ";
-                sqlCommand.CommandType = CommandType.Text;
-                sqlCommand.Connection = sqlConnection;
-
-                sqlCommand.Parameters.AddWithValue("@atl_Id", atl_Id);
-
-                isFound = Convert.ToBoolean((int)sqlCommand.ExecuteScalar());
+                    isFound = Convert.ToBoolean((int)s_sqlCommand.ExecuteScalar());
+                }
             }
 
             return isFound;
+        }
+
+        public static DataTable getAtletasAcreditados(string state)
+        {
+            string sqlQuery = @"
+                SELECT
+                    Atleta.Atl_ID AS 'Id',
+                    Atleta.Atl_Nombre + ', ' + Atleta.Atl_Apellido AS 'Atleta'
+                FROM
+                    Atleta
+                INNER JOIN
+                    Evento ON Atleta.Atl_ID = Evento.Atl_ID
+                WHERE Eve_Estado = @Estado;
+            ";
+
+            using (s_sqlConnection = new SqlConnection(s_connectionString))
+            {
+                using (s_sqlCommand = new SqlCommand(sqlQuery, s_sqlConnection))
+                {
+                    s_sqlConnection.Open();
+                    s_sqlCommand.CommandType = CommandType.Text;
+                    s_sqlCommand.Parameters.AddWithValue("@Estado", state);
+
+                    using (s_sqlDataAdapter = new SqlDataAdapter(s_sqlCommand))
+                    {
+                        DataTable dataTable = new DataTable();
+
+                        s_sqlDataAdapter.Fill(dataTable);
+
+                        return dataTable;
+                    }
+                }
+            }
+        }
+
+        public static DataTable SearchAtletaByPattern(string pattern)
+        {
+            using (s_sqlConnection = new SqlConnection(s_connectionString))
+            {
+                using (s_sqlCommand = new SqlCommand("BuscarAtletaSegunPatron", s_sqlConnection))
+                {
+                    s_sqlConnection.Open();
+                    s_sqlCommand.CommandType = CommandType.StoredProcedure;
+                    s_sqlCommand.Parameters.AddWithValue("@Pattern", "%" + pattern + "%");
+
+                    using (s_sqlDataAdapter = new SqlDataAdapter(s_sqlCommand))
+                    {
+                        DataTable dataTable = new DataTable();
+
+                        s_sqlDataAdapter.Fill(dataTable);
+
+                        return dataTable;
+                    }
+                }
+            }
         }
     }
 }

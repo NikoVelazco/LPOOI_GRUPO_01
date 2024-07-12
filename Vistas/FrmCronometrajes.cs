@@ -10,15 +10,16 @@ using ClasesBase;
 
 namespace Vistas
 {
+    /* #== Cronometrajes =================================================== */
     public partial class FrmCronometrajes : Form
     {
-        private static DateTime initializeHoraInicioEvento;
+        private static DateTime initializeHoraFechaInicioEvento;
+        private static DateTime initializeHoraFechaFinEvento;
 
         public FrmCronometrajes()
         {
             InitializeComponent();
         }
-
 
         private void FrmCronometrajes_Load(object sender, EventArgs e)
         {
@@ -28,8 +29,7 @@ namespace Vistas
 
         private void loadListOfAtletas()
         {
-            DataTable dataTable = TrabajarAtleta.getAllAtletas();
-            dataTable.Columns.Add("Atleta", typeof(string), "Nombre + ' ' + Apellido");
+            DataTable dataTable = TrabajarAtleta.getAtletasAcreditados(EventoEstado.ACREDITADO);
             cmbListaAtletas.DataSource = dataTable;
             cmbListaAtletas.DisplayMember = "Atleta";
             cmbListaAtletas.ValueMember = "Id";
@@ -45,57 +45,139 @@ namespace Vistas
 
         private void loadEventoSegunAtletaCompetencia()
         {
-            int atl_Id = Utilidades.ParseStringToInt(cmbListaAtletas.SelectedValue.ToString());
-            int com_Id = Utilidades.ParseStringToInt(cmbListaCompetencias.SelectedValue.ToString());
-            dgvEventoSegunAtletaCompetencia.DataSource = TrabajarCronometraje.SearchEventoByAtletaAndCompetencia(atl_Id, com_Id);
+            int atletaId = Utilidades.ParseStringToInt(cmbListaAtletas.SelectedValue.ToString());
+            int competenciaId = Utilidades.ParseStringToInt(cmbListaCompetencias.SelectedValue.ToString());
+            dgvEventoSegunAtletaCompetencia.DataSource = TrabajarEvento.SearchEventoByAtletaAndCompetencia(atletaId, competenciaId);
         }
 
         private void btnIniciarEvento_Click(object sender, EventArgs e)
         {
             pnlRegistroCronometrajeHoraInicio.Visible = true;
             pnlRegistroCronometrajeHoraFin.Visible = true;
-            initializeHoraInicioEvento = DateTime.Now;
-            lblValorHoraInicioEvento.Text = initializeHoraInicioEvento.ToString("hh:mm:ss");
-            lblValorFechaInicioEvento.Text = initializeHoraInicioEvento.ToString("dd MMMM yyyy");
+            initializeHoraFechaInicioEvento = DateTime.Now;
+            lblValorHoraInicioEvento.Text = initializeHoraFechaInicioEvento.ToString("h:mm:ss tt");
+            lblValorFechaInicioEvento.Text = initializeHoraFechaInicioEvento.ToString("dd MMMM yyyy");
             btnIniciarEvento.Enabled = false;
         }
 
         private void btnBuscarEvento_Click(object sender, EventArgs e)
         {
-            int atl_Id = (int)cmbListaAtletas.SelectedValue;
-            int com_Id = (int)cmbListaCompetencias.SelectedValue;
+            int atletaId = (int)cmbListaAtletas.SelectedValue;
+            int competenciaId = (int)cmbListaCompetencias.SelectedValue;
             
-            dgvEventoSegunAtletaCompetencia.DataSource = TrabajarCronometraje.SearchEventoByAtletaAndCompetencia(atl_Id, com_Id);
-            dgvEventoSegunAtletaCompetencia.Columns["Id"].Visible = false;
+            dgvEventoSegunAtletaCompetencia.DataSource = TrabajarEvento.SearchEventoByAtletaAndCompetencia(atletaId, competenciaId);
+
+            dgvEventoSegunAtletaCompetencia.Columns[0].Visible = false;
+
+            if (dgvEventoSegunAtletaCompetencia.RowCount > 0 && !dgvEventoSegunAtletaCompetencia.CurrentRow.IsNewRow)
+            {
+                btnFinalizarEvento.Enabled = !btnFinalizarEvento.Enabled;
+                lblValorHoraFinEvento.Enabled = !lblValorHoraFinEvento.Enabled;
+                lblValorFechaFinEvento.Enabled = !lblValorFechaFinEvento.Enabled;
+            }
+            else
+            {
+                btnFinalizarEvento.Enabled = false;
+            }
         }
 
-        private void lblFinalizarEvento_Click(object sender, EventArgs e)
+        private void btnFinalizarEvento_Click(object sender, EventArgs e)
         {
-            // Buscar evento y mostrarlo cuando se haga click
-            int eve_Id = (int)dgvEventoSegunAtletaCompetencia.CurrentRow.Cells[0].Value;
+            initializeHoraFechaFinEvento = DateTime.Now;
 
-            if (eve_Id > 0)
+            if (dgvEventoSegunAtletaCompetencia.RowCount > 0 && !dgvEventoSegunAtletaCompetencia.CurrentRow.IsNewRow)
             {
-                DateTime initializeHoraFinEvento = DateTime.Now;
+                int eventoId = (int)dgvEventoSegunAtletaCompetencia.CurrentRow.Cells["Id"].Value;
                 
-                TrabajarCronometraje.UpdateHoraFinEvent(
-                    eve_Id,
-                    initializeHoraInicioEvento,
-                    initializeHoraFinEvento
+                if (eventoId > 0)
+                {
+                    if (rdoIngresoManual.Checked)
+                    {
+                        initializeHoraFechaFinEvento = Convert.ToDateTime(
+                            dtpIngresoHoraFinEvento.Value.ToString("h:mm:ss tt") +
+                            " " +
+                            dtpIngresoFechaFinEvento.Value.ToString("MM/dd/yyyy")
+                        );
+
+                        TrabajarCronometraje.UpdateHoraInicioFinEvento(
+                            eventoId,
+                            initializeHoraFechaInicioEvento,
+                            initializeHoraFechaFinEvento
+                        );
+                    }
+                    else
+                    {
+                        TrabajarCronometraje.UpdateHoraInicioFinEvento(
+                            eventoId,
+                            initializeHoraFechaInicioEvento,
+                            initializeHoraFechaFinEvento
+                        );
+                    }
+
+                    lblValorHoraFinEvento.Text = initializeHoraFechaFinEvento.ToString("h:mm:ss tt");
+                    lblValorFechaFinEvento.Text = initializeHoraFechaFinEvento.ToString("dd MMMM yyyy");
+                    loadEventoSegunAtletaCompetencia();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Debe seleccionar una competencia", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void rdoIngresoAutogenerado_CheckedChanged(object sender, EventArgs e)
+        {
+            pnlIngresarHoraFinEvento.Enabled = false;
+            pnlIngresarFechaFinEvento.Enabled = false;
+        }
+
+        private void rdoIngresoManual_CheckedChanged(object sender, EventArgs e)
+        {
+            pnlIngresarHoraFinEvento.Enabled = !pnlIngresarHoraFinEvento.Enabled;
+            pnlIngresarFechaFinEvento.Enabled = !pnlIngresarFechaFinEvento.Enabled;
+        }
+
+        private void ActualizarEventoAbandono_Click(object sender, EventArgs e)
+        {
+            if (dgvEventoSegunAtletaCompetencia.RowCount > 0 && !dgvEventoSegunAtletaCompetencia.CurrentRow.IsNewRow)
+            {
+                TrabajarEvento.UpdateEventoEstado(int.Parse(dgvEventoSegunAtletaCompetencia.CurrentRow.Cells["Id"].Value.ToString()), EventoEstado.ABANDONO);
+            }
+            loadEventoSegunAtletaCompetencia();
+        }
+
+        private void btnActualizarEventoDescalificado_Click(object sender, EventArgs e)
+        {
+            if (dgvEventoSegunAtletaCompetencia.RowCount > 0 && !dgvEventoSegunAtletaCompetencia.CurrentRow.IsNewRow)
+            {
+                TrabajarEvento.UpdateEventoEstado(int.Parse(dgvEventoSegunAtletaCompetencia.CurrentRow.Cells["Id"].Value.ToString()), EventoEstado.DESCALIFICADO);
+            }
+            loadEventoSegunAtletaCompetencia();
+        }
+
+        private void btnActualizarFechaInicio_Click(object sender, EventArgs e)
+        {
+            int eventoId = (int)dgvEventoSegunAtletaCompetencia.CurrentRow.Cells["Id"].Value;
+
+            initializeHoraFechaInicioEvento = Convert.ToDateTime(
+                dtpActualizarHoraInicio.Value.ToString("h:mm:ss tt") +
+                " " +
+                dtpActualizarFechaInicio.Value.ToString("MM/dd/yyyy")
+            );
+
+            if (initializeHoraFechaInicioEvento <= Convert.ToDateTime(dgvEventoSegunAtletaCompetencia.CurrentRow.Cells["Hora Fin"].Value))
+            {
+                TrabajarCronometraje.UpdateHoraInicioEvento(
+                    eventoId,
+                    initializeHoraFechaInicioEvento
                 );
-                
-                lblValorHoraFinEvento.Text = initializeHoraFinEvento.ToString("hh:mm:ss");
-                lblValorFechaFinEvento.Text = initializeHoraFinEvento.ToString("dd MMMM yyyy");
-                loadEventoSegunAtletaCompetencia();
+            }
+            else
+            {
+                MessageBox.Show("La fecha debe ser anterior a la fecha de fin del evento", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-            lblUltimoParticipante.Text = "Último participante";
-            lblUltimoParticipante.ForeColor = Color.Red;
-        }
-
-        private void dgvEventoSegunAtletaCompetencia_RowStateChanged(object sender, DataGridViewRowStateChangedEventArgs e)
-        {
-            btnFinalizarEvento.Enabled = !btnFinalizarEvento.Enabled;
+            loadEventoSegunAtletaCompetencia();            
         }
     }
 }
