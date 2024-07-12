@@ -16,7 +16,7 @@ namespace ClasesBase
         static SqlDataAdapter sqlDataAdapter;
 
         /* # == Get a list of Resultados -------------------------------------------- */
-        public static DataTable GetResultados(int com_Id)
+        public static DataTable GetResultados(int competenciaId)
         {
             using (sqlConnection = new SqlConnection(connectionString))
             {
@@ -24,7 +24,7 @@ namespace ClasesBase
                 {
                     sqlConnection.Open();
                     sqlCommand.CommandType = CommandType.StoredProcedure;
-                    sqlCommand.Parameters.AddWithValue("@Id", com_Id);
+                    sqlCommand.Parameters.AddWithValue("@Id", competenciaId);
 
                     using (sqlDataAdapter = new SqlDataAdapter(sqlCommand))
                     {
@@ -77,8 +77,8 @@ namespace ClasesBase
             return sortedDataTable;
         }
 
-        /* # == Get the amount of Atletas según Competencia ------------------------- */
-        public static DataTable GetAtletasByCompetencia(int com_Id)
+        /* # == Get a list of Atletas según Competencia ----------------------------- */
+        public static DataTable GetAtletasByCompetencia(int competenciaId)
         {
             using (sqlConnection = new SqlConnection(connectionString))
             {
@@ -86,7 +86,7 @@ namespace ClasesBase
                 {
                     sqlConnection.Open();
                     sqlCommand.CommandType = CommandType.StoredProcedure;
-                    sqlCommand.Parameters.AddWithValue("@Id", com_Id);
+                    sqlCommand.Parameters.AddWithValue("@Id", competenciaId);
 
                     using (sqlDataAdapter = new SqlDataAdapter(sqlCommand))
                     {
