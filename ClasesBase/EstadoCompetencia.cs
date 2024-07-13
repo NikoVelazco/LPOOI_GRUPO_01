@@ -7,9 +7,9 @@ namespace ClasesBase
 {
     public class EstadoCompetencia
     {
-        public static readonly string PROGRAMADO = "Programado";
-        public static readonly string POSTERGADO = "Postergado";
-        public static readonly string REPROGRAMADO = "Reprogramado";
-        public static readonly string CANCELADO = "Cancelado";
+        public static readonly string PROGRAMADO = "programado";
+        public static readonly string POSTERGADO = "postergado";
+        public static readonly string REPROGRAMADO = "reprogramado";
+        public static readonly string CANCELADO = "cancelado";
     }
 }

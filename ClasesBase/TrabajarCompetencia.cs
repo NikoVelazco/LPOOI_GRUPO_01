@@ -101,16 +101,12 @@ namespace ClasesBase
                 sqlConnection.Open();
                 sqlCommand = new SqlCommand();
 
-                sqlCommand.CommandText = @"
-                    SELECT COUNT (Com_Estado)
-                    FROM Competencia
-                    WHERE Com_ID = @com_Id AND Com_Estado = @stateNotAllowed
-                ";
-                sqlCommand.CommandType = CommandType.Text;
+                sqlCommand.CommandText = "CountCompetenciasNotAllowed";
+                sqlCommand.CommandType = CommandType.StoredProcedure;
                 sqlCommand.Connection = sqlConnection;
 
-                sqlCommand.Parameters.AddWithValue("@com_Id", com_Id);
-                sqlCommand.Parameters.AddWithValue("@stateNotAllowed", stateNotAllowed);
+                sqlCommand.Parameters.AddWithValue("@CompetenciaId", com_Id);
+                sqlCommand.Parameters.AddWithValue("@Estado", stateNotAllowed);
 
                 isFound = Convert.ToBoolean((int)sqlCommand.ExecuteScalar());
             }
@@ -122,22 +118,13 @@ namespace ClasesBase
         {
             string connectionString = ClasesBase.Properties.Settings.Default.comdepConnectionString;
             string stateNotAllowed = "cancelado";
-            string sqlQuery= @"
-                SELECT
-                    Com_ID AS 'Id',
-                    Com_Nombre AS 'Nombre',
-                    Com_FechaInicio AS 'Fecha_Inicio',
-                    Com_FechaFin AS 'Fecha_Fin'
-                FROM Competencia
-                WHERE NOT Com_Estado = @stateNotAllowed
-            ";
 
             using (SqlConnection sqlConnection = new SqlConnection(connectionString))
             {
-                using(SqlCommand sqlCommand = new SqlCommand(sqlQuery, sqlConnection))
+                using(SqlCommand sqlCommand = new SqlCommand("GetAllowedCompetencias", sqlConnection))
 	            {
-                    //sqlCommand.CommandType = CommandType.StoredProcedure;
-                    sqlCommand.Parameters.AddWithValue("@stateNotAllowed", stateNotAllowed);
+                    sqlCommand.CommandType = CommandType.StoredProcedure;
+                    sqlCommand.Parameters.AddWithValue("@Estado", stateNotAllowed);
                     sqlConnection.Open();
 
                     using (SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(sqlCommand))

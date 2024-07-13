@@ -17,7 +17,8 @@ namespace ClasesBase
         public static bool validarUsuario(string nombre, string contrasenia)
         {
             SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.comdepConnectionString);
-            SqlCommand cmd = new SqlCommand("SELECT * FROM Usuario", cnn);
+            SqlCommand cmd = new SqlCommand("ListarUsuarios", cnn);
+            cmd.CommandType = CommandType.StoredProcedure;
             SqlDataReader dr;
             cnn.Open();
             dr = cmd.ExecuteReader();
@@ -40,9 +41,9 @@ namespace ClasesBase
          * */
         public static DataTable buscarPorCorreo(string email)
         {
-            string sentencia = "SELECT * FROM Usuario WHERE Usu_Email = @email";
             SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.comdepConnectionString);
-            SqlCommand cmd = new SqlCommand(sentencia, cnn);
+            SqlCommand cmd = new SqlCommand("BuscarUsuarioPorCorreo", cnn);
+            cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@email", email);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
@@ -56,10 +57,10 @@ namespace ClasesBase
          * */
         public static Usuario searchUserByNameUser(string nombreUsuario)
         {
-            string sentencia = "SELECT * FROM Usuario WHERE Usu_NombreUsuario = @nameuser";
             SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.comdepConnectionString);
-            SqlCommand cmd = new SqlCommand(sentencia, cnn);
-            cmd.Parameters.AddWithValue("@nameuser", nombreUsuario);
+            SqlCommand cmd = new SqlCommand("SearchUserByUsername", cnn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@Username", nombreUsuario);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);
@@ -84,14 +85,11 @@ namespace ClasesBase
         public static int getRolCodigo(string nombreUsuario)
         {
             int codigoRol = -1;
-            string consulta = @"
-            SELECT r.Rol_Codigo 
-            FROM Usuario u
-            JOIN Rol r ON u.Rol_Codigo = r.Rol_Codigo
-            WHERE u.Usu_NombreUsuario = @NombreUsuario";
+            
             SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.comdepConnectionString);
-            SqlCommand cmd = new SqlCommand(consulta, cnn);
+            SqlCommand cmd = new SqlCommand("GetUserRolByCodigo", cnn);
             {
+                cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@NombreUsuario", nombreUsuario);
                 cnn.Open();
                 object result = cmd.ExecuteScalar();
@@ -110,16 +108,12 @@ namespace ClasesBase
         public static string getUserRol(string username)
         {
             string rolDescription = "";
-            string query = @"
-            SELECT r.Rol_Descripcion
-            FROM Usuario AS u
-            JOIN Rol AS r ON u.Rol_Codigo = r.Rol_Codigo
-            WHERE u.Usu_NombreUsuario = @NombreUsuario";
 
             SqlConnection sqlConnection = new SqlConnection(ClasesBase.Properties.Settings.Default.comdepConnectionString);
             sqlConnection.Open();
 
-            SqlCommand sqlCommand = new SqlCommand(query, sqlConnection);
+            SqlCommand sqlCommand = new SqlCommand("GetUserRolByUsername", sqlConnection);
+            sqlCommand.CommandType = CommandType.StoredProcedure;
             sqlCommand.Parameters.AddWithValue("@NombreUsuario", username);
 
             rolDescription = (string)sqlCommand.ExecuteScalar();
@@ -132,9 +126,9 @@ namespace ClasesBase
          * */
         public static DataTable getListRoles()
         {
-            string consulta = @"SELECT * FROM Rol";
             SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.comdepConnectionString);
-            SqlCommand cmd = new SqlCommand(consulta, cnn);
+            SqlCommand cmd = new SqlCommand("ListarRoles", cnn);
+            cmd.CommandType = CommandType.StoredProcedure;
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);
@@ -146,9 +140,9 @@ namespace ClasesBase
          * */
         public static void addUser(Usuario user)
         {
-            string sentencia = @"INSERT INTO Usuario(Usu_NombreUsuario, Usu_Contraseña, Usu_ApellidoNombre, Rol_Codigo, Usu_Email, Usu_Imagen) VALUES(@nom, @pass, @ape, @rol, @email, @imagen)";
             SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.comdepConnectionString);
-            SqlCommand cmd = new SqlCommand(sentencia, cnn);
+            SqlCommand cmd = new SqlCommand("InsertarUsuario", cnn);
+            cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@nom", user.Usu_NombreUsuario);
             cmd.Parameters.AddWithValue("@pass", user.Usu_Contrasenia);
             cmd.Parameters.AddWithValue("@ape", user.Usu_ApellidoNombre);
@@ -165,10 +159,9 @@ namespace ClasesBase
          * */
         public static DataTable listUser()
         {
-            string consulta = @"SELECT Rol_Descripcion AS 'Rol', Usu_ApellidoNombre AS 'Apellido y Nombre', Usu_NombreUsuario AS 'Usuario', Usu_Contraseña AS 'Contraseña', Usu_Email AS 'Email', Usu_Imagen AS 'Imagen',
-            Usu_ID, U.Rol_Codigo FROM Usuario as U LEFT JOIN Rol as R ON (R.Rol_Codigo=U.Rol_Codigo)";
             SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.comdepConnectionString);
-            SqlCommand cmd = new SqlCommand(consulta, cnn);
+            SqlCommand cmd = new SqlCommand("ListarUsuariosByRol", cnn);
+            cmd.CommandType = CommandType.StoredProcedure;
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);
@@ -230,10 +223,10 @@ namespace ClasesBase
          * */
         public static void deleteUser(int id)
         {
-            string sentencia = @"DELETE FROM Usuario WHERE Usu_ID = @id";
             SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.comdepConnectionString);
-            SqlCommand cmd = new SqlCommand(sentencia, cnn);
-            cmd.Parameters.AddWithValue("@id", id);
+            SqlCommand cmd = new SqlCommand("DeleteUsuario", cnn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@Id", id);
             cnn.Open();
             cmd.ExecuteNonQuery();
             cnn.Close();
@@ -244,9 +237,9 @@ namespace ClasesBase
          * */
         public static void editUser(Usuario user, int id)
         {
-            string sentencia = @"UPDATE Usuario SET Usu_Contraseña = @pass, Usu_ApellidoNombre = @ape, Usu_NombreUsuario = @nom, Rol_Codigo = @rol, Usu_Email = @email, Usu_Imagen = @imagen WHERE Usu_ID = @id";
             SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.comdepConnectionString);
-            SqlCommand cmd = new SqlCommand(sentencia, cnn);
+            SqlCommand cmd = new SqlCommand("UpdateUsuario", cnn);
+            cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@id", id);
             cmd.Parameters.AddWithValue("@pass", user.Usu_Contrasenia);
             cmd.Parameters.AddWithValue("@ape", user.Usu_ApellidoNombre);
