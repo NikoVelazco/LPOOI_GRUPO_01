@@ -57,14 +57,9 @@ namespace ClasesBase
          * */
         public static int searchAtletaByDNI(string dni)
         {
-            string consulta = @"
-                SELECT
-                    Atl_ID
-                FROM Atleta
-                WHERE Atl_DNI = @dni
-            ";
             SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.comdepConnectionString);
-            SqlCommand cmd = new SqlCommand(consulta, cnn);
+            SqlCommand cmd = new SqlCommand("searchAtletaByDniOnly", cnn);
+            cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@dni", dni);
             cnn.Open();
             object result = cmd.ExecuteScalar();
@@ -84,9 +79,9 @@ namespace ClasesBase
          * */
         public static void editAtleta(Atleta atleta, int idAtleta)
         {
-            string sentencia = @"UPDATE Atleta SET Atl_DNi = @dni, Atl_Apellido = @apellido, Atl_Nombre = @nombre, Atl_Nacionalidad = @nacionalidad, Atl_Entrenador = @entrenador, Atl_Genero = @genero, Atl_Altura = @altura, Atl_Peso = @peso, Atl_FechaNac = @fechaNac, Atl_Direccion = @direccion, Atl_Email = @email WHERE Atl_ID = @id";
             SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.comdepConnectionString);
-            SqlCommand cmd = new SqlCommand(sentencia, cnn);
+            SqlCommand cmd = new SqlCommand("editAtleta", cnn);
+            cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@id", idAtleta);
             cmd.Parameters.AddWithValue("@dni", atleta.Atl_DNI);
             cmd.Parameters.AddWithValue("@apellido", atleta.Atl_Apellido);
@@ -109,9 +104,9 @@ namespace ClasesBase
          * */
         public static DataTable searchAtletaByName(string pattern)
         {
-            string consulta = @"SELECT Atl_DNI AS 'DNI', Atl_Apellido AS 'Apellido', Atl_Nombre AS 'Nombre', Atl_Nacionalidad AS 'Nacionalidad', Atl_Entrenador AS 'Entrenador', Atl_Genero AS 'Genero', Atl_Altura AS 'Altura', Atl_Peso AS 'Peso', Atl_FechaNac AS 'Fecha Nacimiento', Atl_Direccion AS 'Direccion', Atl_Email AS 'Email', Atl_ID FROM Atleta WHERE Atl_Nombre LIKE @pattern";
             SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.comdepConnectionString);
-            SqlCommand cmd = new SqlCommand(consulta, cnn);
+            SqlCommand cmd = new SqlCommand("searchAtletaByName", cnn);
+            cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@pattern", "%" + pattern + "%");
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
@@ -121,9 +116,9 @@ namespace ClasesBase
 
         public static void deleteAtleta(int id)
         {
-            string sentencia = @"DELETE FROM Atleta WHERE Atl_ID = @id";
             SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.comdepConnectionString);
-            SqlCommand cmd = new SqlCommand(sentencia, cnn);
+            SqlCommand cmd = new SqlCommand("deleteAtletaById", cnn);
+            cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@id", id);
             cnn.Open();
             cmd.ExecuteNonQuery();
@@ -154,19 +149,12 @@ namespace ClasesBase
         {
             Boolean isFound;
 
-            string sqlQuery = @"
-                SELECT COUNT (a.Atl_ID)
-                FROM Evento AS e
-                JOIN Atleta a ON e.Atl_ID = a.Atl_ID
-                WHERE e.Atl_ID = (@Atl_Id)
-            ";
-
             using (s_sqlConnection = new SqlConnection(s_connectionString))
             {
-                using (s_sqlCommand = new SqlCommand(sqlQuery, s_sqlConnection))
+                using (s_sqlCommand = new SqlCommand("atletaIsFound", s_sqlConnection))
                 {
                     s_sqlConnection.Open();
-                    s_sqlCommand.CommandType = CommandType.Text;
+                    s_sqlCommand.CommandType = CommandType.StoredProcedure;
                     s_sqlCommand.Connection = s_sqlConnection;
                     s_sqlCommand.Parameters.AddWithValue("@Atl_Id", atl_Id);
 
@@ -179,23 +167,12 @@ namespace ClasesBase
 
         public static DataTable getAtletasAcreditados(string state)
         {
-            string sqlQuery = @"
-                SELECT
-                    Atleta.Atl_ID AS 'Id',
-                    Atleta.Atl_Nombre + ', ' + Atleta.Atl_Apellido AS 'Atleta'
-                FROM
-                    Atleta
-                INNER JOIN
-                    Evento ON Atleta.Atl_ID = Evento.Atl_ID
-                WHERE Eve_Estado = @Estado;
-            ";
-
             using (s_sqlConnection = new SqlConnection(s_connectionString))
             {
-                using (s_sqlCommand = new SqlCommand(sqlQuery, s_sqlConnection))
+                using (s_sqlCommand = new SqlCommand("getAtletasAcreditados", s_sqlConnection))
                 {
                     s_sqlConnection.Open();
-                    s_sqlCommand.CommandType = CommandType.Text;
+                    s_sqlCommand.CommandType = CommandType.StoredProcedure;
                     s_sqlCommand.Parameters.AddWithValue("@Estado", state);
 
                     using (s_sqlDataAdapter = new SqlDataAdapter(s_sqlCommand))
