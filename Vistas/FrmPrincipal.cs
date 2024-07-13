@@ -130,7 +130,7 @@ namespace Vistas
                 Util.disabledButton(btnUsuarios);
                 Util.disabledButton(btnCategorias);
                 Util.disabledButton(btnDisciplinas);
-                Util.disabledButton(btnEventos);
+                //Util.disabledButton(btnEventos);
             }
             if (TrabajarUsuario.getRolCodigo(txtUser.Text) == 3)
             {
