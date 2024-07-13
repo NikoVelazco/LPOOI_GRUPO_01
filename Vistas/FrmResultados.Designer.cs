@@ -41,14 +41,21 @@
             this.lblValorCantidadAbandonos = new System.Windows.Forms.Label();
             this.lblCantidadAbandonos = new System.Windows.Forms.Label();
             this.lblCantidadParticipantes = new System.Windows.Forms.Label();
+            this.lblTitleUser = new System.Windows.Forms.Panel();
+            this.lblGestion = new System.Windows.Forms.Label();
+            this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvResultados)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.lblTitleUser.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(248)))), ((int)(((byte)(241)))));
+            this.panel1.Controls.Add(this.lblTitleUser);
+            this.panel1.Controls.Add(this.groupBox1);
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(600, 220);
@@ -73,7 +80,7 @@
             this.lblListaResultados.Name = "lblListaResultados";
             this.lblListaResultados.Size = new System.Drawing.Size(600, 23);
             this.lblListaResultados.TabIndex = 12;
-            this.lblListaResultados.Text = "Resultados";
+            this.lblListaResultados.Text = "Listado";
             this.lblListaResultados.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // dgvResultados
@@ -89,7 +96,7 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.cmbListaCompetenciasParaResultados);
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Location = new System.Drawing.Point(303, 53);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(0);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(300, 50);
@@ -111,6 +118,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(248)))), ((int)(((byte)(241)))));
             this.groupBox2.Controls.Add(this.lblValorCantidadDescalificados);
             this.groupBox2.Controls.Add(this.lblCantidadDescalificados);
             this.groupBox2.Controls.Add(this.lblValorCantidadParticipantes);
@@ -181,23 +189,47 @@
             this.lblCantidadParticipantes.Text = "Cantidad de participantes";
             this.lblCantidadParticipantes.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // lblTitleUser
+            // 
+            this.lblTitleUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(111)))), ((int)(((byte)(109)))));
+            this.lblTitleUser.Controls.Add(this.lblGestion);
+            this.lblTitleUser.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblTitleUser.Location = new System.Drawing.Point(0, 0);
+            this.lblTitleUser.Name = "lblTitleUser";
+            this.lblTitleUser.Size = new System.Drawing.Size(600, 31);
+            this.lblTitleUser.TabIndex = 15;
+            // 
+            // lblGestion
+            // 
+            this.lblGestion.AutoSize = true;
+            this.lblGestion.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGestion.ForeColor = System.Drawing.Color.Gold;
+            this.lblGestion.Location = new System.Drawing.Point(257, 5);
+            this.lblGestion.Name = "lblGestion";
+            this.lblGestion.Size = new System.Drawing.Size(110, 22);
+            this.lblGestion.TabIndex = 18;
+            this.lblGestion.Text = "RESULTADOS";
+            // 
             // FrmResultados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(248)))), ((int)(((byte)(241)))));
             this.ClientSize = new System.Drawing.Size(624, 441);
             this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "FrmResultados";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gestión Resultados";
             this.Load += new System.EventHandler(this.FrmResultados_Load);
+            this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvResultados)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
+            this.lblTitleUser.ResumeLayout(false);
+            this.lblTitleUser.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -217,5 +249,7 @@
         private System.Windows.Forms.Label lblCantidadAbandonos;
         private System.Windows.Forms.Label lblCantidadParticipantes;
         private System.Windows.Forms.Label lblListaResultados;
+        private System.Windows.Forms.Panel lblTitleUser;
+        private System.Windows.Forms.Label lblGestion;
     }
 }
