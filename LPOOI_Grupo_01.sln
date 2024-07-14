@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClasesBase", "ClasesBase\Cl
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vistas", "Vistas\Vistas.csproj", "{51C0D17B-A87F-4A8F-9780-19C6CA7040E6}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "SetupProyect", "C:\Users\Main\Documents\TP_FINAL_LPOO_01\SetupProyect\SetupProyect.vdproj", "{C862E5C6-2EA4-4AB3-AA88-0E89DDE9F832}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,6 +37,12 @@ Global
 		{51C0D17B-A87F-4A8F-9780-19C6CA7040E6}.Release|Mixed Platforms.Build.0 = Release|x86
 		{51C0D17B-A87F-4A8F-9780-19C6CA7040E6}.Release|x86.ActiveCfg = Release|x86
 		{51C0D17B-A87F-4A8F-9780-19C6CA7040E6}.Release|x86.Build.0 = Release|x86
+		{C862E5C6-2EA4-4AB3-AA88-0E89DDE9F832}.Debug|Any CPU.ActiveCfg = Debug
+		{C862E5C6-2EA4-4AB3-AA88-0E89DDE9F832}.Debug|Mixed Platforms.ActiveCfg = Debug
+		{C862E5C6-2EA4-4AB3-AA88-0E89DDE9F832}.Debug|x86.ActiveCfg = Debug
+		{C862E5C6-2EA4-4AB3-AA88-0E89DDE9F832}.Release|Any CPU.ActiveCfg = Release
+		{C862E5C6-2EA4-4AB3-AA88-0E89DDE9F832}.Release|Mixed Platforms.ActiveCfg = Release
+		{C862E5C6-2EA4-4AB3-AA88-0E89DDE9F832}.Release|x86.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

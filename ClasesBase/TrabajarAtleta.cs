@@ -208,5 +208,17 @@ namespace ClasesBase
                 }
             }
         }
+
+        //get all atletas disponibles
+        public static DataTable getAtletasDisponibles()
+        {
+            SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.comdepConnectionString);
+            SqlCommand cmd = new SqlCommand("getAtletasDisponibles", cnn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            return dt;
+        }
     }
 }

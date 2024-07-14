@@ -76,7 +76,7 @@ namespace ClasesBase
 
         public static void RegisterEvento(int eve_Id)
         {
-            string state = EventoEstado.ACREDITADO;
+            Console.WriteLine(eve_Id);
 
             using (s_sqlConnection = new SqlConnection(s_connectionString))
             {
@@ -84,8 +84,8 @@ namespace ClasesBase
                 {
                     s_sqlConnection.Open();
                     s_sqlCommand.CommandType = CommandType.Text;
+                    Console.WriteLine(eve_Id);
                     s_sqlCommand.Parameters.AddWithValue("@Id", eve_Id);
-                    s_sqlCommand.Parameters.AddWithValue("@Estado", state);
                     s_sqlCommand.ExecuteNonQuery();
                 }
             }
@@ -93,8 +93,6 @@ namespace ClasesBase
 
         public static DataTable searchAtletaByDNI(string dni)
         {
-            string state = EventoEstado.INSCRIPTO;
-
             using (s_sqlConnection = new SqlConnection(s_connectionString))
             {
                 using (s_sqlCommand = new SqlCommand("SearchAtletaByDni", s_sqlConnection))
@@ -102,7 +100,6 @@ namespace ClasesBase
                     s_sqlConnection.Open();
                     s_sqlCommand.CommandType = CommandType.StoredProcedure;
                     s_sqlCommand.Parameters.AddWithValue("@Dni", dni);
-                    s_sqlCommand.Parameters.AddWithValue("@Estado", state);
 
                     using (s_sqlDataAdapter = new SqlDataAdapter(s_sqlCommand))
                     {

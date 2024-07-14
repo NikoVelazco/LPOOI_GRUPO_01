@@ -47,7 +47,6 @@
             this.lblInformacionAtletaAnularInscripcion = new System.Windows.Forms.Label();
             this.grpBuscarAtletaPorDniAnularInscripcion = new System.Windows.Forms.GroupBox();
             this.txtBuscarAtleta = new System.Windows.Forms.TextBox();
-            this.dgvAnularInscripcion = new System.Windows.Forms.DataGridView();
             this.tabControlEvento = new System.Windows.Forms.TabControl();
             this.tpRegistrarInscripcionEvento = new System.Windows.Forms.TabPage();
             this.tpAnularInscripcionEvento = new System.Windows.Forms.TabPage();
@@ -55,7 +54,6 @@
             this.grpInformacionAtletaAcreditarInscripcion = new System.Windows.Forms.GroupBox();
             this.lblInformacionAtletaRegistrarAcreditacion = new System.Windows.Forms.Label();
             this.btnRegistrarAcreditacionEvento = new System.Windows.Forms.Button();
-            this.dgvRegistrarAcreditacion = new System.Windows.Forms.DataGridView();
             this.grpBuscarAtletaAcreditacion = new System.Windows.Forms.GroupBox();
             this.txtBuscarAtletaAcredicacion = new System.Windows.Forms.TextBox();
             this.pnlEventos = new System.Windows.Forms.Panel();
@@ -70,13 +68,11 @@
             this.pnlAnularInscripcionEvento.SuspendLayout();
             this.grpInformacionAtletaAnularInscripcion.SuspendLayout();
             this.grpBuscarAtletaPorDniAnularInscripcion.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvAnularInscripcion)).BeginInit();
             this.tabControlEvento.SuspendLayout();
             this.tpRegistrarInscripcionEvento.SuspendLayout();
             this.tpAnularInscripcionEvento.SuspendLayout();
             this.tpRegistrarAcreditacionEvento.SuspendLayout();
             this.grpInformacionAtletaAcreditarInscripcion.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvRegistrarAcreditacion)).BeginInit();
             this.grpBuscarAtletaAcreditacion.SuspendLayout();
             this.pnlEventos.SuspendLayout();
             this.lblTitleUser.SuspendLayout();
@@ -86,9 +82,9 @@
             // 
             this.grpAtletas.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.grpAtletas.Controls.Add(this.cmbListaAtletas);
-            this.grpAtletas.Location = new System.Drawing.Point(3, 6);
+            this.grpAtletas.Location = new System.Drawing.Point(19, 6);
             this.grpAtletas.Name = "grpAtletas";
-            this.grpAtletas.Size = new System.Drawing.Size(307, 50);
+            this.grpAtletas.Size = new System.Drawing.Size(244, 50);
             this.grpAtletas.TabIndex = 0;
             this.grpAtletas.TabStop = false;
             this.grpAtletas.Text = "Atletas";
@@ -100,16 +96,16 @@
             this.cmbListaAtletas.FormattingEnabled = true;
             this.cmbListaAtletas.Location = new System.Drawing.Point(6, 19);
             this.cmbListaAtletas.Name = "cmbListaAtletas";
-            this.cmbListaAtletas.Size = new System.Drawing.Size(295, 21);
+            this.cmbListaAtletas.Size = new System.Drawing.Size(225, 21);
             this.cmbListaAtletas.TabIndex = 1;
             // 
             // grpCompetencias
             // 
             this.grpCompetencias.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.grpCompetencias.Controls.Add(this.cmbListaCompetencias);
-            this.grpCompetencias.Location = new System.Drawing.Point(3, 62);
+            this.grpCompetencias.Location = new System.Drawing.Point(291, 6);
             this.grpCompetencias.Name = "grpCompetencias";
-            this.grpCompetencias.Size = new System.Drawing.Size(307, 50);
+            this.grpCompetencias.Size = new System.Drawing.Size(244, 50);
             this.grpCompetencias.TabIndex = 2;
             this.grpCompetencias.TabStop = false;
             this.grpCompetencias.Text = "Competencias";
@@ -120,7 +116,7 @@
             this.cmbListaCompetencias.FormattingEnabled = true;
             this.cmbListaCompetencias.Location = new System.Drawing.Point(6, 19);
             this.cmbListaCompetencias.Name = "cmbListaCompetencias";
-            this.cmbListaCompetencias.Size = new System.Drawing.Size(295, 21);
+            this.cmbListaCompetencias.Size = new System.Drawing.Size(225, 21);
             this.cmbListaCompetencias.TabIndex = 1;
             this.cmbListaCompetencias.SelectedIndexChanged += new System.EventHandler(this.cmbListaCompetencias_SelectedIndexChanged);
             // 
@@ -130,9 +126,9 @@
             this.btnRegistrarEvento.AutoSize = true;
             this.btnRegistrarEvento.BackColor = System.Drawing.Color.DodgerBlue;
             this.btnRegistrarEvento.ForeColor = System.Drawing.Color.White;
-            this.btnRegistrarEvento.Location = new System.Drawing.Point(460, 207);
+            this.btnRegistrarEvento.Location = new System.Drawing.Point(456, 119);
             this.btnRegistrarEvento.Name = "btnRegistrarEvento";
-            this.btnRegistrarEvento.Size = new System.Drawing.Size(123, 23);
+            this.btnRegistrarEvento.Size = new System.Drawing.Size(133, 23);
             this.btnRegistrarEvento.TabIndex = 3;
             this.btnRegistrarEvento.Text = "Registrar Inscripción";
             this.btnRegistrarEvento.UseVisualStyleBackColor = false;
@@ -146,10 +142,11 @@
             this.dgvEvento.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvEvento.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvEvento.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvEvento.Location = new System.Drawing.Point(3, 29);
+            this.dgvEvento.Location = new System.Drawing.Point(0, 3);
             this.dgvEvento.Name = "dgvEvento";
-            this.dgvEvento.Size = new System.Drawing.Size(594, 110);
+            this.dgvEvento.Size = new System.Drawing.Size(525, 144);
             this.dgvEvento.TabIndex = 5;
+            this.dgvEvento.SelectionChanged += new System.EventHandler(this.dgvEvento_SelectionChanged);
             // 
             // btnAnularInscripcionEvento
             // 
@@ -157,7 +154,7 @@
             this.btnAnularInscripcionEvento.AutoSize = true;
             this.btnAnularInscripcionEvento.BackColor = System.Drawing.Color.DodgerBlue;
             this.btnAnularInscripcionEvento.ForeColor = System.Drawing.Color.White;
-            this.btnAnularInscripcionEvento.Location = new System.Drawing.Point(482, 207);
+            this.btnAnularInscripcionEvento.Location = new System.Drawing.Point(479, 116);
             this.btnAnularInscripcionEvento.Name = "btnAnularInscripcionEvento";
             this.btnAnularInscripcionEvento.Size = new System.Drawing.Size(101, 23);
             this.btnAnularInscripcionEvento.TabIndex = 6;
@@ -170,9 +167,9 @@
             this.grpHoraInicioCompetencia.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.grpHoraInicioCompetencia.Controls.Add(this.txtFechaInicioCompetencia);
             this.grpHoraInicioCompetencia.Controls.Add(this.txtHoraInicioCompetencia);
-            this.grpHoraInicioCompetencia.Location = new System.Drawing.Point(3, 118);
+            this.grpHoraInicioCompetencia.Location = new System.Drawing.Point(19, 64);
             this.grpHoraInicioCompetencia.Name = "grpHoraInicioCompetencia";
-            this.grpHoraInicioCompetencia.Size = new System.Drawing.Size(307, 50);
+            this.grpHoraInicioCompetencia.Size = new System.Drawing.Size(260, 45);
             this.grpHoraInicioCompetencia.TabIndex = 3;
             this.grpHoraInicioCompetencia.TabStop = false;
             this.grpHoraInicioCompetencia.Text = "Inicio Competencia";
@@ -184,7 +181,7 @@
             this.txtFechaInicioCompetencia.Location = new System.Drawing.Point(6, 19);
             this.txtFechaInicioCompetencia.Name = "txtFechaInicioCompetencia";
             this.txtFechaInicioCompetencia.ReadOnly = true;
-            this.txtFechaInicioCompetencia.Size = new System.Drawing.Size(144, 20);
+            this.txtFechaInicioCompetencia.Size = new System.Drawing.Size(120, 20);
             this.txtFechaInicioCompetencia.TabIndex = 11;
             this.txtFechaInicioCompetencia.Text = "Fecha";
             this.txtFechaInicioCompetencia.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -194,10 +191,10 @@
             this.txtHoraInicioCompetencia.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txtHoraInicioCompetencia.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.txtHoraInicioCompetencia.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.txtHoraInicioCompetencia.Location = new System.Drawing.Point(156, 19);
+            this.txtHoraInicioCompetencia.Location = new System.Drawing.Point(132, 19);
             this.txtHoraInicioCompetencia.Name = "txtHoraInicioCompetencia";
             this.txtHoraInicioCompetencia.ReadOnly = true;
-            this.txtHoraInicioCompetencia.Size = new System.Drawing.Size(138, 20);
+            this.txtHoraInicioCompetencia.Size = new System.Drawing.Size(121, 20);
             this.txtHoraInicioCompetencia.TabIndex = 9;
             this.txtHoraInicioCompetencia.Text = "Hora";
             this.txtHoraInicioCompetencia.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -207,9 +204,9 @@
             this.grpHoraFinCompetencia.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.grpHoraFinCompetencia.Controls.Add(this.txtFechaFinCompetencia);
             this.grpHoraFinCompetencia.Controls.Add(this.txtHoraFinCompetencia);
-            this.grpHoraFinCompetencia.Location = new System.Drawing.Point(3, 174);
+            this.grpHoraFinCompetencia.Location = new System.Drawing.Point(285, 64);
             this.grpHoraFinCompetencia.Name = "grpHoraFinCompetencia";
-            this.grpHoraFinCompetencia.Size = new System.Drawing.Size(307, 50);
+            this.grpHoraFinCompetencia.Size = new System.Drawing.Size(260, 45);
             this.grpHoraFinCompetencia.TabIndex = 8;
             this.grpHoraFinCompetencia.TabStop = false;
             this.grpHoraFinCompetencia.Text = "Fin Competencia";
@@ -221,7 +218,7 @@
             this.txtFechaFinCompetencia.Location = new System.Drawing.Point(6, 19);
             this.txtFechaFinCompetencia.Name = "txtFechaFinCompetencia";
             this.txtFechaFinCompetencia.ReadOnly = true;
-            this.txtFechaFinCompetencia.Size = new System.Drawing.Size(144, 20);
+            this.txtFechaFinCompetencia.Size = new System.Drawing.Size(120, 20);
             this.txtFechaFinCompetencia.TabIndex = 12;
             this.txtFechaFinCompetencia.Text = "Fecha";
             this.txtFechaFinCompetencia.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -231,10 +228,10 @@
             this.txtHoraFinCompetencia.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txtHoraFinCompetencia.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.txtHoraFinCompetencia.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.txtHoraFinCompetencia.Location = new System.Drawing.Point(156, 19);
+            this.txtHoraFinCompetencia.Location = new System.Drawing.Point(132, 18);
             this.txtHoraFinCompetencia.Name = "txtHoraFinCompetencia";
             this.txtHoraFinCompetencia.ReadOnly = true;
-            this.txtHoraFinCompetencia.Size = new System.Drawing.Size(138, 20);
+            this.txtHoraFinCompetencia.Size = new System.Drawing.Size(121, 20);
             this.txtHoraFinCompetencia.TabIndex = 10;
             this.txtHoraFinCompetencia.Text = "Hora";
             this.txtHoraFinCompetencia.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -247,9 +244,9 @@
             this.pnlRegistrarInscripcionEvento.Controls.Add(this.grpCompetencias);
             this.pnlRegistrarInscripcionEvento.Controls.Add(this.grpAtletas);
             this.pnlRegistrarInscripcionEvento.Controls.Add(this.grpHoraInicioCompetencia);
-            this.pnlRegistrarInscripcionEvento.Location = new System.Drawing.Point(3, 3);
+            this.pnlRegistrarInscripcionEvento.Location = new System.Drawing.Point(0, 0);
             this.pnlRegistrarInscripcionEvento.Name = "pnlRegistrarInscripcionEvento";
-            this.pnlRegistrarInscripcionEvento.Size = new System.Drawing.Size(586, 233);
+            this.pnlRegistrarInscripcionEvento.Size = new System.Drawing.Size(592, 147);
             this.pnlRegistrarInscripcionEvento.TabIndex = 9;
             // 
             // pnlAnularInscripcionEvento
@@ -257,11 +254,10 @@
             this.pnlAnularInscripcionEvento.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(248)))), ((int)(((byte)(241)))));
             this.pnlAnularInscripcionEvento.Controls.Add(this.grpInformacionAtletaAnularInscripcion);
             this.pnlAnularInscripcionEvento.Controls.Add(this.grpBuscarAtletaPorDniAnularInscripcion);
-            this.pnlAnularInscripcionEvento.Controls.Add(this.dgvAnularInscripcion);
             this.pnlAnularInscripcionEvento.Controls.Add(this.btnAnularInscripcionEvento);
             this.pnlAnularInscripcionEvento.Location = new System.Drawing.Point(3, 3);
             this.pnlAnularInscripcionEvento.Name = "pnlAnularInscripcionEvento";
-            this.pnlAnularInscripcionEvento.Size = new System.Drawing.Size(586, 233);
+            this.pnlAnularInscripcionEvento.Size = new System.Drawing.Size(586, 235);
             this.pnlAnularInscripcionEvento.TabIndex = 10;
             // 
             // grpInformacionAtletaAnularInscripcion
@@ -308,30 +304,18 @@
             this.txtBuscarAtleta.Enter += new System.EventHandler(this.txtBuscarAtleta_Enter);
             this.txtBuscarAtleta.Leave += new System.EventHandler(this.txtBuscarAtleta_Leave);
             // 
-            // dgvAnularInscripcion
-            // 
-            this.dgvAnularInscripcion.AllowUserToAddRows = false;
-            this.dgvAnularInscripcion.AllowUserToResizeColumns = false;
-            this.dgvAnularInscripcion.AllowUserToResizeRows = false;
-            this.dgvAnularInscripcion.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvAnularInscripcion.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvAnularInscripcion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvAnularInscripcion.Location = new System.Drawing.Point(3, 63);
-            this.dgvAnularInscripcion.Name = "dgvAnularInscripcion";
-            this.dgvAnularInscripcion.Size = new System.Drawing.Size(580, 138);
-            this.dgvAnularInscripcion.TabIndex = 8;
-            // 
             // tabControlEvento
             // 
             this.tabControlEvento.Appearance = System.Windows.Forms.TabAppearance.Buttons;
             this.tabControlEvento.Controls.Add(this.tpRegistrarInscripcionEvento);
             this.tabControlEvento.Controls.Add(this.tpAnularInscripcionEvento);
             this.tabControlEvento.Controls.Add(this.tpRegistrarAcreditacionEvento);
-            this.tabControlEvento.Location = new System.Drawing.Point(12, 161);
+            this.tabControlEvento.Location = new System.Drawing.Point(53, 221);
             this.tabControlEvento.Name = "tabControlEvento";
             this.tabControlEvento.SelectedIndex = 0;
-            this.tabControlEvento.Size = new System.Drawing.Size(600, 268);
+            this.tabControlEvento.Size = new System.Drawing.Size(600, 176);
             this.tabControlEvento.TabIndex = 9;
+            this.tabControlEvento.SelectedIndexChanged += new System.EventHandler(this.tabControlEvento_SelectedIndexChanged);
             // 
             // tpRegistrarInscripcionEvento
             // 
@@ -339,7 +323,7 @@
             this.tpRegistrarInscripcionEvento.Location = new System.Drawing.Point(4, 25);
             this.tpRegistrarInscripcionEvento.Name = "tpRegistrarInscripcionEvento";
             this.tpRegistrarInscripcionEvento.Padding = new System.Windows.Forms.Padding(3);
-            this.tpRegistrarInscripcionEvento.Size = new System.Drawing.Size(592, 239);
+            this.tpRegistrarInscripcionEvento.Size = new System.Drawing.Size(592, 147);
             this.tpRegistrarInscripcionEvento.TabIndex = 0;
             this.tpRegistrarInscripcionEvento.Text = "Registrar inscripción";
             this.tpRegistrarInscripcionEvento.UseVisualStyleBackColor = true;
@@ -350,7 +334,7 @@
             this.tpAnularInscripcionEvento.Location = new System.Drawing.Point(4, 25);
             this.tpAnularInscripcionEvento.Name = "tpAnularInscripcionEvento";
             this.tpAnularInscripcionEvento.Padding = new System.Windows.Forms.Padding(3);
-            this.tpAnularInscripcionEvento.Size = new System.Drawing.Size(592, 239);
+            this.tpAnularInscripcionEvento.Size = new System.Drawing.Size(592, 147);
             this.tpAnularInscripcionEvento.TabIndex = 1;
             this.tpAnularInscripcionEvento.Text = "Anular inscripción";
             this.tpAnularInscripcionEvento.UseVisualStyleBackColor = true;
@@ -360,12 +344,11 @@
             this.tpRegistrarAcreditacionEvento.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(248)))), ((int)(((byte)(241)))));
             this.tpRegistrarAcreditacionEvento.Controls.Add(this.grpInformacionAtletaAcreditarInscripcion);
             this.tpRegistrarAcreditacionEvento.Controls.Add(this.btnRegistrarAcreditacionEvento);
-            this.tpRegistrarAcreditacionEvento.Controls.Add(this.dgvRegistrarAcreditacion);
             this.tpRegistrarAcreditacionEvento.Controls.Add(this.grpBuscarAtletaAcreditacion);
             this.tpRegistrarAcreditacionEvento.Location = new System.Drawing.Point(4, 25);
             this.tpRegistrarAcreditacionEvento.Name = "tpRegistrarAcreditacionEvento";
             this.tpRegistrarAcreditacionEvento.Padding = new System.Windows.Forms.Padding(3);
-            this.tpRegistrarAcreditacionEvento.Size = new System.Drawing.Size(592, 239);
+            this.tpRegistrarAcreditacionEvento.Size = new System.Drawing.Size(592, 147);
             this.tpRegistrarAcreditacionEvento.TabIndex = 2;
             this.tpRegistrarAcreditacionEvento.Text = "Registrar acreditación";
             // 
@@ -395,26 +378,13 @@
             this.btnRegistrarAcreditacionEvento.AutoSize = true;
             this.btnRegistrarAcreditacionEvento.BackColor = System.Drawing.Color.DodgerBlue;
             this.btnRegistrarAcreditacionEvento.ForeColor = System.Drawing.Color.White;
-            this.btnRegistrarAcreditacionEvento.Location = new System.Drawing.Point(465, 210);
+            this.btnRegistrarAcreditacionEvento.Location = new System.Drawing.Point(462, 118);
             this.btnRegistrarAcreditacionEvento.Name = "btnRegistrarAcreditacionEvento";
             this.btnRegistrarAcreditacionEvento.Size = new System.Drawing.Size(121, 23);
             this.btnRegistrarAcreditacionEvento.TabIndex = 12;
             this.btnRegistrarAcreditacionEvento.Text = "Registrar Acreditación";
             this.btnRegistrarAcreditacionEvento.UseVisualStyleBackColor = false;
             this.btnRegistrarAcreditacionEvento.Click += new System.EventHandler(this.btnRegistrarAcreditacionEvento_Click);
-            // 
-            // dgvRegistrarAcreditacion
-            // 
-            this.dgvRegistrarAcreditacion.AllowUserToAddRows = false;
-            this.dgvRegistrarAcreditacion.AllowUserToResizeColumns = false;
-            this.dgvRegistrarAcreditacion.AllowUserToResizeRows = false;
-            this.dgvRegistrarAcreditacion.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvRegistrarAcreditacion.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvRegistrarAcreditacion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvRegistrarAcreditacion.Location = new System.Drawing.Point(6, 66);
-            this.dgvRegistrarAcreditacion.Name = "dgvRegistrarAcreditacion";
-            this.dgvRegistrarAcreditacion.Size = new System.Drawing.Size(580, 138);
-            this.dgvRegistrarAcreditacion.TabIndex = 11;
             // 
             // grpBuscarAtletaAcreditacion
             // 
@@ -445,9 +415,9 @@
             // pnlEventos
             // 
             this.pnlEventos.Controls.Add(this.dgvEvento);
-            this.pnlEventos.Location = new System.Drawing.Point(12, 12);
+            this.pnlEventos.Location = new System.Drawing.Point(87, 54);
             this.pnlEventos.Name = "pnlEventos";
-            this.pnlEventos.Size = new System.Drawing.Size(600, 143);
+            this.pnlEventos.Size = new System.Drawing.Size(525, 150);
             this.pnlEventos.TabIndex = 10;
             // 
             // lblTitleUser
@@ -457,7 +427,7 @@
             this.lblTitleUser.Dock = System.Windows.Forms.DockStyle.Top;
             this.lblTitleUser.Location = new System.Drawing.Point(0, 0);
             this.lblTitleUser.Name = "lblTitleUser";
-            this.lblTitleUser.Size = new System.Drawing.Size(624, 31);
+            this.lblTitleUser.Size = new System.Drawing.Size(704, 31);
             this.lblTitleUser.TabIndex = 11;
             // 
             // lblGestion
@@ -476,7 +446,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(248)))), ((int)(((byte)(241)))));
-            this.ClientSize = new System.Drawing.Size(624, 441);
+            this.ClientSize = new System.Drawing.Size(704, 400);
             this.Controls.Add(this.lblTitleUser);
             this.Controls.Add(this.pnlEventos);
             this.Controls.Add(this.tabControlEvento);
@@ -498,14 +468,12 @@
             this.grpInformacionAtletaAnularInscripcion.ResumeLayout(false);
             this.grpBuscarAtletaPorDniAnularInscripcion.ResumeLayout(false);
             this.grpBuscarAtletaPorDniAnularInscripcion.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvAnularInscripcion)).EndInit();
             this.tabControlEvento.ResumeLayout(false);
             this.tpRegistrarInscripcionEvento.ResumeLayout(false);
             this.tpAnularInscripcionEvento.ResumeLayout(false);
             this.tpRegistrarAcreditacionEvento.ResumeLayout(false);
             this.tpRegistrarAcreditacionEvento.PerformLayout();
             this.grpInformacionAtletaAcreditarInscripcion.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvRegistrarAcreditacion)).EndInit();
             this.grpBuscarAtletaAcreditacion.ResumeLayout(false);
             this.grpBuscarAtletaAcreditacion.PerformLayout();
             this.pnlEventos.ResumeLayout(false);
@@ -528,7 +496,6 @@
         private System.Windows.Forms.GroupBox grpHoraFinCompetencia;
         private System.Windows.Forms.Panel pnlRegistrarInscripcionEvento;
         private System.Windows.Forms.Panel pnlAnularInscripcionEvento;
-        private System.Windows.Forms.DataGridView dgvAnularInscripcion;
         private System.Windows.Forms.TextBox txtBuscarAtleta;
         private System.Windows.Forms.TabControl tabControlEvento;
         private System.Windows.Forms.TabPage tpRegistrarInscripcionEvento;
@@ -540,7 +507,6 @@
         private System.Windows.Forms.TextBox txtHoraFinCompetencia;
         private System.Windows.Forms.GroupBox grpBuscarAtletaPorDniAnularInscripcion;
         private System.Windows.Forms.Button btnRegistrarAcreditacionEvento;
-        private System.Windows.Forms.DataGridView dgvRegistrarAcreditacion;
         private System.Windows.Forms.GroupBox grpBuscarAtletaAcreditacion;
         private System.Windows.Forms.TextBox txtBuscarAtletaAcredicacion;
         private System.Windows.Forms.Panel pnlEventos;

@@ -12,6 +12,9 @@ namespace Vistas
 {
     public partial class FrmGestionEvento : Form
     {
+        private int idAnular = 0;
+        private int idAcreditar = 0;
+        private string estado = "";
         public FrmGestionEvento()
         {
             InitializeComponent();
@@ -32,7 +35,7 @@ namespace Vistas
 
         private void loadComboBoxWithAtletas()
         {
-            DataTable dataTable = TrabajarAtleta.getAllAtletas();
+            DataTable dataTable = TrabajarAtleta.getAtletasDisponibles();
             dataTable.Columns.Add("Nombre_Completo", typeof(string), "Nombre + ' ' + Apellido");
             cmbListaAtletas.DataSource = dataTable;
             cmbListaAtletas.DisplayMember = "Nombre_Completo";
@@ -74,37 +77,54 @@ namespace Vistas
                     
                     MessageBox.Show("Atleta registrado correctamente", "Registro inscripción", MessageBoxButtons.OK, MessageBoxIcon.None);
                     
-                    loadListOfEventos();    
+                    loadListOfEventos();
+                    loadComboBoxWithAtletas();
+                    cmbListaAtletas.ResetText();
                 }
             }
         }
 
         private void btnAnularInscripcionEvento_Click(object sender, EventArgs e)
         {
-            DialogResult confirmationMessage = MessageBox.Show("Desea anular inscripción del Atleta", "Anular", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-            if (confirmationMessage == DialogResult.Yes)
+            if(idAnular == 0)
+                MessageBox.Show("Selecciona un evento a anular.", "Anulación inscripción");
+            else if (estado == "Anulado")
+                MessageBox.Show("Inscripción ya anulada", "Anulación inscripción");
+            else
             {
-                TrabajarEvento.UpdateEventoEstado(int.Parse(dgvAnularInscripcion.CurrentRow.Cells["Id"].Value.ToString()), EventoEstado.ANULADO);
-                
-                MessageBox.Show("Inscripción a evento anulada", "Anulación inscripción", MessageBoxButtons.OK, MessageBoxIcon.None);
-                
-                loadListOfEventos();    
-            }
+                DialogResult confirmationMessage = MessageBox.Show("Desea anular inscripción del Atleta", "Anular", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (confirmationMessage == DialogResult.Yes)
+                {
+                    TrabajarEvento.UpdateEventoEstado(idAnular, EventoEstado.ANULADO);
+
+                    MessageBox.Show("Inscripción a evento anulada", "Anulación inscripción", MessageBoxButtons.OK, MessageBoxIcon.None);
+
+                    loadListOfEventos();
+                    resetVariables();
+                }
+            }        
         }
 
         private void btnRegistrarAcreditacionEvento_Click(object sender, EventArgs e)
         {
-            DialogResult confirmationMessage = MessageBox.Show("Desea acreditar inscripción del Atleta", "Acreditar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-            if (confirmationMessage == DialogResult.Yes)
+            if (idAcreditar == 0)
+                MessageBox.Show("Selecciona un evento a anular.", "Anulación inscripción");
+            else if (estado == "Acreditado")
+                MessageBox.Show("Evento ya acreditado", "Acreditar inscripción");
+            else
             {
-                TrabajarEvento.RegisterEvento(int.Parse(dgvRegistrarAcreditacion.CurrentRow.Cells["Id"].Value.ToString()));
+                DialogResult confirmationMessage = MessageBox.Show("Desea acreditar inscripción del Atleta", "Acreditar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (confirmationMessage == DialogResult.Yes)
+                {
+                    TrabajarEvento.UpdateEventoEstado(idAcreditar, EventoEstado.ACREDITADO);
 
-                MessageBox.Show("Adreditación a evento confirmada", "Acreditar inscripción", MessageBoxButtons.OK, MessageBoxIcon.None);
+                    MessageBox.Show("Acreditación a evento confirmada", "Acreditar inscripción", MessageBoxButtons.OK, MessageBoxIcon.None);
 
-                loadListOfEventos();    
-            }
+                    loadListOfEventos();
+                    resetVariables();
+                }
+            }      
         }
 
         private Boolean isEventoDateTimeBeforeOrEqualToCompetenciaDateTime()
@@ -116,8 +136,8 @@ namespace Vistas
         private void txtBuscarAtleta_TextChanged(object sender, EventArgs e)
         {
             DataTable dataTable = TrabajarEvento.searchAtletaByDNI(txtBuscarAtleta.Text);
-            dgvAnularInscripcion.DataSource = dataTable;
-            dgvAnularInscripcion.Columns["Id"].Visible = false;
+            dgvEvento.DataSource = dataTable;
+            dgvEvento.Columns["Id"].Visible = false;
             getInformacionAtleta(dataTable, lblInformacionAtletaAnularInscripcion);
         }
 
@@ -156,10 +176,9 @@ namespace Vistas
         private void txtBuscarAtletaAcredicacion_TextChanged(object sender, EventArgs e)
         {
             DataTable dataTable = TrabajarEvento.searchAtletaByDNI(txtBuscarAtletaAcredicacion.Text);
-            dgvRegistrarAcreditacion.DataSource = dataTable;
-            dgvRegistrarAcreditacion.Columns["Id"].Visible = false;
-            dgvRegistrarAcreditacion.Columns["Atleta"].Visible = false;
-            getInformacionAtleta(dataTable, lblInformacionAtletaRegistrarAcreditacion);
+            dgvEvento.DataSource = dataTable;
+            dgvEvento.Columns["Id"].Visible = false;
+            getInformacionAtleta(dataTable, lblInformacionAtletaAnularInscripcion);
         }
 
         private void txtBuscarAtletaAcredicacion_Enter(object sender, EventArgs e)
@@ -191,6 +210,36 @@ namespace Vistas
         private void btnResultados_Click(object sender, EventArgs e)
         {
             
+        }
+
+        private void dgvEvento_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dgvEvento.SelectedRows.Count > 0 && !dgvEvento.CurrentRow.IsNewRow) {
+
+                DataGridViewRow selectedRow = dgvEvento.SelectedRows[0];
+
+                idAnular = (int)selectedRow.Cells["Id"].Value;
+                idAcreditar = (int)selectedRow.Cells["Id"].Value;
+                estado = selectedRow.Cells["Estado"].Value.ToString();
+                lblInformacionAtletaRegistrarAcreditacion.Text = selectedRow.Cells["Atleta"].Value.ToString();
+                lblInformacionAtletaAnularInscripcion.Text = selectedRow.Cells["Atleta"].Value.ToString();
+            }
+        }
+
+        private void tabControlEvento_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            loadListOfEventos();
+            resetVariables();
+        }
+
+        private void resetVariables() 
+        {
+            txtBuscarAtleta.ResetText();
+            txtBuscarAtletaAcredicacion.ResetText();
+            lblInformacionAtletaRegistrarAcreditacion.Text = "Nombre y Apellido";
+            lblInformacionAtletaAnularInscripcion.Text = "Nombre y Apellido";
+            idAnular = 0;
+            idAcreditar = 0;
         }
     }
 }

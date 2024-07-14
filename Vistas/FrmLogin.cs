@@ -61,7 +61,7 @@ namespace Vistas
 
         private void FrmLogin_Load(object sender, EventArgs e)
         {
-            Util.startSound("Login-sound.mp3");
+
         }
 
         /**
