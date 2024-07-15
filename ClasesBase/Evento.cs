@@ -5,7 +5,7 @@ using System.Text;
 
 namespace ClasesBase
 {
-    class Evento
+    public class Evento
     {
         private int eve_ID;
 

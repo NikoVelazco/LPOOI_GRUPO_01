@@ -29,23 +29,16 @@
         private void InitializeComponent()
         {
             this.pnlRegistroCronometrajeHoraInicio = new System.Windows.Forms.Panel();
-            this.gtpActualizarFechaHoraInicio = new System.Windows.Forms.GroupBox();
-            this.btnActualizarFechaInicio = new System.Windows.Forms.Button();
-            this.pnlActualizarFechaInicio = new System.Windows.Forms.Panel();
-            this.dtpActualizarFechaInicio = new System.Windows.Forms.DateTimePicker();
-            this.pnlActualizarHoraInicio = new System.Windows.Forms.Panel();
-            this.dtpActualizarHoraInicio = new System.Windows.Forms.DateTimePicker();
+            this.btnGuardar = new System.Windows.Forms.Button();
             this.grpActualizarEstadoEvento = new System.Windows.Forms.GroupBox();
-            this.ActualizarEventoAbandono = new System.Windows.Forms.Button();
-            this.btnActualizarEventoDescalificado = new System.Windows.Forms.Button();
+            this.cmbEstados = new System.Windows.Forms.ComboBox();
             this.lblInformacionEvento = new System.Windows.Forms.Label();
             this.dgvEventoSegunAtletaCompetencia = new System.Windows.Forms.DataGridView();
             this.grpListaCompetencias = new System.Windows.Forms.GroupBox();
-            this.cmbListaCompetencias = new System.Windows.Forms.ComboBox();
+            this.cmbCompetencias = new System.Windows.Forms.ComboBox();
             this.lblRegistroTiempoLlegada = new System.Windows.Forms.Label();
             this.gtpListaAtletas = new System.Windows.Forms.GroupBox();
-            this.cmbListaAtletas = new System.Windows.Forms.ComboBox();
-            this.btnBuscarEvento = new System.Windows.Forms.Button();
+            this.cmbAtletas = new System.Windows.Forms.ComboBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.button3 = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -63,27 +56,33 @@
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.button6 = new System.Windows.Forms.Button();
-            this.pnlInicioEvento = new System.Windows.Forms.Panel();
-            this.pnlRegistroCronometrajeHoraFechaFin = new System.Windows.Forms.Panel();
+            this.panelCronometraje = new System.Windows.Forms.Panel();
             this.grpFinalizarEvento = new System.Windows.Forms.GroupBox();
-            this.rdoIngresoManual = new System.Windows.Forms.RadioButton();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.txtSegundoFinal = new System.Windows.Forms.TextBox();
+            this.txtMinutoFinal = new System.Windows.Forms.TextBox();
+            this.txtHoraFinal = new System.Windows.Forms.TextBox();
+            this.rdoIngresoManualFinal = new System.Windows.Forms.RadioButton();
             this.rdoIngresoAutogenerado = new System.Windows.Forms.RadioButton();
-            this.pnlIngresarHoraFinEvento = new System.Windows.Forms.Panel();
-            this.dtpIngresoHoraFinEvento = new System.Windows.Forms.DateTimePicker();
             this.pnlIngresarFechaFinEvento = new System.Windows.Forms.Panel();
-            this.dtpIngresoFechaFinEvento = new System.Windows.Forms.DateTimePicker();
-            this.lblValorFechaFinEvento = new System.Windows.Forms.Label();
+            this.calendarFinal = new System.Windows.Forms.DateTimePicker();
             this.lblFechaFinEvento = new System.Windows.Forms.Label();
-            this.lblValorHoraFinEvento = new System.Windows.Forms.Label();
             this.lblHoraFinEvento = new System.Windows.Forms.Label();
-            this.btnFinalizarEvento = new System.Windows.Forms.Button();
             this.grpIniciarEvento = new System.Windows.Forms.GroupBox();
-            this.btnAsignarFechaHoraInicio = new System.Windows.Forms.Button();
-            this.lblValorFechaInicioEvento = new System.Windows.Forms.Label();
-            this.lblFechaInicioEvento = new System.Windows.Forms.Label();
-            this.lblValorHoraInicioEvento = new System.Windows.Forms.Label();
-            this.lblHoraInicioEvento = new System.Windows.Forms.Label();
-            this.btnIniciarEvento = new System.Windows.Forms.Button();
+            this.label15 = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.calendarInicial = new System.Windows.Forms.DateTimePicker();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.txtSegundoInicial = new System.Windows.Forms.TextBox();
+            this.radioButton4 = new System.Windows.Forms.RadioButton();
+            this.txtMinutoInicial = new System.Windows.Forms.TextBox();
+            this.ingesoManualInicial = new System.Windows.Forms.RadioButton();
+            this.txtHoraInicial = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
@@ -107,139 +106,69 @@
             this.lblTitleUser = new System.Windows.Forms.Panel();
             this.lblGestion = new System.Windows.Forms.Label();
             this.pnlRegistroCronometrajeHoraInicio.SuspendLayout();
-            this.gtpActualizarFechaHoraInicio.SuspendLayout();
-            this.pnlActualizarFechaInicio.SuspendLayout();
-            this.pnlActualizarHoraInicio.SuspendLayout();
             this.grpActualizarEstadoEvento.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEventoSegunAtletaCompetencia)).BeginInit();
             this.grpListaCompetencias.SuspendLayout();
             this.gtpListaAtletas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.pnlInicioEvento.SuspendLayout();
-            this.pnlRegistroCronometrajeHoraFechaFin.SuspendLayout();
+            this.panelCronometraje.SuspendLayout();
             this.grpFinalizarEvento.SuspendLayout();
-            this.pnlIngresarHoraFinEvento.SuspendLayout();
             this.pnlIngresarFechaFinEvento.SuspendLayout();
             this.grpIniciarEvento.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.lblTitleUser.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlRegistroCronometrajeHoraInicio
             // 
-            this.pnlRegistroCronometrajeHoraInicio.Controls.Add(this.gtpActualizarFechaHoraInicio);
+            this.pnlRegistroCronometrajeHoraInicio.Controls.Add(this.btnGuardar);
             this.pnlRegistroCronometrajeHoraInicio.Controls.Add(this.grpActualizarEstadoEvento);
             this.pnlRegistroCronometrajeHoraInicio.Controls.Add(this.lblInformacionEvento);
             this.pnlRegistroCronometrajeHoraInicio.Controls.Add(this.dgvEventoSegunAtletaCompetencia);
             this.pnlRegistroCronometrajeHoraInicio.Controls.Add(this.grpListaCompetencias);
             this.pnlRegistroCronometrajeHoraInicio.Controls.Add(this.lblRegistroTiempoLlegada);
             this.pnlRegistroCronometrajeHoraInicio.Controls.Add(this.gtpListaAtletas);
-            this.pnlRegistroCronometrajeHoraInicio.Controls.Add(this.btnBuscarEvento);
-            this.pnlRegistroCronometrajeHoraInicio.Location = new System.Drawing.Point(12, 144);
+            this.pnlRegistroCronometrajeHoraInicio.Location = new System.Drawing.Point(12, 183);
             this.pnlRegistroCronometrajeHoraInicio.Name = "pnlRegistroCronometrajeHoraInicio";
-            this.pnlRegistroCronometrajeHoraInicio.Size = new System.Drawing.Size(600, 285);
+            this.pnlRegistroCronometrajeHoraInicio.Size = new System.Drawing.Size(600, 246);
             this.pnlRegistroCronometrajeHoraInicio.TabIndex = 13;
-            this.pnlRegistroCronometrajeHoraInicio.Visible = false;
             // 
-            // gtpActualizarFechaHoraInicio
+            // btnGuardar
             // 
-            this.gtpActualizarFechaHoraInicio.Controls.Add(this.btnActualizarFechaInicio);
-            this.gtpActualizarFechaHoraInicio.Controls.Add(this.pnlActualizarFechaInicio);
-            this.gtpActualizarFechaHoraInicio.Controls.Add(this.pnlActualizarHoraInicio);
-            this.gtpActualizarFechaHoraInicio.Location = new System.Drawing.Point(356, 161);
-            this.gtpActualizarFechaHoraInicio.Name = "gtpActualizarFechaHoraInicio";
-            this.gtpActualizarFechaHoraInicio.Size = new System.Drawing.Size(244, 124);
-            this.gtpActualizarFechaHoraInicio.TabIndex = 19;
-            this.gtpActualizarFechaHoraInicio.TabStop = false;
-            this.gtpActualizarFechaHoraInicio.Text = "Actualizar Fecha-Hora Inicio";
-            // 
-            // btnActualizarFechaInicio
-            // 
-            this.btnActualizarFechaInicio.AutoSize = true;
-            this.btnActualizarFechaInicio.BackColor = System.Drawing.Color.DodgerBlue;
-            this.btnActualizarFechaInicio.ForeColor = System.Drawing.Color.White;
-            this.btnActualizarFechaInicio.Location = new System.Drawing.Point(6, 74);
-            this.btnActualizarFechaInicio.Name = "btnActualizarFechaInicio";
-            this.btnActualizarFechaInicio.Size = new System.Drawing.Size(162, 29);
-            this.btnActualizarFechaInicio.TabIndex = 18;
-            this.btnActualizarFechaInicio.Text = "Actualizar Fecha-Hora Inicio";
-            this.btnActualizarFechaInicio.UseVisualStyleBackColor = false;
-            this.btnActualizarFechaInicio.Click += new System.EventHandler(this.btnActualizarFechaInicio_Click);
-            // 
-            // pnlActualizarFechaInicio
-            // 
-            this.pnlActualizarFechaInicio.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pnlActualizarFechaInicio.Controls.Add(this.dtpActualizarFechaInicio);
-            this.pnlActualizarFechaInicio.Location = new System.Drawing.Point(6, 45);
-            this.pnlActualizarFechaInicio.Name = "pnlActualizarFechaInicio";
-            this.pnlActualizarFechaInicio.Size = new System.Drawing.Size(232, 23);
-            this.pnlActualizarFechaInicio.TabIndex = 12;
-            // 
-            // dtpActualizarFechaInicio
-            // 
-            this.dtpActualizarFechaInicio.CustomFormat = "dd MMMM yyyy";
-            this.dtpActualizarFechaInicio.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dtpActualizarFechaInicio.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpActualizarFechaInicio.Location = new System.Drawing.Point(0, 0);
-            this.dtpActualizarFechaInicio.Name = "dtpActualizarFechaInicio";
-            this.dtpActualizarFechaInicio.Size = new System.Drawing.Size(228, 20);
-            this.dtpActualizarFechaInicio.TabIndex = 8;
-            // 
-            // pnlActualizarHoraInicio
-            // 
-            this.pnlActualizarHoraInicio.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pnlActualizarHoraInicio.Controls.Add(this.dtpActualizarHoraInicio);
-            this.pnlActualizarHoraInicio.Location = new System.Drawing.Point(6, 19);
-            this.pnlActualizarHoraInicio.Name = "pnlActualizarHoraInicio";
-            this.pnlActualizarHoraInicio.Size = new System.Drawing.Size(232, 23);
-            this.pnlActualizarHoraInicio.TabIndex = 11;
-            // 
-            // dtpActualizarHoraInicio
-            // 
-            this.dtpActualizarHoraInicio.CustomFormat = "h:mm:ss tt";
-            this.dtpActualizarHoraInicio.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dtpActualizarHoraInicio.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpActualizarHoraInicio.Location = new System.Drawing.Point(0, 0);
-            this.dtpActualizarHoraInicio.Name = "dtpActualizarHoraInicio";
-            this.dtpActualizarHoraInicio.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.dtpActualizarHoraInicio.ShowUpDown = true;
-            this.dtpActualizarHoraInicio.Size = new System.Drawing.Size(228, 20);
-            this.dtpActualizarHoraInicio.TabIndex = 7;
+            this.btnGuardar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnGuardar.AutoSize = true;
+            this.btnGuardar.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnGuardar.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardar.ForeColor = System.Drawing.Color.White;
+            this.btnGuardar.Location = new System.Drawing.Point(422, 217);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(181, 29);
+            this.btnGuardar.TabIndex = 19;
+            this.btnGuardar.Text = "Guardar Cronometraje";
+            this.btnGuardar.UseVisualStyleBackColor = false;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // grpActualizarEstadoEvento
             // 
-            this.grpActualizarEstadoEvento.Controls.Add(this.ActualizarEventoAbandono);
-            this.grpActualizarEstadoEvento.Controls.Add(this.btnActualizarEventoDescalificado);
-            this.grpActualizarEstadoEvento.Location = new System.Drawing.Point(356, 105);
+            this.grpActualizarEstadoEvento.Controls.Add(this.cmbEstados);
+            this.grpActualizarEstadoEvento.Location = new System.Drawing.Point(438, 105);
             this.grpActualizarEstadoEvento.Name = "grpActualizarEstadoEvento";
-            this.grpActualizarEstadoEvento.Size = new System.Drawing.Size(244, 50);
+            this.grpActualizarEstadoEvento.Size = new System.Drawing.Size(174, 55);
             this.grpActualizarEstadoEvento.TabIndex = 18;
             this.grpActualizarEstadoEvento.TabStop = false;
-            this.grpActualizarEstadoEvento.Text = "Actualizar Evento";
+            this.grpActualizarEstadoEvento.Text = "Actualizar Estado del Evento";
             // 
-            // ActualizarEventoAbandono
+            // cmbEstados
             // 
-            this.ActualizarEventoAbandono.BackColor = System.Drawing.Color.DodgerBlue;
-            this.ActualizarEventoAbandono.ForeColor = System.Drawing.Color.White;
-            this.ActualizarEventoAbandono.Location = new System.Drawing.Point(6, 19);
-            this.ActualizarEventoAbandono.Name = "ActualizarEventoAbandono";
-            this.ActualizarEventoAbandono.Size = new System.Drawing.Size(75, 23);
-            this.ActualizarEventoAbandono.TabIndex = 16;
-            this.ActualizarEventoAbandono.Text = "Abandono";
-            this.ActualizarEventoAbandono.UseVisualStyleBackColor = false;
-            this.ActualizarEventoAbandono.Click += new System.EventHandler(this.ActualizarEventoAbandono_Click);
-            // 
-            // btnActualizarEventoDescalificado
-            // 
-            this.btnActualizarEventoDescalificado.AutoSize = true;
-            this.btnActualizarEventoDescalificado.BackColor = System.Drawing.Color.DodgerBlue;
-            this.btnActualizarEventoDescalificado.ForeColor = System.Drawing.Color.White;
-            this.btnActualizarEventoDescalificado.Location = new System.Drawing.Point(87, 19);
-            this.btnActualizarEventoDescalificado.Name = "btnActualizarEventoDescalificado";
-            this.btnActualizarEventoDescalificado.Size = new System.Drawing.Size(81, 23);
-            this.btnActualizarEventoDescalificado.TabIndex = 17;
-            this.btnActualizarEventoDescalificado.Text = "Descalificado";
-            this.btnActualizarEventoDescalificado.UseVisualStyleBackColor = false;
-            this.btnActualizarEventoDescalificado.Click += new System.EventHandler(this.btnActualizarEventoDescalificado_Click);
+            this.cmbEstados.FormattingEnabled = true;
+            this.cmbEstados.Items.AddRange(new object[] {
+            "Abandono",
+            "Descalificado"});
+            this.cmbEstados.Location = new System.Drawing.Point(8, 30);
+            this.cmbEstados.Name = "cmbEstados";
+            this.cmbEstados.Size = new System.Drawing.Size(121, 21);
+            this.cmbEstados.TabIndex = 0;
+            this.cmbEstados.Text = "Seleccione Estado";
             // 
             // lblInformacionEvento
             // 
@@ -260,16 +189,16 @@
             this.dgvEventoSegunAtletaCompetencia.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvEventoSegunAtletaCompetencia.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvEventoSegunAtletaCompetencia.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvEventoSegunAtletaCompetencia.Location = new System.Drawing.Point(0, 135);
+            this.dgvEventoSegunAtletaCompetencia.Location = new System.Drawing.Point(0, 105);
             this.dgvEventoSegunAtletaCompetencia.Name = "dgvEventoSegunAtletaCompetencia";
             this.dgvEventoSegunAtletaCompetencia.ReadOnly = true;
             this.dgvEventoSegunAtletaCompetencia.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvEventoSegunAtletaCompetencia.Size = new System.Drawing.Size(350, 150);
+            this.dgvEventoSegunAtletaCompetencia.Size = new System.Drawing.Size(416, 161);
             this.dgvEventoSegunAtletaCompetencia.TabIndex = 14;
             // 
             // grpListaCompetencias
             // 
-            this.grpListaCompetencias.Controls.Add(this.cmbListaCompetencias);
+            this.grpListaCompetencias.Controls.Add(this.cmbCompetencias);
             this.grpListaCompetencias.Location = new System.Drawing.Point(307, 26);
             this.grpListaCompetencias.Name = "grpListaCompetencias";
             this.grpListaCompetencias.Size = new System.Drawing.Size(290, 50);
@@ -277,16 +206,17 @@
             this.grpListaCompetencias.TabStop = false;
             this.grpListaCompetencias.Text = "Competencia";
             // 
-            // cmbListaCompetencias
+            // cmbCompetencias
             // 
-            this.cmbListaCompetencias.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.cmbListaCompetencias.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cmbListaCompetencias.FormattingEnabled = true;
-            this.cmbListaCompetencias.Location = new System.Drawing.Point(6, 19);
-            this.cmbListaCompetencias.Name = "cmbListaCompetencias";
-            this.cmbListaCompetencias.Size = new System.Drawing.Size(278, 21);
-            this.cmbListaCompetencias.TabIndex = 5;
-            this.cmbListaCompetencias.Text = "Seleccione una Competencia";
+            this.cmbCompetencias.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cmbCompetencias.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cmbCompetencias.FormattingEnabled = true;
+            this.cmbCompetencias.Location = new System.Drawing.Point(6, 19);
+            this.cmbCompetencias.Name = "cmbCompetencias";
+            this.cmbCompetencias.Size = new System.Drawing.Size(278, 21);
+            this.cmbCompetencias.TabIndex = 5;
+            this.cmbCompetencias.Text = "Seleccione una Competencia";
+            this.cmbCompetencias.SelectedIndexChanged += new System.EventHandler(this.cmbCompetencias_SelectedIndexChanged);
             // 
             // lblRegistroTiempoLlegada
             // 
@@ -298,12 +228,13 @@
             this.lblRegistroTiempoLlegada.Name = "lblRegistroTiempoLlegada";
             this.lblRegistroTiempoLlegada.Size = new System.Drawing.Size(600, 23);
             this.lblRegistroTiempoLlegada.TabIndex = 13;
-            this.lblRegistroTiempoLlegada.Text = "Registro de tiempos de llegada";
+            this.lblRegistroTiempoLlegada.Text = "Seleccione el Atleta y su Competencia para el registro de tiempos de inicio y lle" +
+                "gada";
             this.lblRegistroTiempoLlegada.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // gtpListaAtletas
             // 
-            this.gtpListaAtletas.Controls.Add(this.cmbListaAtletas);
+            this.gtpListaAtletas.Controls.Add(this.cmbAtletas);
             this.gtpListaAtletas.Location = new System.Drawing.Point(3, 26);
             this.gtpListaAtletas.Name = "gtpListaAtletas";
             this.gtpListaAtletas.Size = new System.Drawing.Size(290, 50);
@@ -311,30 +242,17 @@
             this.gtpListaAtletas.TabStop = false;
             this.gtpListaAtletas.Text = "Atleta";
             // 
-            // cmbListaAtletas
+            // cmbAtletas
             // 
-            this.cmbListaAtletas.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.cmbListaAtletas.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cmbListaAtletas.FormattingEnabled = true;
-            this.cmbListaAtletas.Location = new System.Drawing.Point(6, 19);
-            this.cmbListaAtletas.Name = "cmbListaAtletas";
-            this.cmbListaAtletas.Size = new System.Drawing.Size(278, 21);
-            this.cmbListaAtletas.TabIndex = 4;
-            this.cmbListaAtletas.Text = "Seleccione una Atleta";
-            // 
-            // btnBuscarEvento
-            // 
-            this.btnBuscarEvento.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnBuscarEvento.AutoSize = true;
-            this.btnBuscarEvento.BackColor = System.Drawing.Color.DodgerBlue;
-            this.btnBuscarEvento.ForeColor = System.Drawing.Color.White;
-            this.btnBuscarEvento.Location = new System.Drawing.Point(0, 106);
-            this.btnBuscarEvento.Name = "btnBuscarEvento";
-            this.btnBuscarEvento.Size = new System.Drawing.Size(103, 23);
-            this.btnBuscarEvento.TabIndex = 3;
-            this.btnBuscarEvento.Text = "Buscar Evento";
-            this.btnBuscarEvento.UseVisualStyleBackColor = false;
-            this.btnBuscarEvento.Click += new System.EventHandler(this.btnBuscarEvento_Click);
+            this.cmbAtletas.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cmbAtletas.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cmbAtletas.FormattingEnabled = true;
+            this.cmbAtletas.Location = new System.Drawing.Point(6, 19);
+            this.cmbAtletas.Name = "cmbAtletas";
+            this.cmbAtletas.Size = new System.Drawing.Size(278, 21);
+            this.cmbAtletas.TabIndex = 4;
+            this.cmbAtletas.Text = "Seleccione una Atleta";
+            this.cmbAtletas.SelectedIndexChanged += new System.EventHandler(this.cmbAtletas_SelectedIndexChanged);
             // 
             // groupBox3
             // 
@@ -511,242 +429,278 @@
             this.button6.Text = "Buscar Evento";
             this.button6.UseVisualStyleBackColor = true;
             // 
-            // pnlInicioEvento
+            // panelCronometraje
             // 
-            this.pnlInicioEvento.Controls.Add(this.pnlRegistroCronometrajeHoraFechaFin);
-            this.pnlInicioEvento.Controls.Add(this.grpIniciarEvento);
-            this.pnlInicioEvento.Location = new System.Drawing.Point(12, 12);
-            this.pnlInicioEvento.Name = "pnlInicioEvento";
-            this.pnlInicioEvento.Size = new System.Drawing.Size(600, 125);
-            this.pnlInicioEvento.TabIndex = 3;
-            // 
-            // pnlRegistroCronometrajeHoraFechaFin
-            // 
-            this.pnlRegistroCronometrajeHoraFechaFin.Controls.Add(this.grpFinalizarEvento);
-            this.pnlRegistroCronometrajeHoraFechaFin.Location = new System.Drawing.Point(236, 25);
-            this.pnlRegistroCronometrajeHoraFechaFin.Name = "pnlRegistroCronometrajeHoraFechaFin";
-            this.pnlRegistroCronometrajeHoraFechaFin.Size = new System.Drawing.Size(364, 100);
-            this.pnlRegistroCronometrajeHoraFechaFin.TabIndex = 13;
-            this.pnlRegistroCronometrajeHoraFechaFin.Visible = false;
+            this.panelCronometraje.Controls.Add(this.grpFinalizarEvento);
+            this.panelCronometraje.Controls.Add(this.grpIniciarEvento);
+            this.panelCronometraje.Location = new System.Drawing.Point(12, 12);
+            this.panelCronometraje.Name = "panelCronometraje";
+            this.panelCronometraje.Size = new System.Drawing.Size(600, 168);
+            this.panelCronometraje.TabIndex = 3;
             // 
             // grpFinalizarEvento
             // 
-            this.grpFinalizarEvento.Controls.Add(this.rdoIngresoManual);
+            this.grpFinalizarEvento.Controls.Add(this.label14);
+            this.grpFinalizarEvento.Controls.Add(this.label13);
+            this.grpFinalizarEvento.Controls.Add(this.label12);
+            this.grpFinalizarEvento.Controls.Add(this.txtSegundoFinal);
+            this.grpFinalizarEvento.Controls.Add(this.txtMinutoFinal);
+            this.grpFinalizarEvento.Controls.Add(this.txtHoraFinal);
+            this.grpFinalizarEvento.Controls.Add(this.rdoIngresoManualFinal);
             this.grpFinalizarEvento.Controls.Add(this.rdoIngresoAutogenerado);
-            this.grpFinalizarEvento.Controls.Add(this.pnlIngresarHoraFinEvento);
             this.grpFinalizarEvento.Controls.Add(this.pnlIngresarFechaFinEvento);
-            this.grpFinalizarEvento.Controls.Add(this.lblValorFechaFinEvento);
             this.grpFinalizarEvento.Controls.Add(this.lblFechaFinEvento);
-            this.grpFinalizarEvento.Controls.Add(this.lblValorHoraFinEvento);
             this.grpFinalizarEvento.Controls.Add(this.lblHoraFinEvento);
-            this.grpFinalizarEvento.Controls.Add(this.btnFinalizarEvento);
-            this.grpFinalizarEvento.Location = new System.Drawing.Point(0, 1);
+            this.grpFinalizarEvento.Location = new System.Drawing.Point(313, 22);
             this.grpFinalizarEvento.Name = "grpFinalizarEvento";
-            this.grpFinalizarEvento.Size = new System.Drawing.Size(364, 99);
+            this.grpFinalizarEvento.Size = new System.Drawing.Size(284, 143);
             this.grpFinalizarEvento.TabIndex = 14;
             this.grpFinalizarEvento.TabStop = false;
-            this.grpFinalizarEvento.Text = "Finalizar Evento";
+            this.grpFinalizarEvento.Text = "Finalizacion Evento";
             // 
-            // rdoIngresoManual
+            // label14
             // 
-            this.rdoIngresoManual.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.rdoIngresoManual.Location = new System.Drawing.Point(216, 74);
-            this.rdoIngresoManual.Name = "rdoIngresoManual";
-            this.rdoIngresoManual.Size = new System.Drawing.Size(115, 17);
-            this.rdoIngresoManual.TabIndex = 10;
-            this.rdoIngresoManual.Text = "Ingreso manual";
-            this.rdoIngresoManual.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.rdoIngresoManual.UseVisualStyleBackColor = true;
-            this.rdoIngresoManual.CheckedChanged += new System.EventHandler(this.rdoIngresoManual_CheckedChanged);
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(223, 16);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(55, 13);
+            this.label14.TabIndex = 16;
+            this.label14.Text = "Segundos";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(164, 16);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(44, 13);
+            this.label13.TabIndex = 15;
+            this.label13.Text = "Minutos";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(106, 16);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(30, 13);
+            this.label12.TabIndex = 14;
+            this.label12.Text = "Hora";
+            // 
+            // txtSegundoFinal
+            // 
+            this.txtSegundoFinal.Location = new System.Drawing.Point(226, 39);
+            this.txtSegundoFinal.MaxLength = 2;
+            this.txtSegundoFinal.Name = "txtSegundoFinal";
+            this.txtSegundoFinal.Size = new System.Drawing.Size(40, 20);
+            this.txtSegundoFinal.TabIndex = 13;
+            // 
+            // txtMinutoFinal
+            // 
+            this.txtMinutoFinal.Location = new System.Drawing.Point(167, 39);
+            this.txtMinutoFinal.MaxLength = 2;
+            this.txtMinutoFinal.Name = "txtMinutoFinal";
+            this.txtMinutoFinal.Size = new System.Drawing.Size(40, 20);
+            this.txtMinutoFinal.TabIndex = 12;
+            // 
+            // txtHoraFinal
+            // 
+            this.txtHoraFinal.Location = new System.Drawing.Point(109, 39);
+            this.txtHoraFinal.MaxLength = 2;
+            this.txtHoraFinal.Name = "txtHoraFinal";
+            this.txtHoraFinal.Size = new System.Drawing.Size(40, 20);
+            this.txtHoraFinal.TabIndex = 11;
+            // 
+            // rdoIngresoManualFinal
+            // 
+            this.rdoIngresoManualFinal.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.rdoIngresoManualFinal.Location = new System.Drawing.Point(127, 110);
+            this.rdoIngresoManualFinal.Name = "rdoIngresoManualFinal";
+            this.rdoIngresoManualFinal.Size = new System.Drawing.Size(115, 17);
+            this.rdoIngresoManualFinal.TabIndex = 10;
+            this.rdoIngresoManualFinal.Text = "Ingreso manual";
+            this.rdoIngresoManualFinal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.rdoIngresoManualFinal.UseVisualStyleBackColor = true;
+            this.rdoIngresoManualFinal.Click += new System.EventHandler(this.rdoIngresoManual_Click);
             // 
             // rdoIngresoAutogenerado
             // 
             this.rdoIngresoAutogenerado.AutoSize = true;
-            this.rdoIngresoAutogenerado.Checked = true;
             this.rdoIngresoAutogenerado.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.rdoIngresoAutogenerado.Location = new System.Drawing.Point(109, 74);
+            this.rdoIngresoAutogenerado.Location = new System.Drawing.Point(20, 110);
             this.rdoIngresoAutogenerado.Name = "rdoIngresoAutogenerado";
             this.rdoIngresoAutogenerado.Size = new System.Drawing.Size(83, 17);
             this.rdoIngresoAutogenerado.TabIndex = 9;
-            this.rdoIngresoAutogenerado.TabStop = true;
             this.rdoIngresoAutogenerado.Text = "Autogenerar";
             this.rdoIngresoAutogenerado.UseVisualStyleBackColor = true;
-            this.rdoIngresoAutogenerado.CheckedChanged += new System.EventHandler(this.rdoIngresoAutogenerado_CheckedChanged);
-            // 
-            // pnlIngresarHoraFinEvento
-            // 
-            this.pnlIngresarHoraFinEvento.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pnlIngresarHoraFinEvento.Controls.Add(this.dtpIngresoHoraFinEvento);
-            this.pnlIngresarHoraFinEvento.Enabled = false;
-            this.pnlIngresarHoraFinEvento.Location = new System.Drawing.Point(216, 20);
-            this.pnlIngresarHoraFinEvento.Name = "pnlIngresarHoraFinEvento";
-            this.pnlIngresarHoraFinEvento.Size = new System.Drawing.Size(142, 23);
-            this.pnlIngresarHoraFinEvento.TabIndex = 8;
-            // 
-            // dtpIngresoHoraFinEvento
-            // 
-            this.dtpIngresoHoraFinEvento.CustomFormat = "h:mm:ss tt";
-            this.dtpIngresoHoraFinEvento.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dtpIngresoHoraFinEvento.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpIngresoHoraFinEvento.Location = new System.Drawing.Point(0, 0);
-            this.dtpIngresoHoraFinEvento.Name = "dtpIngresoHoraFinEvento";
-            this.dtpIngresoHoraFinEvento.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.dtpIngresoHoraFinEvento.ShowUpDown = true;
-            this.dtpIngresoHoraFinEvento.Size = new System.Drawing.Size(138, 20);
-            this.dtpIngresoHoraFinEvento.TabIndex = 6;
+            this.rdoIngresoAutogenerado.Click += new System.EventHandler(this.btnAutoCompletarFinal_Click);
             // 
             // pnlIngresarFechaFinEvento
             // 
             this.pnlIngresarFechaFinEvento.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pnlIngresarFechaFinEvento.Controls.Add(this.dtpIngresoFechaFinEvento);
-            this.pnlIngresarFechaFinEvento.Enabled = false;
-            this.pnlIngresarFechaFinEvento.Location = new System.Drawing.Point(216, 45);
+            this.pnlIngresarFechaFinEvento.Controls.Add(this.calendarFinal);
+            this.pnlIngresarFechaFinEvento.Location = new System.Drawing.Point(112, 76);
             this.pnlIngresarFechaFinEvento.Name = "pnlIngresarFechaFinEvento";
             this.pnlIngresarFechaFinEvento.Size = new System.Drawing.Size(142, 23);
             this.pnlIngresarFechaFinEvento.TabIndex = 7;
             // 
-            // dtpIngresoFechaFinEvento
+            // calendarFinal
             // 
-            this.dtpIngresoFechaFinEvento.CustomFormat = "dd MMMM yyyy";
-            this.dtpIngresoFechaFinEvento.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dtpIngresoFechaFinEvento.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpIngresoFechaFinEvento.Location = new System.Drawing.Point(0, 0);
-            this.dtpIngresoFechaFinEvento.Name = "dtpIngresoFechaFinEvento";
-            this.dtpIngresoFechaFinEvento.Size = new System.Drawing.Size(138, 20);
-            this.dtpIngresoFechaFinEvento.TabIndex = 7;
-            // 
-            // lblValorFechaFinEvento
-            // 
-            this.lblValorFechaFinEvento.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblValorFechaFinEvento.Enabled = false;
-            this.lblValorFechaFinEvento.Location = new System.Drawing.Point(109, 45);
-            this.lblValorFechaFinEvento.Name = "lblValorFechaFinEvento";
-            this.lblValorFechaFinEvento.Size = new System.Drawing.Size(100, 23);
-            this.lblValorFechaFinEvento.TabIndex = 4;
-            this.lblValorFechaFinEvento.Text = "- - - -";
-            this.lblValorFechaFinEvento.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.calendarFinal.CustomFormat = "dd MMMM yyyy";
+            this.calendarFinal.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.calendarFinal.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.calendarFinal.Location = new System.Drawing.Point(0, 0);
+            this.calendarFinal.Name = "calendarFinal";
+            this.calendarFinal.Size = new System.Drawing.Size(138, 20);
+            this.calendarFinal.TabIndex = 21;
             // 
             // lblFechaFinEvento
             // 
-            this.lblFechaFinEvento.Location = new System.Drawing.Point(3, 45);
+            this.lblFechaFinEvento.Location = new System.Drawing.Point(3, 76);
             this.lblFechaFinEvento.Name = "lblFechaFinEvento";
             this.lblFechaFinEvento.Size = new System.Drawing.Size(100, 23);
             this.lblFechaFinEvento.TabIndex = 3;
             this.lblFechaFinEvento.Text = "Fecha de fin:";
             this.lblFechaFinEvento.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // lblValorHoraFinEvento
-            // 
-            this.lblValorHoraFinEvento.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblValorHoraFinEvento.Enabled = false;
-            this.lblValorHoraFinEvento.Location = new System.Drawing.Point(109, 20);
-            this.lblValorHoraFinEvento.Name = "lblValorHoraFinEvento";
-            this.lblValorHoraFinEvento.Size = new System.Drawing.Size(100, 23);
-            this.lblValorHoraFinEvento.TabIndex = 2;
-            this.lblValorHoraFinEvento.Text = "- - - -";
-            this.lblValorHoraFinEvento.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // lblHoraFinEvento
             // 
-            this.lblHoraFinEvento.Location = new System.Drawing.Point(3, 20);
+            this.lblHoraFinEvento.Location = new System.Drawing.Point(3, 39);
             this.lblHoraFinEvento.Name = "lblHoraFinEvento";
             this.lblHoraFinEvento.Size = new System.Drawing.Size(100, 23);
             this.lblHoraFinEvento.TabIndex = 1;
             this.lblHoraFinEvento.Text = "Hora de fin:";
             this.lblHoraFinEvento.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // btnFinalizarEvento
-            // 
-            this.btnFinalizarEvento.AutoSize = true;
-            this.btnFinalizarEvento.BackColor = System.Drawing.Color.DodgerBlue;
-            this.btnFinalizarEvento.ForeColor = System.Drawing.Color.White;
-            this.btnFinalizarEvento.Location = new System.Drawing.Point(6, 71);
-            this.btnFinalizarEvento.Name = "btnFinalizarEvento";
-            this.btnFinalizarEvento.Size = new System.Drawing.Size(92, 23);
-            this.btnFinalizarEvento.TabIndex = 0;
-            this.btnFinalizarEvento.Text = "Finalizar Evento";
-            this.btnFinalizarEvento.UseVisualStyleBackColor = false;
-            this.btnFinalizarEvento.Click += new System.EventHandler(this.btnFinalizarEvento_Click);
-            // 
             // grpIniciarEvento
             // 
-            this.grpIniciarEvento.Controls.Add(this.btnAsignarFechaHoraInicio);
-            this.grpIniciarEvento.Controls.Add(this.lblValorFechaInicioEvento);
-            this.grpIniciarEvento.Controls.Add(this.lblFechaInicioEvento);
-            this.grpIniciarEvento.Controls.Add(this.lblValorHoraInicioEvento);
-            this.grpIniciarEvento.Controls.Add(this.lblHoraInicioEvento);
-            this.grpIniciarEvento.Controls.Add(this.btnIniciarEvento);
-            this.grpIniciarEvento.Location = new System.Drawing.Point(0, 26);
+            this.grpIniciarEvento.Controls.Add(this.label15);
+            this.grpIniciarEvento.Controls.Add(this.panel4);
+            this.grpIniciarEvento.Controls.Add(this.label16);
+            this.grpIniciarEvento.Controls.Add(this.label19);
+            this.grpIniciarEvento.Controls.Add(this.label17);
+            this.grpIniciarEvento.Controls.Add(this.label18);
+            this.grpIniciarEvento.Controls.Add(this.txtSegundoInicial);
+            this.grpIniciarEvento.Controls.Add(this.radioButton4);
+            this.grpIniciarEvento.Controls.Add(this.txtMinutoInicial);
+            this.grpIniciarEvento.Controls.Add(this.ingesoManualInicial);
+            this.grpIniciarEvento.Controls.Add(this.txtHoraInicial);
+            this.grpIniciarEvento.Location = new System.Drawing.Point(0, 22);
             this.grpIniciarEvento.Name = "grpIniciarEvento";
-            this.grpIniciarEvento.Size = new System.Drawing.Size(230, 100);
+            this.grpIniciarEvento.Size = new System.Drawing.Size(303, 143);
             this.grpIniciarEvento.TabIndex = 2;
             this.grpIniciarEvento.TabStop = false;
-            this.grpIniciarEvento.Text = "Iniciar Evento";
+            this.grpIniciarEvento.Text = "Inicio Evento";
             // 
-            // btnAsignarFechaHoraInicio
+            // label15
             // 
-            this.btnAsignarFechaHoraInicio.AutoSize = true;
-            this.btnAsignarFechaHoraInicio.BackColor = System.Drawing.Color.DodgerBlue;
-            this.btnAsignarFechaHoraInicio.Enabled = false;
-            this.btnAsignarFechaHoraInicio.ForeColor = System.Drawing.Color.White;
-            this.btnAsignarFechaHoraInicio.Location = new System.Drawing.Point(94, 71);
-            this.btnAsignarFechaHoraInicio.Name = "btnAsignarFechaHoraInicio";
-            this.btnAsignarFechaHoraInicio.Size = new System.Drawing.Size(130, 23);
-            this.btnAsignarFechaHoraInicio.TabIndex = 5;
-            this.btnAsignarFechaHoraInicio.Text = "Asignar Hora Inicio";
-            this.btnAsignarFechaHoraInicio.UseVisualStyleBackColor = false;
-            this.btnAsignarFechaHoraInicio.Click += new System.EventHandler(this.btnAsignarFechaHoraInicio_Click);
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(229, 18);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(55, 13);
+            this.label15.TabIndex = 27;
+            this.label15.Text = "Segundos";
             // 
-            // lblValorFechaInicioEvento
+            // panel4
             // 
-            this.lblValorFechaInicioEvento.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblValorFechaInicioEvento.Location = new System.Drawing.Point(109, 45);
-            this.lblValorFechaInicioEvento.Name = "lblValorFechaInicioEvento";
-            this.lblValorFechaInicioEvento.Size = new System.Drawing.Size(100, 23);
-            this.lblValorFechaInicioEvento.TabIndex = 4;
-            this.lblValorFechaInicioEvento.Text = "- - - -";
-            this.lblValorFechaInicioEvento.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel4.Controls.Add(this.calendarInicial);
+            this.panel4.Location = new System.Drawing.Point(115, 78);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(142, 23);
+            this.panel4.TabIndex = 19;
             // 
-            // lblFechaInicioEvento
+            // calendarInicial
             // 
-            this.lblFechaInicioEvento.Location = new System.Drawing.Point(3, 45);
-            this.lblFechaInicioEvento.Name = "lblFechaInicioEvento";
-            this.lblFechaInicioEvento.Size = new System.Drawing.Size(100, 23);
-            this.lblFechaInicioEvento.TabIndex = 3;
-            this.lblFechaInicioEvento.Text = "Fecha de inicio:";
-            this.lblFechaInicioEvento.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.calendarInicial.CustomFormat = "dd MMMM yyyy";
+            this.calendarInicial.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.calendarInicial.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.calendarInicial.Location = new System.Drawing.Point(0, 0);
+            this.calendarInicial.Name = "calendarInicial";
+            this.calendarInicial.Size = new System.Drawing.Size(138, 20);
+            this.calendarInicial.TabIndex = 7;
             // 
-            // lblValorHoraInicioEvento
+            // label16
             // 
-            this.lblValorHoraInicioEvento.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblValorHoraInicioEvento.Location = new System.Drawing.Point(109, 20);
-            this.lblValorHoraInicioEvento.Name = "lblValorHoraInicioEvento";
-            this.lblValorHoraInicioEvento.Size = new System.Drawing.Size(100, 23);
-            this.lblValorHoraInicioEvento.TabIndex = 2;
-            this.lblValorHoraInicioEvento.Text = "- - - -";
-            this.lblValorHoraInicioEvento.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(170, 18);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(44, 13);
+            this.label16.TabIndex = 26;
+            this.label16.Text = "Minutos";
             // 
-            // lblHoraInicioEvento
+            // label19
             // 
-            this.lblHoraInicioEvento.Location = new System.Drawing.Point(3, 20);
-            this.lblHoraInicioEvento.Name = "lblHoraInicioEvento";
-            this.lblHoraInicioEvento.Size = new System.Drawing.Size(100, 23);
-            this.lblHoraInicioEvento.TabIndex = 1;
-            this.lblHoraInicioEvento.Text = "Hora de inicio:";
-            this.lblHoraInicioEvento.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label19.Location = new System.Drawing.Point(9, 41);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(100, 23);
+            this.label19.TabIndex = 17;
+            this.label19.Text = "Hora de Inicio:";
+            this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // btnIniciarEvento
+            // label17
             // 
-            this.btnIniciarEvento.AutoSize = true;
-            this.btnIniciarEvento.BackColor = System.Drawing.Color.DodgerBlue;
-            this.btnIniciarEvento.ForeColor = System.Drawing.Color.White;
-            this.btnIniciarEvento.Location = new System.Drawing.Point(6, 71);
-            this.btnIniciarEvento.Name = "btnIniciarEvento";
-            this.btnIniciarEvento.Size = new System.Drawing.Size(82, 23);
-            this.btnIniciarEvento.TabIndex = 0;
-            this.btnIniciarEvento.Text = "Iniciar Evento";
-            this.btnIniciarEvento.UseVisualStyleBackColor = false;
-            this.btnIniciarEvento.Click += new System.EventHandler(this.btnIniciarEvento_Click);
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(112, 18);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(30, 13);
+            this.label17.TabIndex = 25;
+            this.label17.Text = "Hora";
+            // 
+            // label18
+            // 
+            this.label18.Location = new System.Drawing.Point(9, 78);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(100, 23);
+            this.label18.TabIndex = 18;
+            this.label18.Text = "Fecha de Inicio:";
+            this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // txtSegundoInicial
+            // 
+            this.txtSegundoInicial.Location = new System.Drawing.Point(232, 41);
+            this.txtSegundoInicial.MaxLength = 2;
+            this.txtSegundoInicial.Name = "txtSegundoInicial";
+            this.txtSegundoInicial.Size = new System.Drawing.Size(40, 20);
+            this.txtSegundoInicial.TabIndex = 24;
+            // 
+            // radioButton4
+            // 
+            this.radioButton4.AutoSize = true;
+            this.radioButton4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.radioButton4.Location = new System.Drawing.Point(26, 112);
+            this.radioButton4.Name = "radioButton4";
+            this.radioButton4.Size = new System.Drawing.Size(83, 17);
+            this.radioButton4.TabIndex = 20;
+            this.radioButton4.Text = "Autogenerar";
+            this.radioButton4.UseVisualStyleBackColor = true;
+            this.radioButton4.Click += new System.EventHandler(this.btnAutoCompletarInicio_Click);
+            // 
+            // txtMinutoInicial
+            // 
+            this.txtMinutoInicial.Location = new System.Drawing.Point(173, 41);
+            this.txtMinutoInicial.MaxLength = 2;
+            this.txtMinutoInicial.Name = "txtMinutoInicial";
+            this.txtMinutoInicial.Size = new System.Drawing.Size(40, 20);
+            this.txtMinutoInicial.TabIndex = 23;
+            // 
+            // ingesoManualInicial
+            // 
+            this.ingesoManualInicial.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ingesoManualInicial.Location = new System.Drawing.Point(133, 112);
+            this.ingesoManualInicial.Name = "ingesoManualInicial";
+            this.ingesoManualInicial.Size = new System.Drawing.Size(115, 17);
+            this.ingesoManualInicial.TabIndex = 21;
+            this.ingesoManualInicial.Text = "Ingreso manual";
+            this.ingesoManualInicial.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.ingesoManualInicial.UseVisualStyleBackColor = true;
+            this.ingesoManualInicial.Click += new System.EventHandler(this.ingesoManualInicial_Click);
+            // 
+            // txtHoraInicial
+            // 
+            this.txtHoraInicial.Location = new System.Drawing.Point(115, 41);
+            this.txtHoraInicial.MaxLength = 2;
+            this.txtHoraInicial.Name = "txtHoraInicial";
+            this.txtHoraInicial.Size = new System.Drawing.Size(40, 20);
+            this.txtHoraInicial.TabIndex = 22;
             // 
             // panel3
             // 
@@ -972,32 +926,25 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(248)))), ((int)(((byte)(241)))));
             this.ClientSize = new System.Drawing.Size(624, 441);
             this.Controls.Add(this.lblTitleUser);
-            this.Controls.Add(this.pnlInicioEvento);
+            this.Controls.Add(this.panelCronometraje);
             this.Controls.Add(this.pnlRegistroCronometrajeHoraInicio);
             this.Name = "FrmCronometrajes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gestión Cronometrajes";
-            this.Load += new System.EventHandler(this.FrmCronometrajes_Load);
             this.pnlRegistroCronometrajeHoraInicio.ResumeLayout(false);
             this.pnlRegistroCronometrajeHoraInicio.PerformLayout();
-            this.gtpActualizarFechaHoraInicio.ResumeLayout(false);
-            this.gtpActualizarFechaHoraInicio.PerformLayout();
-            this.pnlActualizarFechaInicio.ResumeLayout(false);
-            this.pnlActualizarHoraInicio.ResumeLayout(false);
             this.grpActualizarEstadoEvento.ResumeLayout(false);
-            this.grpActualizarEstadoEvento.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEventoSegunAtletaCompetencia)).EndInit();
             this.grpListaCompetencias.ResumeLayout(false);
             this.gtpListaAtletas.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.pnlInicioEvento.ResumeLayout(false);
-            this.pnlRegistroCronometrajeHoraFechaFin.ResumeLayout(false);
+            this.panelCronometraje.ResumeLayout(false);
             this.grpFinalizarEvento.ResumeLayout(false);
             this.grpFinalizarEvento.PerformLayout();
-            this.pnlIngresarHoraFinEvento.ResumeLayout(false);
             this.pnlIngresarFechaFinEvento.ResumeLayout(false);
             this.grpIniciarEvento.ResumeLayout(false);
             this.grpIniciarEvento.PerformLayout();
+            this.panel4.ResumeLayout(false);
             this.lblTitleUser.ResumeLayout(false);
             this.lblTitleUser.PerformLayout();
             this.ResumeLayout(false);
@@ -1007,23 +954,14 @@
         #endregion
 
         private System.Windows.Forms.Panel pnlRegistroCronometrajeHoraInicio;
-        private System.Windows.Forms.GroupBox gtpActualizarFechaHoraInicio;
-        private System.Windows.Forms.Button btnActualizarFechaInicio;
-        private System.Windows.Forms.Panel pnlActualizarFechaInicio;
-        private System.Windows.Forms.DateTimePicker dtpActualizarFechaInicio;
-        private System.Windows.Forms.Panel pnlActualizarHoraInicio;
-        private System.Windows.Forms.DateTimePicker dtpActualizarHoraInicio;
         private System.Windows.Forms.GroupBox grpActualizarEstadoEvento;
-        private System.Windows.Forms.Button ActualizarEventoAbandono;
-        private System.Windows.Forms.Button btnActualizarEventoDescalificado;
         private System.Windows.Forms.Label lblInformacionEvento;
         private System.Windows.Forms.DataGridView dgvEventoSegunAtletaCompetencia;
         private System.Windows.Forms.GroupBox grpListaCompetencias;
-        private System.Windows.Forms.ComboBox cmbListaCompetencias;
+        private System.Windows.Forms.ComboBox cmbCompetencias;
         private System.Windows.Forms.Label lblRegistroTiempoLlegada;
         private System.Windows.Forms.GroupBox gtpListaAtletas;
-        private System.Windows.Forms.ComboBox cmbListaAtletas;
-        private System.Windows.Forms.Button btnBuscarEvento;
+        private System.Windows.Forms.ComboBox cmbAtletas;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Panel panel5;
@@ -1041,26 +979,13 @@
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Panel pnlInicioEvento;
-        private System.Windows.Forms.Panel pnlRegistroCronometrajeHoraFechaFin;
+        private System.Windows.Forms.Panel panelCronometraje;
         private System.Windows.Forms.GroupBox grpFinalizarEvento;
-        private System.Windows.Forms.RadioButton rdoIngresoManual;
+        private System.Windows.Forms.RadioButton rdoIngresoManualFinal;
         private System.Windows.Forms.RadioButton rdoIngresoAutogenerado;
-        private System.Windows.Forms.Panel pnlIngresarHoraFinEvento;
-        private System.Windows.Forms.DateTimePicker dtpIngresoHoraFinEvento;
-        private System.Windows.Forms.Panel pnlIngresarFechaFinEvento;
-        private System.Windows.Forms.DateTimePicker dtpIngresoFechaFinEvento;
-        private System.Windows.Forms.Label lblValorFechaFinEvento;
         private System.Windows.Forms.Label lblFechaFinEvento;
-        private System.Windows.Forms.Label lblValorHoraFinEvento;
         private System.Windows.Forms.Label lblHoraFinEvento;
-        private System.Windows.Forms.Button btnFinalizarEvento;
         private System.Windows.Forms.GroupBox grpIniciarEvento;
-        private System.Windows.Forms.Label lblValorFechaInicioEvento;
-        private System.Windows.Forms.Label lblFechaInicioEvento;
-        private System.Windows.Forms.Label lblValorHoraInicioEvento;
-        private System.Windows.Forms.Label lblHoraInicioEvento;
-        private System.Windows.Forms.Button btnIniciarEvento;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.RadioButton radioButton1;
@@ -1081,9 +1006,30 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Button btnAsignarFechaHoraInicio;
         private System.Windows.Forms.Panel lblTitleUser;
         private System.Windows.Forms.Label lblGestion;
+        private System.Windows.Forms.ComboBox cmbEstados;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox txtSegundoFinal;
+        private System.Windows.Forms.TextBox txtMinutoFinal;
+        private System.Windows.Forms.TextBox txtHoraFinal;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.DateTimePicker calendarInicial;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.TextBox txtSegundoInicial;
+        private System.Windows.Forms.RadioButton radioButton4;
+        private System.Windows.Forms.TextBox txtMinutoInicial;
+        private System.Windows.Forms.RadioButton ingesoManualInicial;
+        private System.Windows.Forms.TextBox txtHoraInicial;
+        private System.Windows.Forms.Button btnGuardar;
+        private System.Windows.Forms.Panel pnlIngresarFechaFinEvento;
+        private System.Windows.Forms.DateTimePicker calendarFinal;
 
     }
 }

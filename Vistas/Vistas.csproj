@@ -175,7 +175,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <None Include="app.config" />
+    <None Include="Resources\app.config" />
     <None Include="comdepDataSet.xsc">
       <DependentUpon>comdepDataSet.xsd</DependentUpon>
     </None>
