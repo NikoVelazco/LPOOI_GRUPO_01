@@ -60,12 +60,9 @@ namespace Vistas
                 MessageBox.Show("El Atleta ya se encuentra inscripto a un evento", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             
-            if (dateIsAllowed)
-            {
-                MessageBox.Show("La fecha de la Competencia es incorrecta, debe ser anterior al día de hoy", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            
 
-            if (!athleteWasFound && !dateIsAllowed)
+            if (!athleteWasFound)
             {
                 DialogResult confirmationMessage = MessageBox.Show("Desea registrar inscripción del Atleta", "Registrar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (confirmationMessage == DialogResult.Yes)

@@ -245,11 +245,18 @@ namespace Vistas
 
                 DataRow dataRow = dataTable.Rows[0];
                 
-                DateTime fechaInicial = (DateTime)dataRow["Hora Inicio"];
-                cargarFechaInicial(fechaInicial);
+                if (dataRow["Hora Inicio"] != DBNull.Value)
+                {
+                    DateTime fechaInicial = (DateTime)dataRow["Hora Inicio"];
+                    cargarFechaInicial(fechaInicial);
+                }
 
-                DateTime fechaFinal = (DateTime)dataRow["Hora Fin"];
-                cargarFechaFinal(fechaFinal);
+
+                if (dataRow["Hora Fin"] != DBNull.Value)
+                {
+                    DateTime fechaFinal = (DateTime)dataRow["Hora Fin"];
+                    cargarFechaFinal(fechaFinal);
+                }
 
                 cmbEstados.Text = dataRow["Estado"].ToString();
 
