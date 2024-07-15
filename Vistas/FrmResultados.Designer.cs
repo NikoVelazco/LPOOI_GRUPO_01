@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cmbListaCompetenciasParaResultados = new System.Windows.Forms.ComboBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblListaResultados = new System.Windows.Forms.Label();
             this.dgvResultados = new System.Windows.Forms.DataGridView();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.cmbListaCompetenciasParaResultados = new System.Windows.Forms.ComboBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.lblValorCantidadDescalificados = new System.Windows.Forms.Label();
             this.lblCantidadDescalificados = new System.Windows.Forms.Label();
@@ -44,9 +44,9 @@
             this.lblTitleUser = new System.Windows.Forms.Panel();
             this.lblGestion = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvResultados)).BeginInit();
-            this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.lblTitleUser.SuspendLayout();
             this.SuspendLayout();
@@ -54,12 +54,34 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(248)))), ((int)(((byte)(241)))));
-            this.panel1.Controls.Add(this.lblTitleUser);
             this.panel1.Controls.Add(this.groupBox1);
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(600, 220);
             this.panel1.TabIndex = 0;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.cmbListaCompetenciasParaResultados);
+            this.groupBox1.Location = new System.Drawing.Point(303, 53);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(0);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(300, 50);
+            this.groupBox1.TabIndex = 3;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Seleccionar Competencia";
+            // 
+            // cmbListaCompetenciasParaResultados
+            // 
+            this.cmbListaCompetenciasParaResultados.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.cmbListaCompetenciasParaResultados.BackColor = System.Drawing.SystemColors.Window;
+            this.cmbListaCompetenciasParaResultados.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.cmbListaCompetenciasParaResultados.FormattingEnabled = true;
+            this.cmbListaCompetenciasParaResultados.Location = new System.Drawing.Point(6, 19);
+            this.cmbListaCompetenciasParaResultados.Name = "cmbListaCompetenciasParaResultados";
+            this.cmbListaCompetenciasParaResultados.Size = new System.Drawing.Size(288, 21);
+            this.cmbListaCompetenciasParaResultados.TabIndex = 2;
+            this.cmbListaCompetenciasParaResultados.SelectedIndexChanged += new System.EventHandler(this.cmbListaCompetenciasParaResultados_SelectedIndexChanged);
             // 
             // panel2
             // 
@@ -92,29 +114,6 @@
             this.dgvResultados.Name = "dgvResultados";
             this.dgvResultados.Size = new System.Drawing.Size(600, 154);
             this.dgvResultados.TabIndex = 0;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.cmbListaCompetenciasParaResultados);
-            this.groupBox1.Location = new System.Drawing.Point(303, 53);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(0);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(300, 50);
-            this.groupBox1.TabIndex = 3;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Seleccionar Competencia";
-            // 
-            // cmbListaCompetenciasParaResultados
-            // 
-            this.cmbListaCompetenciasParaResultados.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.cmbListaCompetenciasParaResultados.BackColor = System.Drawing.SystemColors.Window;
-            this.cmbListaCompetenciasParaResultados.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.cmbListaCompetenciasParaResultados.FormattingEnabled = true;
-            this.cmbListaCompetenciasParaResultados.Location = new System.Drawing.Point(6, 19);
-            this.cmbListaCompetenciasParaResultados.Name = "cmbListaCompetenciasParaResultados";
-            this.cmbListaCompetenciasParaResultados.Size = new System.Drawing.Size(288, 21);
-            this.cmbListaCompetenciasParaResultados.TabIndex = 2;
-            this.cmbListaCompetenciasParaResultados.SelectedIndexChanged += new System.EventHandler(this.cmbListaCompetenciasParaResultados_SelectedIndexChanged);
             // 
             // groupBox2
             // 
@@ -196,8 +195,8 @@
             this.lblTitleUser.Dock = System.Windows.Forms.DockStyle.Top;
             this.lblTitleUser.Location = new System.Drawing.Point(0, 0);
             this.lblTitleUser.Name = "lblTitleUser";
-            this.lblTitleUser.Size = new System.Drawing.Size(600, 31);
-            this.lblTitleUser.TabIndex = 15;
+            this.lblTitleUser.Size = new System.Drawing.Size(624, 31);
+            this.lblTitleUser.TabIndex = 16;
             // 
             // lblGestion
             // 
@@ -216,6 +215,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(248)))), ((int)(((byte)(241)))));
             this.ClientSize = new System.Drawing.Size(624, 441);
+            this.Controls.Add(this.lblTitleUser);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -224,9 +224,9 @@
             this.Text = "Gestión Resultados";
             this.Load += new System.EventHandler(this.FrmResultados_Load);
             this.panel1.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvResultados)).EndInit();
-            this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.lblTitleUser.ResumeLayout(false);
             this.lblTitleUser.PerformLayout();

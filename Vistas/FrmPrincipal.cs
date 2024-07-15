@@ -124,6 +124,7 @@ namespace Vistas
                 Util.disabledButton(btnCompetencia);
                 Util.disabledButton(btnEventos);
                 Util.disabledButton(btnCronometraje);
+                Util.disabledButton(btnResultados);
             }
             if (TrabajarUsuario.getRolCodigo(txtUser.Text) == 2)
             {
