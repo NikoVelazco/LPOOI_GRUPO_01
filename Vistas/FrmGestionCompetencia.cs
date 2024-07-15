@@ -57,9 +57,21 @@ namespace Vistas
 
         private void loadDisciplinas()
         {
-            cmbDisciplina.DisplayMember = "Nombre";
-            cmbDisciplina.ValueMember = "ID";
-            cmbDisciplina.DataSource = TrabajarDisciplina.listarDisciplinas();
+            DataTable dataTable = TrabajarDisciplina.listarDisciplinas();
+
+            // Crear una nueva columna para la combinación de Nombre y Descripcion
+            dataTable.Columns.Add("NombreDescripcion", typeof(string));
+
+            // Llenar la nueva columna con la concatenación de Nombre y Descripcion
+            foreach (DataRow row in dataTable.Rows)
+            {
+                row["NombreDescripcion"] = row["Nombre"].ToString() + " - " + row["Descripcion"].ToString();
+            }
+
+            // Asignar el DataTable modificado como DataSource del ComboBox
+            cmbDisciplina.DisplayMember = "NombreDescripcion";
+            cmbDisciplina.ValueMember = "Id";
+            cmbDisciplina.DataSource = dataTable;
             cmbDisciplina.SelectedIndex = 0;
         }
 
